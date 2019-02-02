@@ -1,0 +1,807 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22AA8832D7526E840D7FA916 /* Pods_SheetyColors_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87B5CDD8C9040B059B8C1536 /* Pods_SheetyColors_Example.framework */; };
+		44B496B12233C0AB00CF8B38 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B496B02233C0AB00CF8B38 /* ColorCell.swift */; };
+		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
+		607FACD81AFB9204008FA782 /* ColorsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ColorsCollectionViewController.swift */; };
+		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
+		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
+		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		831FCF0022591DFE003C48A4 /* UIAlertController+customViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831FCEFF22591DFE003C48A4 /* UIAlertController+customViewTests.swift */; };
+		831FCF02225E62F8003C48A4 /* SheetyColorsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831FCF01225E62F8003C48A4 /* SheetyColorsViewTests.swift */; };
+		83205EE52256815500D62BB8 /* UIView+findLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83205EE42256815500D62BB8 /* UIView+findLabelTests.swift */; };
+		834A36DC224686C500DECD37 /* RGBAColors+NSItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36DB224686C500DECD37 /* RGBAColors+NSItemProvider.swift */; };
+		834A36E022496F8A00DECD37 /* SheetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36DF22496F8A00DECD37 /* SheetType.swift */; };
+		834A36E2224971F700DECD37 /* SheetyColorsViewFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36E1224971F700DECD37 /* SheetyColorsViewFactoryTests.swift */; };
+		834A36E52249829300DECD37 /* SheetyColorsConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36E42249829300DECD37 /* SheetyColorsConfigMock.swift */; };
+		834A36E8224E88F400DECD37 /* RGBViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36E7224E88F400DECD37 /* RGBViewModelTests.swift */; };
+		834A36ED224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36EC224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift */; };
+		834A36F2224E94FC00DECD37 /* SheetyColorsViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36F1224E94FC00DECD37 /* SheetyColorsViewModelMock.swift */; };
+		834A36F4224E98F900DECD37 /* SheetyColorsViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36F3224E98F900DECD37 /* SheetyColorsViewMock.swift */; };
+		83681FE82231AC14000AB720 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83681FE72231AC14000AB720 /* Storage.swift */; };
+		83DDE21A225FBCBC005F4CEF /* UIColor+rgbaColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DDE219225FBCBC005F4CEF /* UIColor+rgbaColorTests.swift */; };
+		83DDE21C2262204F005F4CEF /* GradientSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DDE21B2262204F005F4CEF /* GradientSliderTests.swift */; };
+		83DDE2212264FD1C005F4CEF /* SheetyColorsConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DDE2202264FD1C005F4CEF /* SheetyColorsConfigTests.swift */; };
+		9B7181428734F7B979869D46 /* Pods_SheetyColors_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB8CE96911C8C57D7DDDF3A /* Pods_SheetyColors_Tests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = SheetyColors;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0667B03A5A1675277F1DA2E0 /* Pods-SheetyColors_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheetyColors_Example.release.xcconfig"; path = "Target Support Files/Pods-SheetyColors_Example/Pods-SheetyColors_Example.release.xcconfig"; sourceTree = "<group>"; };
+		0BBE2895D4BA3C0500B57432 /* Pods-SheetyColors_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheetyColors_Tests.release.xcconfig"; path = "Target Support Files/Pods-SheetyColors_Tests/Pods-SheetyColors_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		0E199A98F8761686DD180A4E /* SheetyColors.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SheetyColors.podspec; path = ../SheetyColors.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1BB8CE96911C8C57D7DDDF3A /* Pods_SheetyColors_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SheetyColors_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3697BB2765259F63B9A5841A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		44B496B02233C0AB00CF8B38 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		553AD8A7258AE141F7908ED0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		607FACD01AFB9204008FA782 /* SheetyColors_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SheetyColors_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* ColorsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsCollectionViewController.swift; sourceTree = "<group>"; };
+		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		607FACE51AFB9204008FA782 /* SheetyColors_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SheetyColors_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75490FC3B4195381C3A8028D /* Pods-SheetyColors_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheetyColors_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SheetyColors_Tests/Pods-SheetyColors_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		8166C41FC07DB3CEB6DFB341 /* Pods-SheetyColors_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheetyColors_Example.debug.xcconfig"; path = "Target Support Files/Pods-SheetyColors_Example/Pods-SheetyColors_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		831FCEFF22591DFE003C48A4 /* UIAlertController+customViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+customViewTests.swift"; sourceTree = "<group>"; };
+		831FCF01225E62F8003C48A4 /* SheetyColorsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewTests.swift; sourceTree = "<group>"; };
+		83205EE42256815500D62BB8 /* UIView+findLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+findLabelTests.swift"; sourceTree = "<group>"; };
+		834A36DB224686C500DECD37 /* RGBAColors+NSItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RGBAColors+NSItemProvider.swift"; sourceTree = "<group>"; };
+		834A36DF22496F8A00DECD37 /* SheetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetType.swift; sourceTree = "<group>"; };
+		834A36E1224971F700DECD37 /* SheetyColorsViewFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewFactoryTests.swift; sourceTree = "<group>"; };
+		834A36E42249829300DECD37 /* SheetyColorsConfigMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsConfigMock.swift; sourceTree = "<group>"; };
+		834A36E7224E88F400DECD37 /* RGBViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBViewModelTests.swift; sourceTree = "<group>"; };
+		834A36EC224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewModelDelegateMock.swift; sourceTree = "<group>"; };
+		834A36F1224E94FC00DECD37 /* SheetyColorsViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewModelMock.swift; sourceTree = "<group>"; };
+		834A36F3224E98F900DECD37 /* SheetyColorsViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewMock.swift; sourceTree = "<group>"; };
+		83681FE72231AC14000AB720 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		83DDE219225FBCBC005F4CEF /* UIColor+rgbaColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgbaColorTests.swift"; sourceTree = "<group>"; };
+		83DDE21B2262204F005F4CEF /* GradientSliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientSliderTests.swift; sourceTree = "<group>"; };
+		83DDE2202264FD1C005F4CEF /* SheetyColorsConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsConfigTests.swift; sourceTree = "<group>"; };
+		87B5CDD8C9040B059B8C1536 /* Pods_SheetyColors_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SheetyColors_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		607FACCD1AFB9204008FA782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22AA8832D7526E840D7FA916 /* Pods_SheetyColors_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACE21AFB9204008FA782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B7181428734F7B979869D46 /* Pods_SheetyColors_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		331C6C07067074803A1282C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8166C41FC07DB3CEB6DFB341 /* Pods-SheetyColors_Example.debug.xcconfig */,
+				0667B03A5A1675277F1DA2E0 /* Pods-SheetyColors_Example.release.xcconfig */,
+				75490FC3B4195381C3A8028D /* Pods-SheetyColors_Tests.debug.xcconfig */,
+				0BBE2895D4BA3C0500B57432 /* Pods-SheetyColors_Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		44B496B22233C2EC00CF8B38 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				834A36DB224686C500DECD37 /* RGBAColors+NSItemProvider.swift */,
+				834A36DF22496F8A00DECD37 /* SheetType.swift */,
+				83681FE72231AC14000AB720 /* Storage.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		44B496B32233C2F800CF8B38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				44B496B02233C0AB00CF8B38 /* ColorCell.swift */,
+				607FACD71AFB9204008FA782 /* ColorsCollectionViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		607FACC71AFB9204008FA782 = {
+			isa = PBXGroup;
+			children = (
+				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				607FACD21AFB9204008FA782 /* Example for SheetyColors */,
+				607FACE81AFB9204008FA782 /* Tests */,
+				607FACD11AFB9204008FA782 /* Products */,
+				331C6C07067074803A1282C9 /* Pods */,
+				F68D4421B09BBEA234892C6C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		607FACD11AFB9204008FA782 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD01AFB9204008FA782 /* SheetyColors_Example.app */,
+				607FACE51AFB9204008FA782 /* SheetyColors_Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		607FACD21AFB9204008FA782 /* Example for SheetyColors */ = {
+			isa = PBXGroup;
+			children = (
+				44B496B22233C2EC00CF8B38 /* Models */,
+				44B496B32233C2F800CF8B38 /* Views */,
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACD31AFB9204008FA782 /* Supporting Files */,
+			);
+			name = "Example for SheetyColors";
+			path = SheetyColors;
+			sourceTree = "<group>";
+		};
+		607FACD31AFB9204008FA782 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD41AFB9204008FA782 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		607FACE81AFB9204008FA782 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				834A36EA224E893B00DECD37 /* Common */,
+				834A36EB224E894900DECD37 /* RGB */,
+				834A36E32249823800DECD37 /* Mocks */,
+				607FACE91AFB9204008FA782 /* Supporting Files */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		607FACE91AFB9204008FA782 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				607FACEA1AFB9204008FA782 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				0E199A98F8761686DD180A4E /* SheetyColors.podspec */,
+				3697BB2765259F63B9A5841A /* README.md */,
+				553AD8A7258AE141F7908ED0 /* LICENSE */,
+			);
+			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		83205EE22256812D00D62BB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				83205EE32256813800D62BB8 /* Extensions */,
+				831FCF01225E62F8003C48A4 /* SheetyColorsViewTests.swift */,
+				83DDE21B2262204F005F4CEF /* GradientSliderTests.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		83205EE32256813800D62BB8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				83205EE42256815500D62BB8 /* UIView+findLabelTests.swift */,
+				831FCEFF22591DFE003C48A4 /* UIAlertController+customViewTests.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		834A36E32249823800DECD37 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				834A36F1224E94FC00DECD37 /* SheetyColorsViewModelMock.swift */,
+				834A36E42249829300DECD37 /* SheetyColorsConfigMock.swift */,
+				834A36EC224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift */,
+				834A36F3224E98F900DECD37 /* SheetyColorsViewMock.swift */,
+			);
+			name = Mocks;
+			sourceTree = "<group>";
+		};
+		834A36E6224E88D500DECD37 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				834A36E7224E88F400DECD37 /* RGBViewModelTests.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		834A36E9224E88FB00DECD37 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				834A36E1224971F700DECD37 /* SheetyColorsViewFactoryTests.swift */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
+		834A36EA224E893B00DECD37 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				83DDE21F2264FD06005F4CEF /* Models */,
+				83205EE22256812D00D62BB8 /* Views */,
+				834A36E9224E88FB00DECD37 /* Factories */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		834A36EB224E894900DECD37 /* RGB */ = {
+			isa = PBXGroup;
+			children = (
+				83DDE217225FBC99005F4CEF /* Models */,
+				834A36E6224E88D500DECD37 /* ViewModels */,
+			);
+			name = RGB;
+			sourceTree = "<group>";
+		};
+		83DDE217225FBC99005F4CEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				83DDE218225FBCA5005F4CEF /* Extensions */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		83DDE218225FBCA5005F4CEF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				83DDE219225FBCBC005F4CEF /* UIColor+rgbaColorTests.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		83DDE21F2264FD06005F4CEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				83DDE2202264FD1C005F4CEF /* SheetyColorsConfigTests.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F68D4421B09BBEA234892C6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87B5CDD8C9040B059B8C1536 /* Pods_SheetyColors_Example.framework */,
+				1BB8CE96911C8C57D7DDDF3A /* Pods_SheetyColors_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		607FACCF1AFB9204008FA782 /* SheetyColors_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SheetyColors_Example" */;
+			buildPhases = (
+				AE9008059691A960F5E1E813 /* [CP] Check Pods Manifest.lock */,
+				607FACCC1AFB9204008FA782 /* Sources */,
+				607FACCD1AFB9204008FA782 /* Frameworks */,
+				607FACCE1AFB9204008FA782 /* Resources */,
+				C241CED9962A765195F2E27F /* [CP] Embed Pods Frameworks */,
+				831DB4A82253EFB3002C28CD /* Run SwiftLint */,
+				831DB4A92253F980002C28CD /* Run SwiftFormat */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SheetyColors_Example;
+			productName = SheetyColors;
+			productReference = 607FACD01AFB9204008FA782 /* SheetyColors_Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		607FACE41AFB9204008FA782 /* SheetyColors_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SheetyColors_Tests" */;
+			buildPhases = (
+				591E7B09510DFA8885189686 /* [CP] Check Pods Manifest.lock */,
+				607FACE11AFB9204008FA782 /* Sources */,
+				607FACE21AFB9204008FA782 /* Frameworks */,
+				607FACE31AFB9204008FA782 /* Resources */,
+				2072F263859F35E5FB580A30 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
+			);
+			name = SheetyColors_Tests;
+			productName = Tests;
+			productReference = 607FACE51AFB9204008FA782 /* SheetyColors_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		607FACC81AFB9204008FA782 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = CocoaPods;
+				TargetAttributes = {
+					607FACCF1AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 28969S88YP;
+						LastSwiftMigration = 1020;
+					};
+					607FACE41AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0900;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+				};
+			};
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "SheetyColors" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 607FACC71AFB9204008FA782;
+			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				607FACCF1AFB9204008FA782 /* SheetyColors_Example */,
+				607FACE41AFB9204008FA782 /* SheetyColors_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		607FACCE1AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACE31AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2072F263859F35E5FB580A30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SheetyColors_Tests/Pods-SheetyColors_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapshotTesting/SnapshotTesting.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapshotTesting.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SheetyColors_Tests/Pods-SheetyColors_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		591E7B09510DFA8885189686 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SheetyColors_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		831DB4A82253EFB3002C28CD /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swift run swiftlint --path \"../\"\n";
+		};
+		831DB4A92253F980002C28CD /* Run SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftFormat";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swift run swiftformat ../\n";
+		};
+		AE9008059691A960F5E1E813 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SheetyColors_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C241CED9962A765195F2E27F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SheetyColors_Example/Pods-SheetyColors_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Capable/Capable.framework",
+				"${BUILT_PRODUCTS_DIR}/SheetyColors/SheetyColors.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Capable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SheetyColors.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SheetyColors_Example/Pods-SheetyColors_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		607FACCC1AFB9204008FA782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607FACD81AFB9204008FA782 /* ColorsCollectionViewController.swift in Sources */,
+				44B496B12233C0AB00CF8B38 /* ColorCell.swift in Sources */,
+				834A36DC224686C500DECD37 /* RGBAColors+NSItemProvider.swift in Sources */,
+				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				83681FE82231AC14000AB720 /* Storage.swift in Sources */,
+				834A36E022496F8A00DECD37 /* SheetType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACE11AFB9204008FA782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				834A36E52249829300DECD37 /* SheetyColorsConfigMock.swift in Sources */,
+				83DDE2212264FD1C005F4CEF /* SheetyColorsConfigTests.swift in Sources */,
+				83DDE21A225FBCBC005F4CEF /* UIColor+rgbaColorTests.swift in Sources */,
+				83DDE21C2262204F005F4CEF /* GradientSliderTests.swift in Sources */,
+				834A36F2224E94FC00DECD37 /* SheetyColorsViewModelMock.swift in Sources */,
+				834A36E2224971F700DECD37 /* SheetyColorsViewFactoryTests.swift in Sources */,
+				831FCF0022591DFE003C48A4 /* UIAlertController+customViewTests.swift in Sources */,
+				831FCF02225E62F8003C48A4 /* SheetyColorsViewTests.swift in Sources */,
+				834A36E8224E88F400DECD37 /* RGBViewModelTests.swift in Sources */,
+				834A36ED224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift in Sources */,
+				83205EE52256815500D62BB8 /* UIView+findLabelTests.swift in Sources */,
+				834A36F4224E98F900DECD37 /* SheetyColorsViewMock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* SheetyColors_Example */;
+			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				607FACDA1AFB9204008FA782 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				607FACDF1AFB9204008FA782 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		607FACED1AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		607FACEE1AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		607FACF01AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8166C41FC07DB3CEB6DFB341 /* Pods-SheetyColors_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 28969S88YP;
+				INFOPLIST_FILE = SheetyColors/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		607FACF11AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0667B03A5A1675277F1DA2E0 /* Pods-SheetyColors_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 28969S88YP;
+				INFOPLIST_FILE = SheetyColors/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		607FACF31AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75490FC3B4195381C3A8028D /* Pods-SheetyColors_Tests.debug.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SheetyColors_Example.app/SheetyColors_Example";
+			};
+			name = Debug;
+		};
+		607FACF41AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BBE2895D4BA3C0500B57432 /* Pods-SheetyColors_Tests.release.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SheetyColors_Example.app/SheetyColors_Example";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "SheetyColors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACED1AFB9204008FA782 /* Debug */,
+				607FACEE1AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SheetyColors_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACF01AFB9204008FA782 /* Debug */,
+				607FACF11AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "SheetyColors_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACF31AFB9204008FA782 /* Debug */,
+				607FACF41AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
+}

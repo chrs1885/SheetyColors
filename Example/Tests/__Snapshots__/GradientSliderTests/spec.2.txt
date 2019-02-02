@@ -1,0 +1,5 @@
+<SheetyColors.GradientSlider; baseClass = UIControl; frame = (-2 -4; 4 48); layer = <CALayer>>
+   | <CAGradientLayer> (layer)
+   | <CALayer> (layer)
+   |    | <CALayer> (layer)
+   |    | <_TtC12SheetyColorsP33_484746A459ABDEEC544DEF4AF835257327VerticallyCenteredTextLayer> (layer)
