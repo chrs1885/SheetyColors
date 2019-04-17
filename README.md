@@ -1,8 +1,12 @@
+![Cocoapods platforms](https://img.shields.io/cocoapods/p/SheetyColors.svg)
+![Cocoapods](https://img.shields.io/cocoapods/v/SheetyColors.svg)
+[![Carthage compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
+[![Build Status](https://app.bitrise.io/app/e955e72e7da4b8c0/status.svg?token=wOm6zBpCFw7ZeP8gJdDE_A&branch=develop)](https://app.bitrise.io/app/e955e72e7da4b8c0)
+[![Twitter](https://img.shields.io/badge/twitter-%40chr__wendt-58a1f2.svg)](https://twitter.com/chr_wendt)
+
 <p align="center">
   <img src="./Documentation/sheetycolors.png" width="400">
 </p>
-
-[![Build Status](https://app.bitrise.io/app/e955e72e7da4b8c0/status.svg?token=wOm6zBpCFw7ZeP8gJdDE_A&branch=develop)](https://app.bitrise.io/app/e955e72e7da4b8c0)
 
 The **SheetyColors** color picker removes the lack of a built-in iOS component:
 
