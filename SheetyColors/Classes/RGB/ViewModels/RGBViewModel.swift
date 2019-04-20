@@ -41,10 +41,10 @@ extension RGBViewModel: SheetyColorsViewModelProtocol {
         return isAlphaEnabled ? 4 : 3
     }
 
-    func rainbowEnabled(forSliderAt index: Int) -> Bool {
+    func rainbowEnabled(forSliderAt _: Int) -> Bool {
         return false
     }
-    
+
     func stepInterval(forSliderAt _: Int) -> CGFloat {
         return 1.0
     }

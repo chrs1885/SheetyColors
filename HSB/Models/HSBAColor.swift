@@ -66,6 +66,6 @@ public class HSBAColor: NSObject, NSCopying, Codable {
 extension HSBAColor: SheetyColorProtocol {
     /// The UIColor representation of the HSBAColor.
     public var uiColor: UIColor {
-        return UIColor(hue: hue / 360.0, saturation: saturation / 100.0, brightness: 100.0, alpha: alpha / 100.0)
+        return UIColor(hue: hue / 360.0, saturation: saturation / 100.0, brightness: brightness / 100.0, alpha: alpha / 100.0)
     }
 }

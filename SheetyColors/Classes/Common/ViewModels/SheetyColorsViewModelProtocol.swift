@@ -14,6 +14,7 @@ protocol SheetyColorsViewModelProtocol {
     var previewColorModel: SheetyColorProtocol { get }
     var numberOfSliders: Int { get }
 
+    func rainbowEnabled(forSliderAt index: Int) -> Bool
     func stepInterval(forSliderAt index: Int) -> CGFloat
     func value(forSliderAt index: Int) -> CGFloat
     func maximumValue(forSliderAt index: Int) -> CGFloat

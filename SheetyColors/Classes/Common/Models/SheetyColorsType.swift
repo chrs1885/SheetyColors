@@ -9,7 +9,7 @@
 public enum SheetyColorsType: Equatable, CaseIterable {
     /// The RGB color model.
     case rgb
-    
+
     /// The HSB color model.
     case hsb
 }
