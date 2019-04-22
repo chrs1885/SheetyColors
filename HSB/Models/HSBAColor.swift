@@ -12,6 +12,15 @@ public class HSBAColor: NSObject, NSCopying, Codable {
     var hue, saturation, brightness, alpha: CGFloat
 
     var hexColor: String {
+        if let colorRef = self.uiColor.cgColor.components {
+            let red: CGFloat = colorRef[0]
+            let green: CGFloat = colorRef[1]
+            let blue: CGFloat = colorRef[2]
+            let rgb: Int = Int(red * 255.0) << 16 | Int(green * 255.0) << 8 | Int(blue * 255.0) << 0
+
+            return String(format: "%06x", rgb).uppercased()
+        }
+
         return ""
     }
 
