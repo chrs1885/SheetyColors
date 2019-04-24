@@ -40,25 +40,38 @@ class ColorsCollectionViewController: UICollectionViewController {
         collectionView.dragInteractionEnabled = true
     }
 
-    @IBAction func openSheetyColors(_: Any) {
-        openColorsActionSheet(with: .createColor)
+    @IBAction func addColor(_: Any) {
+        openColorTypeSelection(forAction: .createColor)
     }
 
-    func openEditActionSheet(forItemAt item: Int) {
-        openColorsActionSheet(with: .editColor(item: item))
+    func editColor(forItemAt item: Int) {
+        openColorTypeSelection(forAction: .editColor(item: item))
     }
 
-    func openColorsActionSheet(with type: SheetType) {
+    func openColorTypeSelection(forAction action: SheetType) {
+        let colorTypeSelectionSheet = UIAlertController(title: "Color Type", message: "Select a color type to use for your color picker.", preferredStyle: .actionSheet)
+        colorTypeSelectionSheet.addAction(UIAlertAction(title: "HSB", style: .default, handler: { _ in
+            self.openColorPicker(withAction: action, colorType: .hsb)
+        }))
+        colorTypeSelectionSheet.addAction(UIAlertAction(title: "RGB", style: .default, handler: { _ in
+            self.openColorPicker(withAction: action, colorType: .rgb)
+        }))
+        addCancelAlertAction(for: colorTypeSelectionSheet)
+
+        present(colorTypeSelectionSheet, animated: true)
+    }
+
+    func openColorPicker(withAction action: SheetType, colorType: SheetyColorsType) {
         var itemIndex: Int?
-        if case let .editColor(item) = type {
+        if case let .editColor(item) = action {
             itemIndex = item
         }
 
         let color = (itemIndex != nil) ? colorItems[itemIndex!].uiColor : UIColor.white
-        let config = SheetyColorsConfig(alphaEnabled: true, hapticFeedbackEnabled: true, initialColor: color, title: type.title, type: .hsb)
+        let config = SheetyColorsConfig(alphaEnabled: true, hapticFeedbackEnabled: true, initialColor: color, title: action.title, type: colorType)
         let controller = SheetyColorsController(withConfig: config)
 
-        addSelectAlertAction(for: controller, withType: type)
+        addSelectAlertAction(for: controller, withAction: action)
         addCancelAlertAction(for: controller)
         if let itemIndex = itemIndex {
             addDeleteAlertAction(for: controller, item: itemIndex)
@@ -67,10 +80,10 @@ class ColorsCollectionViewController: UICollectionViewController {
         present(controller, animated: true, completion: nil)
     }
 
-    func addSelectAlertAction(for controller: SheetyColorsController, withType type: SheetType) {
+    func addSelectAlertAction(for controller: SheetyColorsController, withAction action: SheetType) {
         let selectAction = UIAlertAction(title: "Save Color", style: .default, handler: { _ in
             self.collectionView.performBatchUpdates({
-                if case let .editColor(item) = type {
+                if case let .editColor(item) = action {
                     self.colorItems[item] = controller.color.rgbaColor
                     self.collectionView.reloadItems(at: [IndexPath(item: item, section: 0)])
                 } else {
@@ -99,7 +112,7 @@ class ColorsCollectionViewController: UICollectionViewController {
         controller.addAction(deleteAction)
     }
 
-    func addCancelAlertAction(for controller: SheetyColorsController) {
+    func addCancelAlertAction(for controller: UIAlertController) {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         controller.addAction(cancelAction)
     }
@@ -134,7 +147,7 @@ extension ColorsCollectionViewController {
 
 extension ColorsCollectionViewController {
     override func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        openEditActionSheet(forItemAt: indexPath.item)
+        editColor(forItemAt: indexPath.item)
     }
 }
 
