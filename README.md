@@ -15,7 +15,7 @@
 - **Intuitive UI:** Each slider comes with a gradient that gives you an idea of how changing individual slider values affects the resulting color.
 
 <p align="center">
-  <img src="./Documentation/sheetycolors_demo.gif">
+  <img src="./Documentation/sheetycolors.gif">
 </p>
 
 ## Example
