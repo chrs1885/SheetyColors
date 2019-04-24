@@ -12,7 +12,7 @@ public extension UIColor {
     /// The RGBAColor representation of the UIColor instance.
     var rgbaColor: RGBAColor {
         func normalize(_ component: CGFloat, multiplier: CGFloat) -> CGFloat {
-            let nomralizedValue = component * multiplier
+            let nomralizedValue = floor(component * multiplier)
 
             if nomralizedValue > multiplier { return multiplier }
             if nomralizedValue < 0.0 { return 0.0 }
