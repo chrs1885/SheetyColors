@@ -79,6 +79,8 @@ present(sheetyColors, animated: true, completion: nil)
         
 ```
 
+Please check the [documentation](./Documentation/Reference/README.MD) for further information on the API.
+
 ## Contributions
 
 We'd love to see you contributing to this project by proposing or adding features, reporting bugs, or spreading the word. Please have a quick look at our [contribution guidelines](./.github/CONTRIBUTING.md).
