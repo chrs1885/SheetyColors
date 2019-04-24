@@ -16,15 +16,14 @@ class SheetyColorsViewTests: QuickSpec {
         describe("The SheetyColorsView") {
             var sut: SheetyColorsView!
             var testSlider: GradientSlider!
-            var testColor: RGBAColor!
 
             beforeEach {
                 testSlider = GradientSlider(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0))
-                testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75).rgbaColor
             }
 
-            context("when RGB SheetyColors view is configured with alpha disabled") {
+            context("when RGB SheetyColors view is configured with alpha enabled") {
                 beforeEach {
+                    let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75).rgbaColor
                     let viewModel = RGBViewModel(withColorModel: testColor, alphaEnabled: false)
                     sut = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: false)
                     viewModel.viewModelDelegate = sut
@@ -71,7 +70,38 @@ class SheetyColorsViewTests: QuickSpec {
 
             context("when RGB SheetyColors view is configured with alpha disabled") {
                 beforeEach {
+                    let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75).rgbaColor
                     let viewModel = RGBViewModel(withColorModel: testColor, alphaEnabled: true)
+                    sut = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: false)
+                    viewModel.viewModelDelegate = sut
+                }
+
+                it("renders a RGB SheetyColors view with an alpha slider") {
+                    assertSnapshot(matching: sut, as: .recursiveDescription(size: .init(width: 300, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)))
+                }
+            }
+
+            context("when HSB SheetyColors view is configured with alpha disabled") {
+                beforeEach {
+                    let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75).hsbaColor
+                    let viewModel = HSBViewModel(withColorModel: testColor, alphaEnabled: false)
+                    sut = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: false)
+                    viewModel.viewModelDelegate = sut
+                }
+
+                it("renders a HSB SheetyColors view without an alpha slider") {
+                    assertSnapshot(matching: sut, as: .recursiveDescription(size: .init(width: 300, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)))
+                }
+            }
+
+            context("when HSB SheetyColors view is configured with alpha enabled") {
+                beforeEach {
+                    let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75).hsbaColor
+                    let viewModel = HSBViewModel(withColorModel: testColor, alphaEnabled: true)
                     sut = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: false)
                     viewModel.viewModelDelegate = sut
                 }
