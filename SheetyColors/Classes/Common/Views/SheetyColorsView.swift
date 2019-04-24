@@ -46,6 +46,7 @@ extension SheetyColorsView {
     func setupSliders() {
         for index in 0 ..< viewModel.numberOfSliders {
             let slider = GradientSlider()
+            slider.hasRainbow = viewModel.rainbowEnabled(forSliderAt: index)
             slider.stepInterval = viewModel.stepInterval(forSliderAt: index)
             slider.maximumValue = viewModel.maximumValue(forSliderAt: index)
             slider.value = viewModel.value(forSliderAt: index)

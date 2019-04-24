@@ -14,6 +14,8 @@ struct SheetyColorsViewFactory {
         switch config.type {
         case .rgb:
             viewModel = RGBViewModel(withColorModel: config.initialColor.rgbaColor, alphaEnabled: config.alphaEnabled)
+        case .hsb:
+            viewModel = HSBViewModel(withColorModel: config.initialColor.hsbaColor, alphaEnabled: config.alphaEnabled)
         }
 
         let view = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: config.hapticFeedbackEnabled)

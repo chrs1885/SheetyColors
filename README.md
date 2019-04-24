@@ -8,10 +8,10 @@
   <img src="./Documentation/sheetycolors.png" width="400">
 </p>
 
-The **SheetyColors** color picker removes the lack of a built-in iOS component:
+**SheetyColors** is an action sheet styled color picker for iOS:
 
 - **Based on UIAlertController:** The SheetyColors API is based on UIKit's `UIAlertController`. Simply add buttons to it as you would for any other Action Sheet by defining `UIAlertAction` instances. Therefore, it nicely integrates with the look & feel of all other native system dialogs.
-- **Fully configurable:** You can choose between a variety of configurations such as a color model, alpha component support, haptic feedback, and many more.
+- **Fully configurable:** You can choose between a variety of configurations such as a color model (RGB or HSB), alpha component support, haptic feedback, and many more.
 - **Intuitive UI:** Each slider comes with a gradient that gives you an idea of how changing individual slider values affects the resulting color.
 
 <p align="center">

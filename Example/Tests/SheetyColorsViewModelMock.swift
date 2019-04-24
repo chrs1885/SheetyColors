@@ -18,6 +18,10 @@ class SheetyColorsViewModelMock: SheetyColorsViewModelProtocol {
     var previewColorModel: SheetyColorProtocol = RGBAColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
     var numberOfSliders: Int = 0
 
+    func rainbowEnabled(forSliderAt _: Int) -> Bool {
+        return false
+    }
+
     func stepInterval(forSliderAt _: Int) -> CGFloat {
         return 0.0
     }
