@@ -5,6 +5,10 @@
 //  Created by Christoph Wendt on 03.02.19.
 //
 
+private enum SliderType: Int, CaseIterable {
+    case red, green, blue, alpha
+}
+
 class RGBViewModel {
     var isAlphaEnabled: Bool
     var colorModel: RGBAColor
@@ -50,7 +54,7 @@ extension RGBViewModel: SheetyColorsViewModelProtocol {
     }
 
     func value(forSliderAt index: Int) -> CGFloat {
-        guard let slider = RGBSliderType(rawValue: index) else { fatalError() }
+        guard let slider = SliderType(rawValue: index) else { fatalError() }
 
         switch slider {
         case .red:
@@ -65,14 +69,14 @@ extension RGBViewModel: SheetyColorsViewModelProtocol {
     }
 
     func maximumValue(forSliderAt index: Int) -> CGFloat {
-        guard let slider = RGBSliderType(rawValue: index) else { fatalError() }
+        guard let slider = SliderType(rawValue: index) else { fatalError() }
         let maxValue: CGFloat = (slider == .alpha) ? 100.0 : 255.0
 
         return maxValue
     }
 
     func minimumColorModel(forSliderAt index: Int) -> SheetyColorProtocol {
-        guard let slider = RGBSliderType(rawValue: index) else { fatalError() }
+        guard let slider = SliderType(rawValue: index) else { fatalError() }
         if case .alpha = slider {
             return RGBAColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 100.0)
         }
@@ -94,7 +98,7 @@ extension RGBViewModel: SheetyColorsViewModelProtocol {
     }
 
     func maximumColorModel(forSliderAt index: Int) -> SheetyColorProtocol {
-        guard let slider = RGBSliderType(rawValue: index), let color = colorModel.copy() as? RGBAColor else {
+        guard let slider = SliderType(rawValue: index), let color = colorModel.copy() as? RGBAColor else {
             fatalError()
         }
 
@@ -113,7 +117,7 @@ extension RGBViewModel: SheetyColorsViewModelProtocol {
     }
 
     func thumbText(forSliderAt index: Int) -> String? {
-        guard let slider = RGBSliderType(rawValue: index) else { fatalError() }
+        guard let slider = SliderType(rawValue: index) else { fatalError() }
 
         switch slider {
         case .red:
@@ -132,7 +136,7 @@ extension RGBViewModel: SheetyColorsViewModelProtocol {
     }
 
     func sliderValueChanged(forSliderAt index: Int, value: CGFloat) {
-        guard let slider = RGBSliderType(rawValue: index) else { fatalError() }
+        guard let slider = SliderType(rawValue: index) else { fatalError() }
 
         switch slider {
         case .red:
