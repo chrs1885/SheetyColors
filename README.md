@@ -15,7 +15,7 @@
 - **Intuitive UI:** Each slider comes with a gradient that gives you an idea of how changing individual slider values affects the resulting color.
 
 <p align="center">
-  <img src="./Documentation/sheetycolors.gif">
+  <img src="./Documentation/sheetycolors_demo.gif">
 </p>
 
 ## Example
@@ -78,6 +78,8 @@ sheetyColors.addAction(cancelAction)
 present(sheetyColors, animated: true, completion: nil)
         
 ```
+
+Please check the [documentation](./Documentation/Reference/README.MD) for further information on the API.
 
 ## Contributions
 
