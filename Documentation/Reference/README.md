@@ -13,6 +13,7 @@ This Reference Documentation has been generated with
 
 ## Classes
 
+-   [HSBAColor](classes/HSBAColor.md)
 -   [RGBAColor](classes/RGBAColor.md)
 
 ## Enums
@@ -21,6 +22,7 @@ This Reference Documentation has been generated with
 
 ## Extensions
 
+-   [HSBAColor](extensions/HSBAColor.md)
 -   [RGBAColor](extensions/RGBAColor.md)
 -   [SheetyColorsController](extensions/SheetyColorsController.md)
 -   [UIColor](extensions/UIColor.md)

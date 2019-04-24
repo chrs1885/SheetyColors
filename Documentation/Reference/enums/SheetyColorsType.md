@@ -16,3 +16,11 @@ case rgb
 ```
 
 > The RGB color model.
+
+### `hsb`
+
+```swift
+case hsb
+```
+
+> The HSB color model.
