@@ -50,6 +50,9 @@ class ColorsCollectionViewController: UICollectionViewController {
 
     func openColorTypeSelection(forAction action: SheetType) {
         let colorTypeSelectionSheet = UIAlertController(title: "Color Type", message: "Select a color type to use for your color picker.", preferredStyle: .actionSheet)
+        colorTypeSelectionSheet.addAction(UIAlertAction(title: "Grayscale", style: .default, handler: { _ in
+            self.openColorPicker(withAction: action, colorType: .grayscale)
+        }))
         colorTypeSelectionSheet.addAction(UIAlertAction(title: "HSB", style: .default, handler: { _ in
             self.openColorPicker(withAction: action, colorType: .hsb)
         }))
