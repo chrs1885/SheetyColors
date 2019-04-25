@@ -29,7 +29,7 @@ public extension UIColor {
 
             return HSBAColor(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
         } else {
-            return HSBAColor(hue: 0.0, saturation: 100.0, brightness: 100.0, alpha: 1)
+            return HSBAColor(hue: 0.0, saturation: 100.0, brightness: 100.0, alpha: 100.0)
         }
     }
 }

@@ -29,7 +29,7 @@ public extension UIColor {
 
             return RGBAColor(red: red, green: green, blue: blue, alpha: alpha)
         } else {
-            return RGBAColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1)
+            return RGBAColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 100.0)
         }
     }
 }
