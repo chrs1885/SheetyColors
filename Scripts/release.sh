@@ -4,11 +4,11 @@
 
 #============================= Linting & Formatting =============================
 echo "Running SwiftFormat"
-swift run swiftformat .
+swift run swiftformat ../
 
 echo "Running SwiftLint"
-swift run swiftlint autocorrect --path SheetyColors/
+swift run swiftlint autocorrect --path ../
 
 #================================= Documentation ================================
 echo "Generating docs with SourceDocs"
-swift run sourcedocs generate -- -workspace Example/SheetyColors.xcworkspace -scheme SheetyColors
+swift run sourcedocs generate --output-folder ../Documentation/Reference -- -workspace ../Example/SheetyColors.xcworkspace -scheme SheetyColors

@@ -112,6 +112,36 @@ class SheetyColorsViewTests: QuickSpec {
                     assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)))
                 }
             }
+
+            context("when Grayscale SheetyColors view is configured with alpha disabled") {
+                beforeEach {
+                    let testColor = UIColor(white: 0.5, alpha: 0.75).grayscaleColor
+                    let viewModel = GrayscaleViewModel(withColorModel: testColor, alphaEnabled: false)
+                    sut = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: false)
+                    viewModel.viewModelDelegate = sut
+                }
+
+                it("renders a Grayscale SheetyColors view without an alpha slider") {
+                    assertSnapshot(matching: sut, as: .recursiveDescription(size: .init(width: 300, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)))
+                }
+            }
+
+            context("when Grayscale SheetyColors view is configured with alpha enabled") {
+                beforeEach {
+                    let testColor = UIColor(white: 0.5, alpha: 0.75).grayscaleColor
+                    let viewModel = GrayscaleViewModel(withColorModel: testColor, alphaEnabled: true)
+                    sut = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: false)
+                    viewModel.viewModelDelegate = sut
+                }
+
+                it("renders a Grayscale SheetyColors view with an alpha slider") {
+                    assertSnapshot(matching: sut, as: .recursiveDescription(size: .init(width: 300, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)))
+                }
+            }
         }
     }
 }

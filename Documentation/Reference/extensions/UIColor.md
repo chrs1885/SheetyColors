@@ -3,6 +3,14 @@
 # `UIColor`
 
 ## Properties
+### `grayscaleColor`
+
+```swift
+var grayscaleColor: GrayscaleColor
+```
+
+> The GrayscaleColor representation of the UIColor instance.
+
 ### `hsbaColor`
 
 ```swift

@@ -1,4 +1,6 @@
 # Reference Documentation
+This Reference Documentation has been generated with
+[SourceDocs](https://github.com/eneko/SourceDocs).
 
 ## Protocols
 
@@ -11,6 +13,7 @@
 
 ## Classes
 
+-   [GrayscaleColor](classes/GrayscaleColor.md)
 -   [HSBAColor](classes/HSBAColor.md)
 -   [RGBAColor](classes/RGBAColor.md)
 
@@ -20,6 +23,7 @@
 
 ## Extensions
 
+-   [GrayscaleColor](extensions/GrayscaleColor.md)
 -   [HSBAColor](extensions/HSBAColor.md)
 -   [RGBAColor](extensions/RGBAColor.md)
 -   [SheetyColorsController](extensions/SheetyColorsController.md)
