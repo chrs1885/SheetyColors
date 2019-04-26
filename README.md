@@ -1,5 +1,5 @@
 ![Cocoapods platforms](https://img.shields.io/cocoapods/p/SheetyColors.svg)
-![Cocoapods](https://img.shields.io/cocoapods/v/SheetyColors.svg)
+![Cocoapods(https://cocoapods.org/pods/SheetyColors)](https://img.shields.io/cocoapods/v/SheetyColors.svg)
 [![Carthage compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![Build Status](https://app.bitrise.io/app/e955e72e7da4b8c0/status.svg?token=wOm6zBpCFw7ZeP8gJdDE_A&branch=develop)](https://app.bitrise.io/app/e955e72e7da4b8c0)
 [![Twitter](https://img.shields.io/badge/twitter-%40chr__wendt-58a1f2.svg)](https://twitter.com/chr_wendt)
@@ -11,7 +11,7 @@
 **SheetyColors** is an action sheet styled color picker for iOS:
 
 - **Based on UIAlertController:** The SheetyColors API is based on UIKit's `UIAlertController`. Simply add buttons to it as you would for any other Action Sheet by defining `UIAlertAction` instances. Therefore, it nicely integrates with the look & feel of all other native system dialogs.
-- **Fully configurable:** You can choose between a variety of configurations such as a color model (RGB or HSB), alpha component support, haptic feedback, and many more.
+- **Fully configurable:** You can choose between a variety of configurations such as a color model (RGB, HSB, or Grayscale), alpha component support, haptic feedback, and many more.
 - **Intuitive UI:** Each slider comes with a gradient that gives you an idea of how changing individual slider values affects the resulting color.
 
 <p align="center">
@@ -79,7 +79,7 @@ present(sheetyColors, animated: true, completion: nil)
         
 ```
 
-Please check the [documentation](./Documentation/Reference/README.MD) for further information on the API.
+Please check the [documentation](./Documentation/Reference/README.md) for further information on the API.
 
 ## Contributions
 

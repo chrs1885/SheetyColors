@@ -9,13 +9,13 @@ public enum SheetyColorsType: Equatable, CaseIterable
 > An enum used for specifying the color model of the SheetyColors view.
 
 ## Cases
-### `rgb`
+### `grayscale`
 
 ```swift
-case rgb
+case grayscale
 ```
 
-> The RGB color model.
+> The grayscale color model.
 
 ### `hsb`
 
@@ -24,3 +24,11 @@ case hsb
 ```
 
 > The HSB color model.
+
+### `rgb`
+
+```swift
+case rgb
+```
+
+> The RGB color model.
