@@ -294,9 +294,9 @@
 		834A36EA224E893B00DECD37 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				834A36E9224E88FB00DECD37 /* Factories */,
 				83DDE21F2264FD06005F4CEF /* Models */,
 				83205EE22256812D00D62BB8 /* Views */,
-				834A36E9224E88FB00DECD37 /* Factories */,
 			);
 			name = Common;
 			sourceTree = "<group>";
