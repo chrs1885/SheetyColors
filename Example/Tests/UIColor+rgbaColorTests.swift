@@ -20,7 +20,7 @@ class UIColorRgbaColorTests: QuickSpec {
                     sut = UIColor(white: 1.0, alpha: 0.5).rgbaColor
                 }
 
-                it("returns an RGBA color model") {
+                it("returns an RGBAColor instance") {
                     expect(sut.red).to(equal(255.0))
                     expect(sut.green).to(equal(255.0))
                     expect(sut.blue).to(equal(255.0))
@@ -33,7 +33,7 @@ class UIColorRgbaColorTests: QuickSpec {
                     sut = UIColor(red: 1.0, green: 0.0, blue: 1.0, alpha: 0.5).rgbaColor
                 }
 
-                it("returns an RGBA color model") {
+                it("returns an RGBAColor instance") {
                     expect(sut.red).to(equal(255.0))
                     expect(sut.green).to(equal(0.0))
                     expect(sut.blue).to(equal(255.0))
@@ -46,7 +46,7 @@ class UIColorRgbaColorTests: QuickSpec {
                     sut = UIColor(red: 2.0, green: -1.0, blue: 1.0, alpha: 2.0).rgbaColor
                 }
 
-                it("returns an RGBA color model") {
+                it("returns an RGBAColor instance") {
                     expect(sut.red).to(equal(255.0))
                     expect(sut.green).to(equal(0.0))
                     expect(sut.blue).to(equal(255.0))

@@ -20,7 +20,7 @@ class UIColorHsbaColorTests: QuickSpec {
                     sut = UIColor(hue: 0.1, saturation: 0.25, brightness: 0.75, alpha: 0.5).hsbaColor
                 }
 
-                it("returns an HSBA color model") {
+                it("returns an HSBAColor instance") {
                     expect(sut.hue).to(equal(36.0))
                     expect(sut.saturation).to(equal(25.0))
                     expect(sut.brightness).to(equal(75.0))
@@ -33,7 +33,7 @@ class UIColorHsbaColorTests: QuickSpec {
                     sut = UIColor(white: 1.0, alpha: 0.5).hsbaColor
                 }
 
-                it("returns an HSBA color model") {
+                it("returns an HSBAColor instance") {
                     expect(sut.saturation).to(equal(0.0))
                     expect(sut.brightness).to(equal(100.0))
                 }
@@ -44,7 +44,7 @@ class UIColorHsbaColorTests: QuickSpec {
                     sut = UIColor(red: 1.0, green: 0.0, blue: 1.0, alpha: 0.5).hsbaColor
                 }
 
-                it("returns an HSBA color model") {
+                it("returns an HSBAColor instance") {
                     expect(sut.hue).to(equal(300.0))
                     expect(sut.saturation).to(equal(100.0))
                     expect(sut.brightness).to(equal(100.0))
@@ -57,7 +57,7 @@ class UIColorHsbaColorTests: QuickSpec {
                     sut = UIColor(red: 2.0, green: -1.0, blue: 1.0, alpha: 2.0).hsbaColor
                 }
 
-                it("returns an HSBA color model") {
+                it("returns an HSBAColor instance") {
                     expect(sut.hue).to(equal(320.0))
                     expect(sut.saturation).to(equal(100.0))
                     expect(sut.brightness).to(equal(100.0))

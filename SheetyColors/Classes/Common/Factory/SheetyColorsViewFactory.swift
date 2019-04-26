@@ -12,10 +12,12 @@ struct SheetyColorsViewFactory {
         var viewModel: SheetyColorsViewModelProtocol
 
         switch config.type {
-        case .rgb:
-            viewModel = RGBViewModel(withColorModel: config.initialColor.rgbaColor, alphaEnabled: config.alphaEnabled)
+        case .grayscale:
+            viewModel = GrayscaleViewModel(withColorModel: config.initialColor.grayscaleColor, alphaEnabled: config.alphaEnabled)
         case .hsb:
             viewModel = HSBViewModel(withColorModel: config.initialColor.hsbaColor, alphaEnabled: config.alphaEnabled)
+        case .rgb:
+            viewModel = RGBViewModel(withColorModel: config.initialColor.rgbaColor, alphaEnabled: config.alphaEnabled)
         }
 
         let view = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: config.hapticFeedbackEnabled)
