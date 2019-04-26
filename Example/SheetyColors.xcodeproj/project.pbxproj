@@ -27,6 +27,8 @@
 		834A36ED224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36EC224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift */; };
 		834A36F2224E94FC00DECD37 /* SheetyColorsViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36F1224E94FC00DECD37 /* SheetyColorsViewModelMock.swift */; };
 		834A36F4224E98F900DECD37 /* SheetyColorsViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36F3224E98F900DECD37 /* SheetyColorsViewMock.swift */; };
+		83537FC222739E1400E91C39 /* UIColor+grayscaleColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83537FC122739E1400E91C39 /* UIColor+grayscaleColorTests.swift */; };
+		83537FC52273A01000E91C39 /* GrayscaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83537FC42273A01000E91C39 /* GrayscaleViewModel.swift */; };
 		83681FE82231AC14000AB720 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83681FE72231AC14000AB720 /* Storage.swift */; };
 		83DDE21A225FBCBC005F4CEF /* UIColor+rgbaColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DDE219225FBCBC005F4CEF /* UIColor+rgbaColorTests.swift */; };
 		83DDE21C2262204F005F4CEF /* GradientSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DDE21B2262204F005F4CEF /* GradientSliderTests.swift */; };
@@ -76,6 +78,8 @@
 		834A36EC224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewModelDelegateMock.swift; sourceTree = "<group>"; };
 		834A36F1224E94FC00DECD37 /* SheetyColorsViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewModelMock.swift; sourceTree = "<group>"; };
 		834A36F3224E98F900DECD37 /* SheetyColorsViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewMock.swift; sourceTree = "<group>"; };
+		83537FC122739E1400E91C39 /* UIColor+grayscaleColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+grayscaleColorTests.swift"; sourceTree = "<group>"; };
+		83537FC42273A01000E91C39 /* GrayscaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayscaleViewModel.swift; sourceTree = "<group>"; };
 		83681FE72231AC14000AB720 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		83DDE219225FBCBC005F4CEF /* UIColor+rgbaColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgbaColorTests.swift"; sourceTree = "<group>"; };
 		83DDE21B2262204F005F4CEF /* GradientSliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientSliderTests.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				83537FBE22739D8700E91C39 /* Grayscale */,
 				832DCEFC226E4D5900DAF3EF /* HSB */,
 				834A36EA224E893B00DECD37 /* Common */,
 				834A36EB224E894900DECD37 /* RGB */,
@@ -303,6 +308,39 @@
 				834A36E6224E88D500DECD37 /* ViewModels */,
 			);
 			name = RGB;
+			sourceTree = "<group>";
+		};
+		83537FBE22739D8700E91C39 /* Grayscale */ = {
+			isa = PBXGroup;
+			children = (
+				83537FC322739FFA00E91C39 /* ViewModels */,
+				83537FBF22739D9600E91C39 /* Models */,
+			);
+			name = Grayscale;
+			sourceTree = "<group>";
+		};
+		83537FBF22739D9600E91C39 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				83537FC022739DF600E91C39 /* Extensions */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		83537FC022739DF600E91C39 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				83537FC122739E1400E91C39 /* UIColor+grayscaleColorTests.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		83537FC322739FFA00E91C39 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				83537FC42273A01000E91C39 /* GrayscaleViewModel.swift */,
+			);
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 		83DDE217225FBC99005F4CEF /* Models */ = {
@@ -605,6 +643,8 @@
 				834A36E2224971F700DECD37 /* SheetyColorsViewFactoryTests.swift in Sources */,
 				831FCF0022591DFE003C48A4 /* UIAlertController+customViewTests.swift in Sources */,
 				831FCF02225E62F8003C48A4 /* SheetyColorsViewTests.swift in Sources */,
+				83537FC52273A01000E91C39 /* GrayscaleViewModel.swift in Sources */,
+				83537FC222739E1400E91C39 /* UIColor+grayscaleColorTests.swift in Sources */,
 				834A36E8224E88F400DECD37 /* RGBViewModelTests.swift in Sources */,
 				834A36ED224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift in Sources */,
 				83205EE52256815500D62BB8 /* UIView+findLabelTests.swift in Sources */,
