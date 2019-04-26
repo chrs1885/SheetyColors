@@ -10,8 +10,9 @@ The SheetyColors color picker is based on UIKit's UIAlertController. Therefore, 
   s.homepage         = 'https://github.com/chrs1885/SheetyColors'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'chrs1885' => 'christoph.wendt@me.com' }
+  s.documentation_url = 'https://github.com/chrs1885/SheetyColors/blob/master/Documentation/Reference/README.md'
   s.source           = { :git => 'https://github.com/chrs1885/SheetyColors.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/chr_wendt'
+  s.social_media_url = 'https://twitter.com/chr_wendt'
 
   s.ios.deployment_target = '11.0'
   s.dependency 'Capable/Colors', '~> 0.9.0'
