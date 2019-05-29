@@ -1,9 +1,9 @@
 PODS:
-  - Capable/Colors (0.9.0)
+  - Capable/Colors (1.0.0)
   - Nimble (8.0.1)
   - Quick (2.0.0)
   - SheetyColors (0.3.0):
-    - Capable/Colors (~> 0.9.0)
+    - Capable/Colors (~> 1.0.0)
   - SnapshotTesting (1.5.0)
 
 DEPENDENCIES:
@@ -24,10 +24,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Capable: 3f2cbbd61326df7304ff97ca4b954c2de2e3ff43
+  Capable: 9305f13c6170488bcbe37f9a34d3590f47068c46
   Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
   Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
-  SheetyColors: 635021ca45c08654941011c4be840460fcb9a0ff
+  SheetyColors: b8085c57d253c5fb558346d05e7473d70eebf45c
   SnapshotTesting: 9ca1d80f6322509a035856170c11d0571b1f7171
 
 PODFILE CHECKSUM: 9b39eb683f19af0f28a510f2ff148ddd0ce5f2a5

@@ -15,7 +15,7 @@ The SheetyColors color picker is based on UIKit's UIAlertController. Therefore, 
   s.social_media_url = 'https://twitter.com/chr_wendt'
 
   s.ios.deployment_target = '11.0'
-  s.dependency 'Capable/Colors', '~> 0.9.0'
+  s.dependency 'Capable/Colors', '~> 1.0.0'
 
   s.source_files     = 'SheetyColors/Classes/**/*.{swift}'
   s.resources        = 'SheetyColors/Classes/**/*.xcassets'
