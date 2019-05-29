@@ -1,3 +1,7 @@
+## Version 0.3.1
+### Enhancements
+* Use stable Capable/Colors version 1.0.0
+
 ## Version 0.3.0
 ### Features
 * Grayscale support
