@@ -1,3 +1,7 @@
+## Version 1.0.0
+### Enhancements
+* [Support iOS 13](https://github.com/chrs1885/SheetyColors/issues/3)
+
 ## Version 0.3.1
 ### Enhancements
 * Use stable Capable/Colors version 1.0.0
