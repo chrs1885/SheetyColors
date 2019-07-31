@@ -13,8 +13,8 @@ import SnapshotTesting
 
 class SheetyColorsViewTests: QuickSpec {
     override func spec() {
-        describe("The SheetyColorsView") {
-            var sut: SheetyColorsView!
+        describe("The SheetyColorsViewController") {
+            var sut: SheetyColorsViewController!
             var testSlider: GradientSlider!
 
             beforeEach {
@@ -25,7 +25,9 @@ class SheetyColorsViewTests: QuickSpec {
                 beforeEach {
                     let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75).rgbaColor
                     let viewModel = RGBViewModel(withColorModel: testColor, alphaEnabled: false)
-                    sut = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: false)
+                    sut = SheetyColorsViewController.create()
+                    sut.viewModel = viewModel
+                    sut.hapticFeedbackEnabled = false
                     viewModel.viewModelDelegate = sut
                 }
 
@@ -72,7 +74,9 @@ class SheetyColorsViewTests: QuickSpec {
                 beforeEach {
                     let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75).rgbaColor
                     let viewModel = RGBViewModel(withColorModel: testColor, alphaEnabled: true)
-                    sut = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: false)
+                    sut = SheetyColorsViewController.create()
+                    sut.viewModel = viewModel
+                    sut.hapticFeedbackEnabled = false
                     viewModel.viewModelDelegate = sut
                 }
 
@@ -87,7 +91,9 @@ class SheetyColorsViewTests: QuickSpec {
                 beforeEach {
                     let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75).hsbaColor
                     let viewModel = HSBViewModel(withColorModel: testColor, alphaEnabled: false)
-                    sut = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: false)
+                    sut = SheetyColorsViewController.create()
+                    sut.viewModel = viewModel
+                    sut.hapticFeedbackEnabled = false
                     viewModel.viewModelDelegate = sut
                 }
 
@@ -102,7 +108,9 @@ class SheetyColorsViewTests: QuickSpec {
                 beforeEach {
                     let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75).hsbaColor
                     let viewModel = HSBViewModel(withColorModel: testColor, alphaEnabled: true)
-                    sut = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: false)
+                    sut = SheetyColorsViewController.create()
+                    sut.viewModel = viewModel
+                    sut.hapticFeedbackEnabled = false
                     viewModel.viewModelDelegate = sut
                 }
 
@@ -117,7 +125,9 @@ class SheetyColorsViewTests: QuickSpec {
                 beforeEach {
                     let testColor = UIColor(white: 0.5, alpha: 0.75).grayscaleColor
                     let viewModel = GrayscaleViewModel(withColorModel: testColor, alphaEnabled: false)
-                    sut = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: false)
+                    sut = SheetyColorsViewController.create()
+                    sut.viewModel = viewModel
+                    sut.hapticFeedbackEnabled = false
                     viewModel.viewModelDelegate = sut
                 }
 
@@ -132,7 +142,9 @@ class SheetyColorsViewTests: QuickSpec {
                 beforeEach {
                     let testColor = UIColor(white: 0.5, alpha: 0.75).grayscaleColor
                     let viewModel = GrayscaleViewModel(withColorModel: testColor, alphaEnabled: true)
-                    sut = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: false)
+                    sut = SheetyColorsViewController.create()
+                    sut.viewModel = viewModel
+                    sut.hapticFeedbackEnabled = false
                     viewModel.viewModelDelegate = sut
                 }
 

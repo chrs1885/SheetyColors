@@ -15,7 +15,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
         describe("The SheetyColorsViewFactory") {
             context("when calling create with a config of type .rgb") {
                 var testConfig: SheetyColorsConfigProtocol!
-                var view: SheetyColorsView!
+                var view: SheetyColorsViewController!
 
                 beforeEach {
                     testConfig = SheetyColorsConfigMock(alphaEnabled: true, initialColor: .red, hapticFeedbackEnabled: true, title: "", type: .rgb)
@@ -33,7 +33,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
 
             context("when calling create with a config of type .hsb") {
                 var testConfig: SheetyColorsConfigProtocol!
-                var view: SheetyColorsView!
+                var view: SheetyColorsViewController!
 
                 beforeEach {
                     testConfig = SheetyColorsConfigMock(alphaEnabled: true, initialColor: .red, hapticFeedbackEnabled: true, title: "", type: .hsb)
@@ -51,7 +51,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
 
             context("when calling create with a config of type .grayscale") {
                 var testConfig: SheetyColorsConfigProtocol!
-                var view: SheetyColorsView!
+                var view: SheetyColorsViewController!
 
                 beforeEach {
                     testConfig = SheetyColorsConfigMock(alphaEnabled: true, initialColor: .red, hapticFeedbackEnabled: true, title: "", type: .grayscale)
