@@ -34,6 +34,5 @@ public extension SheetyColorsController {
 
         let controller = SheetyColorsViewFactory.createView(withConfig: config)
         setValue(controller, forKey: Constants.keyContentViewController)
-
     }
 }
