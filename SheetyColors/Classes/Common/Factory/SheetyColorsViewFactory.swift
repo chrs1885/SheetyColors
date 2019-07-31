@@ -8,7 +8,7 @@
 import UIKit
 
 struct SheetyColorsViewFactory {
-    static func createView(withConfig config: SheetyColorsConfigProtocol) -> SheetyColorsView {
+    static func createView(withConfig config: SheetyColorsConfigProtocol) -> SheetyColorsViewController {
         var viewModel: SheetyColorsViewModelProtocol
 
         switch config.type {
@@ -20,7 +20,9 @@ struct SheetyColorsViewFactory {
             viewModel = RGBViewModel(withColorModel: config.initialColor.rgbaColor, alphaEnabled: config.alphaEnabled)
         }
 
-        let view = SheetyColorsView(withViewModel: viewModel, hapticFeedbackEnabled: config.hapticFeedbackEnabled)
+        let view = SheetyColorsViewController.create()
+        view.viewModel = viewModel
+        view.hapticFeedbackEnabled = config.hapticFeedbackEnabled
         viewModel.viewModelDelegate = view
 
         return view

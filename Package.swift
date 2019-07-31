@@ -7,10 +7,10 @@ let package = Package(
         .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.40.4"),
         .package(url: "https://github.com/Realm/SwiftLint", from: "0.31.0"),
         .package(url: "https://github.com/orta/Komondor", from: "1.0.2"),
-        .package(url: "https://github.com/eneko/SourceDocs.git", from: "0.5.1"),
+        .package(url: "https://github.com/eneko/SourceDocs.git", from: "0.5.1")
     ],
     targets: [
-        .target(name: "SheetyColors_Example", dependencies: [], path: "Example", sources: ["SheetyColors/SheetType.swift"]),
+        .target(name: "SheetyColors_Example", dependencies: [], path: "Example", sources: ["SheetyColors/SheetType.swift"])
     ]
 )
 
@@ -23,8 +23,8 @@ let package = Package(
                 "swift run swiftformat .",
                 "swift run swiftlint autocorrect --path SheetyColors/",
                 "swift run sourcedocs generate -- -workspace Example/SheetyColors.xcworkspace -scheme SheetyColors",
-                "git add .",
-            ],
-        ],
+                "git add ."
+            ]
+        ]
     ])
 #endif
