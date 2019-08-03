@@ -26,7 +26,7 @@ class ColorsCollectionViewController: UICollectionViewController {
         RGBAColor(red: 236.0, green: 15.0, blue: 71.0, alpha: 100.0),
         RGBAColor(red: 160.0, green: 44.0, blue: 93.0, alpha: 100.0),
         RGBAColor(red: 112.0, green: 4.0, blue: 96.0, alpha: 100.0),
-        RGBAColor(red: 2.0, green: 44.0, blue: 122.0, alpha: 100.0)
+        RGBAColor(red: 2.0, green: 44.0, blue: 122.0, alpha: 100.0),
     ]
 
     override func viewDidLoad() {

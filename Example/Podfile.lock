@@ -1,6 +1,6 @@
 PODS:
   - Capable/Colors (1.0.1)
-  - Nimble (8.0.2)
+  - Nimble (8.0.1)
   - Quick (2.0.0)
   - SheetyColors (0.3.1):
     - Capable/Colors (~> 1.0.0)
@@ -25,11 +25,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Capable: f102b9cb3167470fac31d07d175b95ecb4f9ca9a
-  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
   Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
-  SheetyColors: 71fc251618928f399503138093229e3ea700b35f
+  SheetyColors: 9edd082cd40f6ab3681262ff73cf21349fe37853
   SnapshotTesting: 9ca1d80f6322509a035856170c11d0571b1f7171
 
 PODFILE CHECKSUM: 9b39eb683f19af0f28a510f2ff148ddd0ce5f2a5
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.6.0.rc.2

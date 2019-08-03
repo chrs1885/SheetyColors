@@ -18,5 +18,5 @@ The SheetyColors color picker is based on UIKit's UIAlertController. Therefore, 
   s.dependency 'Capable/Colors', '~> 1.0.0'
 
   s.source_files     = 'SheetyColors/Classes/**/*.{swift}'
-  s.resources        = 'SheetyColors/Classes/**/*.xcassets'
+  s.resources        = 'SheetyColors/Classes/**/*.{xcassets,xib}'
 end
