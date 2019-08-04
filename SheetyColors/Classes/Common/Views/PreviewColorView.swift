@@ -82,7 +82,8 @@ class PreviewColorView: UIView {
 
     func updateTextColor() {
         if color.cgColor.alpha < 0.4 {
-            textColor = UIColor.black
+            guard let defaultTextColor = UIColor(named: "PrimaryColor", in: Bundle.framework, compatibleWith: nil) else { return }
+            textColor = defaultTextColor
         } else {
             textColor = UIColor.getTextColor(onBackgroundColor: color)!
         }
