@@ -21,7 +21,7 @@ class SheetyColorsViewController: UIViewController, SheetyColorsViewProtocol {
     }
 
     class func create() -> SheetyColorsViewController {
-        return SheetyColorsViewController(nibName: "SheetyColorsViewController", bundle: Bundle(for: SheetyColorsViewController.self))
+        return SheetyColorsViewController(nibName: "SheetyColorsViewController", bundle: Bundle.framework)
     }
 
     override func viewDidLoad() {

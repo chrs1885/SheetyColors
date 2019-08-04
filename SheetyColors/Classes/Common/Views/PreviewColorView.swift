@@ -90,8 +90,7 @@ class PreviewColorView: UIView {
 
     private func setupColorView() {
         transparencyPatternLayer = CALayer()
-        let bundle = Bundle(for: RGBViewModel.self)
-        if let transparencyIcon = UIImage(named: "Transparency", in: bundle, compatibleWith: nil) {
+        if let transparencyIcon = UIImage(named: "Transparency", in: Bundle.framework, compatibleWith: nil) {
             transparencyPatternLayer.backgroundColor = UIColor(patternImage: transparencyIcon).cgColor
         }
         layer.addSublayer(transparencyPatternLayer)
