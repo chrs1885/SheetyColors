@@ -81,7 +81,8 @@ extension HSBViewModel: SheetyColorsViewModelProtocol {
     func minimumColorModel(forSliderAt index: Int) -> SheetyColorProtocol {
         guard let slider = SliderType(rawValue: index) else { fatalError() }
         if case .alpha = slider {
-            return HSBAColor(hue: 360.0, saturation: 0.0, brightness: 100.0, alpha: 100.0)
+            let brightness: CGFloat = Appearance.current == .light ? 100.0 : 0.0
+            return HSBAColor(hue: 360.0, saturation: 0.0, brightness: brightness, alpha: 100.0)
         }
 
         guard let color = colorModel.copy() as? HSBAColor else { fatalError() }

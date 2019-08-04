@@ -84,7 +84,8 @@ extension GrayscaleViewModel: SheetyColorsViewModelProtocol {
         case .white:
             return GrayscaleColor(white: 0.0, alpha: 100.0)
         case .alpha:
-            return GrayscaleColor(white: 255.0, alpha: 100.0)
+            let white: CGFloat = Appearance.current == .light ? 255.0 : 0.0
+            return GrayscaleColor(white: white, alpha: 100.0)
         }
     }
 
