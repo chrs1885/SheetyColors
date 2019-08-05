@@ -12,7 +12,12 @@ private enum SliderType: Int, CaseIterable {
 class GrayscaleViewModel {
     var isAlphaEnabled: Bool
     var colorModel: GrayscaleColor
+    var appearenceProvider: AppearenceProviderProtocol = AppearenceProvider()
     weak var viewModelDelegate: SheetyColorsViewModelDelegate?
+
+    lazy var appearence: Appearence = {
+        return self.appearenceProvider.current
+    }()
 
     init(withColorModel colorModel: GrayscaleColor, alphaEnabled: Bool) {
         self.colorModel = colorModel
@@ -84,7 +89,7 @@ extension GrayscaleViewModel: SheetyColorsViewModelProtocol {
         case .white:
             return GrayscaleColor(white: 0.0, alpha: 100.0)
         case .alpha:
-            let white: CGFloat = Appearance.current == .light ? 255.0 : 0.0
+            let white: CGFloat = appearence == .light ? 255.0 : 0.0
             return GrayscaleColor(white: white, alpha: 100.0)
         }
     }
