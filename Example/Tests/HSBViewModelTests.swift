@@ -181,13 +181,38 @@ class HSBViewModelTests: QuickSpec {
                             expect(actual).to(equal(expected))
                         }
                     }
-
+                    
                     context("with index 3") {
-                        it("returns color model representing white color") {
-                            let actual = sut.minimumColorModel(forSliderAt: 3) as! HSBAColor
-                            let expected = HSBAColor(hue: 360.0, saturation: 0.0, brightness: 100.0, alpha: 100.0)
+                        var appearenceProviderMock: AppearenceProviderMock?
+                        
+                        context("when appearence is set to light mode") {
+                            beforeEach {
+                                appearenceProviderMock = AppearenceProviderMock()
+                                appearenceProviderMock!.expectedAppearence = .light
+                                sut!.appearenceProvider = appearenceProviderMock!
+                            }
+                            
+                            it("returns color model representing white color") {
+                                let actual = sut.minimumColorModel(forSliderAt: 3) as! HSBAColor
+                                let expected = HSBAColor(hue: 360.0, saturation: 0.0, brightness: 100.0, alpha: 100.0)
 
-                            expect(actual).to(equal(expected))
+                                expect(actual).to(equal(expected))
+                            }
+                        }
+                        
+                        context("when appearence is set to dark mode") {
+                            beforeEach {
+                                appearenceProviderMock = AppearenceProviderMock()
+                                appearenceProviderMock!.expectedAppearence = .dark
+                                sut!.appearenceProvider = appearenceProviderMock!
+                            }
+                            
+                            it("returns color model representing black color") {
+                                let actual = sut.minimumColorModel(forSliderAt: 3) as! HSBAColor
+                                let expected = HSBAColor(hue: 360.0, saturation: 0.0, brightness: 0.0, alpha: 100.0)
+
+                                expect(actual).to(equal(expected))
+                            }
                         }
                     }
                 }

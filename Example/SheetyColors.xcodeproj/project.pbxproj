@@ -30,6 +30,7 @@
 		83537FC222739E1400E91C39 /* UIColor+grayscaleColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83537FC122739E1400E91C39 /* UIColor+grayscaleColorTests.swift */; };
 		83537FC52273A01000E91C39 /* GrayscaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83537FC42273A01000E91C39 /* GrayscaleViewModel.swift */; };
 		83681FE82231AC14000AB720 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83681FE72231AC14000AB720 /* Storage.swift */; };
+		836D683D22F8B4C5005452FB /* AppearenceProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836D683C22F8B4C5005452FB /* AppearenceProviderMock.swift */; };
 		83DDE21A225FBCBC005F4CEF /* UIColor+rgbaColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DDE219225FBCBC005F4CEF /* UIColor+rgbaColorTests.swift */; };
 		83DDE21C2262204F005F4CEF /* GradientSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DDE21B2262204F005F4CEF /* GradientSliderTests.swift */; };
 		83DDE2212264FD1C005F4CEF /* SheetyColorsConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DDE2202264FD1C005F4CEF /* SheetyColorsConfigTests.swift */; };
@@ -81,6 +82,7 @@
 		83537FC122739E1400E91C39 /* UIColor+grayscaleColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+grayscaleColorTests.swift"; sourceTree = "<group>"; };
 		83537FC42273A01000E91C39 /* GrayscaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayscaleViewModel.swift; sourceTree = "<group>"; };
 		83681FE72231AC14000AB720 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		836D683C22F8B4C5005452FB /* AppearenceProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearenceProviderMock.swift; sourceTree = "<group>"; };
 		83DDE219225FBCBC005F4CEF /* UIColor+rgbaColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgbaColorTests.swift"; sourceTree = "<group>"; };
 		83DDE21B2262204F005F4CEF /* GradientSliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientSliderTests.swift; sourceTree = "<group>"; };
 		83DDE2202264FD1C005F4CEF /* SheetyColorsConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsConfigTests.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		834A36E32249823800DECD37 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				836D683C22F8B4C5005452FB /* AppearenceProviderMock.swift */,
 				834A36F1224E94FC00DECD37 /* SheetyColorsViewModelMock.swift */,
 				834A36E42249829300DECD37 /* SheetyColorsConfigMock.swift */,
 				834A36EC224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift */,
@@ -643,6 +646,7 @@
 				834A36E2224971F700DECD37 /* SheetyColorsViewFactoryTests.swift in Sources */,
 				831FCF0022591DFE003C48A4 /* UIAlertController+customViewTests.swift in Sources */,
 				831FCF02225E62F8003C48A4 /* SheetyColorsViewTests.swift in Sources */,
+				836D683D22F8B4C5005452FB /* AppearenceProviderMock.swift in Sources */,
 				83537FC52273A01000E91C39 /* GrayscaleViewModel.swift in Sources */,
 				83537FC222739E1400E91C39 /* UIColor+grayscaleColorTests.swift in Sources */,
 				834A36E8224E88F400DECD37 /* RGBViewModelTests.swift in Sources */,
