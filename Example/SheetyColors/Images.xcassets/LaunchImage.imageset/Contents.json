@@ -3,6 +3,16 @@
     {
       "idiom" : "universal",
       "filename" : "LaunchImage.pdf"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "LaunchImageDark.pdf",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ]
     }
   ],
   "info" : {

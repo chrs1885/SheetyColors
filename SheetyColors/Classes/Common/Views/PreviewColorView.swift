@@ -82,7 +82,8 @@ class PreviewColorView: UIView {
 
     func updateTextColor() {
         if color.cgColor.alpha < 0.4 {
-            textColor = UIColor.black
+            guard let defaultTextColor = UIColor(named: "PrimaryColor", in: Bundle.framework, compatibleWith: nil) else { return }
+            textColor = defaultTextColor
         } else {
             textColor = UIColor.getTextColor(onBackgroundColor: color)!
         }
@@ -90,8 +91,7 @@ class PreviewColorView: UIView {
 
     private func setupColorView() {
         transparencyPatternLayer = CALayer()
-        let bundle = Bundle(for: RGBViewModel.self)
-        if let transparencyIcon = UIImage(named: "Transparency", in: bundle, compatibleWith: nil) {
+        if let transparencyIcon = UIImage(named: "Transparency", in: Bundle.framework, compatibleWith: nil) {
             transparencyPatternLayer.backgroundColor = UIColor(patternImage: transparencyIcon).cgColor
         }
         layer.addSublayer(transparencyPatternLayer)

@@ -2,6 +2,9 @@
 ### Enhancements
 * [Support iOS 13](https://github.com/chrs1885/SheetyColors/issues/3)
 
+### Features
+* [Support Dark Mode](https://github.com/chrs1885/SheetyColors/issues/4)
+
 ## Version 0.3.1
 ### Enhancements
 * Use stable Capable/Colors version 1.0.0

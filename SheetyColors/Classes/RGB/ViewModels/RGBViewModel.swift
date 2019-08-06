@@ -12,7 +12,12 @@ private enum SliderType: Int, CaseIterable {
 class RGBViewModel {
     var isAlphaEnabled: Bool
     var colorModel: RGBAColor
+    var appearenceProvider: AppearenceProviderProtocol = AppearenceProvider()
     weak var viewModelDelegate: SheetyColorsViewModelDelegate?
+
+    lazy var appearence: Appearence = {
+        return self.appearenceProvider.current
+    }()
 
     init(withColorModel colorModel: RGBAColor, alphaEnabled: Bool) {
         self.colorModel = colorModel
@@ -78,7 +83,8 @@ extension RGBViewModel: SheetyColorsViewModelProtocol {
     func minimumColorModel(forSliderAt index: Int) -> SheetyColorProtocol {
         guard let slider = SliderType(rawValue: index) else { fatalError() }
         if case .alpha = slider {
-            return RGBAColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 100.0)
+            let value: CGFloat = appearence == .light ? 255.0 : 0.0
+            return RGBAColor(red: value, green: value, blue: value, alpha: 100.0)
         }
 
         guard let color = colorModel.copy() as? RGBAColor else { fatalError() }

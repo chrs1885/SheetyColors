@@ -37,37 +37,37 @@ class SheetyColorsViewTests: QuickSpec {
                     assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)))
                 }
 
-                context("when start dragging a slider") {
-                    beforeEach {
-                        sut.sliderDidStartEditing(testSlider)
-                    }
-
-                    it("it unhides the labels") {
-                        assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
-                    }
-
-                    context("when changing a slider's position") {
-                        beforeEach {
-                            let activeSlider = sut.sliders[0]
-                            activeSlider.value = 255.0
-                            sut.sliderValueDidChange(activeSlider)
-                        }
-
-                        it("it changes colors and labels accordingly") {
-                            assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
-                        }
-                    }
-
-                    context("when lifting the finger after sliding") {
-                        beforeEach {
-                            sut.sliderDidStartEditing(testSlider)
-                        }
-
-                        it("it hides the labels again") {
-                            assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
-                        }
-                    }
-                }
+//                context("when start dragging a slider") {
+//                    beforeEach {
+//                        sut.sliderDidStartEditing(testSlider)
+//                    }
+//
+//                    it("it unhides the labels") {
+//                        assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
+//                    }
+//
+//                    context("when changing a slider's position") {
+//                        beforeEach {
+//                            let activeSlider = sut.sliders[0]
+//                            activeSlider.value = 255.0
+//                            sut.sliderValueDidChange(activeSlider)
+//                        }
+//
+//                        it("it changes colors and labels accordingly") {
+//                            assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
+//                        }
+//                    }
+//
+//                    context("when lifting the finger after sliding") {
+//                        beforeEach {
+//                            sut.sliderDidStartEditing(testSlider)
+//                        }
+//
+//                        it("it hides the labels again") {
+//                            assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
+//                        }
+//                    }
+//                }
             }
 
             context("when RGB SheetyColors view is configured with alpha disabled") {
