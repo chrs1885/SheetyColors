@@ -3,7 +3,8 @@
 * [Support iOS 13](https://github.com/chrs1885/SheetyColors/issues/3)
 
 ### Features
-* [Support Dark Mode](https://github.com/chrs1885/SheetyColors/issues/4)
+* [Support dark mode](https://github.com/chrs1885/SheetyColors/issues/4)
+* [Add message label](https://github.com/chrs1885/SheetyColors/issues/9)
 
 ## Version 0.3.1
 ### Enhancements
