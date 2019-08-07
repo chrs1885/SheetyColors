@@ -10,8 +10,8 @@
    |    |    |    | <UIStackView; frame = (36.3333 0; 111.333 34); layer = <CATransformLayer>>
    |    |    |    |    | <UILabel; frame = (0 0; 111.333 17); text = '210 100 50 75%'; alpha = 0; userInteractionEnabled = NO; animations = { opacity=<CABasicAnimation>; }; layer = <_UILabelLayer>>
    |    |    |    |    | <UILabel; frame = (0 17; 111.333 17); text = '003F7F'; alpha = 0; userInteractionEnabled = NO; animations = { opacity=<CABasicAnimation>; }; layer = <_UILabelLayer>>
-   |    |    | <UIButton; frame = (235.333 10; 24.6667 24); opaque = NO; tintColor = UIExtendedGrayColorSpace 1 1; layer = <CALayer>>
-   |    |    |    | <UIImageView; frame = (0 0; 24.6667 24); clipsToBounds = YES; opaque = NO; userInteractionEnabled = NO; layer = <CALayer>>
+   |    |    | <UIButton; frame = (238 10; 22 22); opaque = NO; tintColor = UIExtendedGrayColorSpace 1 1; layer = <CALayer>>
+   |    |    |    | <UIImageView; frame = (0 0; 22 22); clipsToBounds = YES; opaque = NO; userInteractionEnabled = NO; layer = <CALayer>>
    |    | <SheetyColors.GradientSlider; baseClass = UIControl; frame = (-2 191; 274 48); layer = <CALayer>>
    |    |    | <CAGradientLayer> (layer)
    |    |    | <CALayer> (layer)

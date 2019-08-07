@@ -17,7 +17,7 @@ class GrayscaleViewModel {
     weak var viewModelDelegate: SheetyColorsViewModelDelegate?
 
     lazy var appearence: Appearence = {
-        return self.appearenceProvider.current
+        self.appearenceProvider.current
     }()
 
     init(withColorModel colorModel: GrayscaleColor, isAlphaEnabled: Bool, hasTextOrMessage: Bool) {

@@ -17,7 +17,7 @@ class HSBViewModel {
     weak var viewModelDelegate: SheetyColorsViewModelDelegate?
 
     lazy var appearence: Appearence = {
-        return self.appearenceProvider.current
+        self.appearenceProvider.current
     }()
 
     init(withColorModel colorModel: HSBAColor, isAlphaEnabled: Bool, hasTextOrMessage: Bool) {

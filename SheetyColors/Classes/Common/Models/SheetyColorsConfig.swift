@@ -9,7 +9,6 @@ import UIKit
 
 /// A struct defining options for configuring a SheetyColors view.
 public struct SheetyColorsConfig: SheetyColorsConfigProtocol {
-
     /// Defines whether an opacity slider should be displayed or not.
     public var alphaEnabled: Bool
 

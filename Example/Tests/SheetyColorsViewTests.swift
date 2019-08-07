@@ -31,10 +31,10 @@ class SheetyColorsViewTests: QuickSpec {
                     assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
                     assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)))
                 }
-                
+
 //                context("when start dragging a slider") {
 //                    var testSlider: GradientSlider!
-//                    
+//
 //                    beforeEach {
 //                        testSlider = GradientSlider(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0))
 //                        sut.sliderDidStartEditing(testSlider)
