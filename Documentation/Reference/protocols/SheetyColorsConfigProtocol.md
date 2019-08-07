@@ -33,10 +33,18 @@ var initialColor: UIColor
 
 > The initial color used when displaying the SheetyColors view.
 
+### `message`
+
+```swift
+var message: String?
+```
+
+> A description text displayed inside the SheetyColors view.
+
 ### `title`
 
 ```swift
-var title: String
+var title: String?
 ```
 
 > A title text displayed inside the SheetyColors view.
