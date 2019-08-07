@@ -4,9 +4,9 @@ import PackageDescription
 let package = Package(
     name: "SheetyColors",
     dependencies: [
-        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.40.4"),
-        .package(url: "https://github.com/Realm/SwiftLint", from: "0.31.0"),
-        .package(url: "https://github.com/orta/Komondor", from: "1.0.2"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.40.11"),
+        .package(url: "https://github.com/Realm/SwiftLint", from: "0.34.0"),
+        .package(url: "https://github.com/orta/Komondor", from: "1.0.4"),
         .package(url: "https://github.com/eneko/SourceDocs.git", from: "0.5.1"),
     ],
     targets: [

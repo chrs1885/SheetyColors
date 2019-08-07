@@ -8,28 +8,25 @@
 import Foundation
 import UIKit
 
-class SheetyColorsView: UIView, SheetyColorsViewProtocol {
+class SheetyColorsViewController: UIViewController, SheetyColorsViewProtocol {
     private var previewColorView: PreviewColorView!
     private var stackView: UIStackView!
     private var selectionFeedback: UISelectionFeedbackGenerator?
-    var viewModel: SheetyColorsViewModelProtocol
-    var hapticFeedbackEnabled: Bool
+    var viewModel: SheetyColorsViewModelProtocol!
+    var hapticFeedbackEnabled: Bool = false
     var sliders: [GradientSlider] = []
 
     var previewColor: UIColor {
         return viewModel.previewColorModel.uiColor
     }
 
-    init(withViewModel viewModel: SheetyColorsViewModelProtocol, hapticFeedbackEnabled: Bool) {
-        self.viewModel = viewModel
-        self.hapticFeedbackEnabled = hapticFeedbackEnabled
-
-        super.init(frame: .zero)
-        setupView()
+    class func create() -> SheetyColorsViewController {
+        return SheetyColorsViewController(nibName: "SheetyColorsViewController", bundle: Bundle.framework)
     }
 
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
     }
 
     func setupView() {
@@ -42,7 +39,7 @@ class SheetyColorsView: UIView, SheetyColorsViewProtocol {
 
 // MARK: - Setting up view components
 
-extension SheetyColorsView {
+extension SheetyColorsViewController {
     func setupSliders() {
         for index in 0 ..< viewModel.numberOfSliders {
             let slider = GradientSlider()
@@ -82,25 +79,22 @@ extension SheetyColorsView {
         stackView = UIStackView(arrangedSubviews: subviews)
         stackView.axis = .vertical
         stackView.spacing = 10.0
-        addSubview(stackView)
+        view.addSubview(stackView)
     }
 }
 
 // MARK: - Calculating view sizes
 
-extension SheetyColorsView {
+extension SheetyColorsViewController {
     func setupConstraints() {
-        stackView.anchor(top: topAnchor, paddingTop: 15.0, bottom: bottomAnchor, left: leftAnchor, paddingLeft: 15.0, right: rightAnchor, paddingRight: 15.0)
-    }
-
-    override var intrinsicContentSize: CGSize {
-        return stackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        let paddingTop: CGFloat = viewModel.hasTextOrMessage ? 0.0 : 15.0
+        stackView.anchor(top: view.topAnchor, paddingTop: paddingTop, bottom: view.bottomAnchor, paddingBottom: 15.0, left: view.leftAnchor, paddingLeft: 15.0, right: view.rightAnchor, paddingRight: 15.0)
     }
 }
 
 // MARK: - Handling user interaction
 
-extension SheetyColorsView {
+extension SheetyColorsViewController {
     @objc func sliderDidStartEditing(_: GradientSlider) {
         if hapticFeedbackEnabled {
             selectionFeedback = UISelectionFeedbackGenerator()
@@ -128,7 +122,7 @@ extension SheetyColorsView {
 
 // MARK: - Data binding
 
-extension SheetyColorsView: SheetyColorsViewModelDelegate {
+extension SheetyColorsViewController: SheetyColorsViewModelDelegate {
     func didUpdateColorComponent(in viewModel: SheetyColorsViewModelProtocol) {
         previewColorView.primaryValueText = viewModel.primaryValueText
         previewColorView.secondaryValueText = viewModel.secondaryValueText

@@ -123,12 +123,19 @@ import UIKit
         thumb.cornerRadius = defaultThumbSize / 2.0
         thumb.bounds = CGRect(x: 0, y: 0, width: defaultThumbSize, height: defaultThumbSize)
         thumb.backgroundColor = UIColor.white.cgColor
-        thumb.shadowColor = UIColor.black.cgColor
-        thumb.shadowOffset = CGSize(width: 0.0, height: 2.5)
-        thumb.shadowRadius = 2.0
-        thumb.shadowOpacity = 0.25
-        thumb.borderColor = UIColor.black.withAlphaComponent(0.15).cgColor
-        thumb.borderWidth = 0.5
+
+        if let shadowColor = UIColor(named: "SliderThumbShadowColor", in: Bundle.framework, compatibleWith: nil) {
+            thumb.shadowColor = shadowColor.cgColor
+            thumb.shadowOffset = CGSize(width: 0.0, height: 2.5)
+            thumb.shadowRadius = 2.0
+            thumb.shadowOpacity = 0.25
+        }
+
+        if let borderColor = UIColor(named: "SliderThumbBorderColor", in: Bundle.framework, compatibleWith: nil) {
+            thumb.borderColor = borderColor.cgColor
+            thumb.borderWidth = 0.5
+        }
+
         return thumb
     }()
 
@@ -139,7 +146,11 @@ import UIKit
         track.endPoint = CGPoint(x: 1.0, y: 0.5)
         track.locations = [0.0, 1.0]
         track.colors = [UIColor.blue.cgColor, UIColor.orange.cgColor]
-        track.borderColor = UIColor.black.cgColor
+
+        if let borderColor = UIColor(named: "SliderThumbBorderColor", in: Bundle.framework, compatibleWith: nil) {
+            track.borderColor = borderColor.cgColor
+        }
+
         return track
     }()
 

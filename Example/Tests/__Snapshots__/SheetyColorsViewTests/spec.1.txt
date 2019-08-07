@@ -1,5 +1,5 @@
-<SheetyColors.SheetyColorsView; frame = (0 0; 300 400); layer = <CALayer>>
-   | <UIStackView; frame = (15 15; 270 385); layer = <CATransformLayer>>
+<UIView; frame = (0 0; 300 400); autoresize = W+H; layer = <CALayer>>
+   | <UIStackView; frame = (15 0; 270 385); layer = <CATransformLayer>>
    |    | <SheetyColors.PreviewColorView; frame = (0 0; 270 235); gestureRecognizers = <NSArray>; layer = <CALayer>>
    |    |    | <CALayer> (layer)
    |    |    | <CALayer> (layer)

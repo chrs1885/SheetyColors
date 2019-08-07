@@ -19,17 +19,25 @@ class RGBViewModelTests: QuickSpec {
             context("after initialization") {
                 var testColorModel: RGBAColor!
                 var testIsAlphaEnabled: Bool!
+                var testHasTextOrMessage: Bool!
 
                 beforeEach {
                     delegateMock = SheetyColorsViewModelDelegateMock()
                     testIsAlphaEnabled = true
+                    testHasTextOrMessage = true
                     testColorModel = RGBAColor(red: 10.0, green: 11.0, blue: 12.0, alpha: 13.0)
-                    sut = RGBViewModel(withColorModel: testColorModel, alphaEnabled: testIsAlphaEnabled)
+                    sut = RGBViewModel(withColorModel: testColorModel, isAlphaEnabled: testIsAlphaEnabled, hasTextOrMessage: testHasTextOrMessage)
                     sut.viewModelDelegate = delegateMock
                 }
 
                 it("sets up the instance correctly") {
                     expect(sut).to(beAnInstanceOf(RGBViewModel.self))
+                }
+
+                context("when calling hasTextOrMessage property") {
+                    it("returns the correct state") {
+                        expect(sut!.hasTextOrMessage).to(equal(testHasTextOrMessage))
+                    }
                 }
 
                 context("when calling primaryKeyText property") {
@@ -183,11 +191,36 @@ class RGBViewModelTests: QuickSpec {
                     }
 
                     context("with index 3") {
-                        it("returns color model representing white color") {
-                            let actual = sut.minimumColorModel(forSliderAt: 3) as! RGBAColor
-                            let expected = RGBAColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 100.0)
+                        var appearenceProviderMock: AppearenceProviderMock?
 
-                            expect(actual).to(equal(expected))
+                        context("when appearence is set to light mode") {
+                            beforeEach {
+                                appearenceProviderMock = AppearenceProviderMock()
+                                appearenceProviderMock!.expectedAppearence = .light
+                                sut!.appearenceProvider = appearenceProviderMock!
+                            }
+
+                            it("returns color model representing white color") {
+                                let actual = sut.minimumColorModel(forSliderAt: 3) as! RGBAColor
+                                let expected = RGBAColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 100.0)
+
+                                expect(actual).to(equal(expected))
+                            }
+                        }
+
+                        context("when appearence is set to dark mode") {
+                            beforeEach {
+                                appearenceProviderMock = AppearenceProviderMock()
+                                appearenceProviderMock!.expectedAppearence = .dark
+                                sut!.appearenceProvider = appearenceProviderMock!
+                            }
+
+                            it("returns color model representing black color") {
+                                let actual = sut.minimumColorModel(forSliderAt: 3) as! RGBAColor
+                                let expected = RGBAColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 100.0)
+
+                                expect(actual).to(equal(expected))
+                            }
                         }
                     }
                 }
