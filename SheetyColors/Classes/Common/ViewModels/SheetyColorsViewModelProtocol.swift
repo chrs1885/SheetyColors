@@ -7,6 +7,7 @@
 
 protocol SheetyColorsViewModelProtocol {
     var viewModelDelegate: SheetyColorsViewModelDelegate? { get set }
+    var hasTextOrMessage: Bool { get }
     var primaryKeyText: String { get }
     var primaryValueText: String { get }
     var secondaryKeyText: String { get }

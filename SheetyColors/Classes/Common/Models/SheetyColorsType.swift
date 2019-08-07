@@ -7,7 +7,7 @@
 
 /// An enum used for specifying the color model of the SheetyColors view.
 public enum SheetyColorsType: Equatable, CaseIterable {
-    /// The grayscale color model.
+    /// The Grayscale color model.
     case grayscale
 
     /// The HSB color model.

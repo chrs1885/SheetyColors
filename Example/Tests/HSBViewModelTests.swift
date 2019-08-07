@@ -19,13 +19,21 @@ class HSBViewModelTests: QuickSpec {
             context("after initialization") {
                 var testColorModel: HSBAColor!
                 var testIsAlphaEnabled: Bool!
+                var testHasTextOrMessage: Bool!
 
                 beforeEach {
                     delegateMock = SheetyColorsViewModelDelegateMock()
                     testIsAlphaEnabled = true
+                    testHasTextOrMessage = true
                     testColorModel = HSBAColor(hue: 123.0, saturation: 94.0, brightness: 87.0, alpha: 69.0)
-                    sut = HSBViewModel(withColorModel: testColorModel, alphaEnabled: testIsAlphaEnabled)
+                    sut = HSBViewModel(withColorModel: testColorModel, isAlphaEnabled: testIsAlphaEnabled, hasTextOrMessage: testHasTextOrMessage)
                     sut.viewModelDelegate = delegateMock
+                }
+
+                context("when calling hasTextOrMessage property") {
+                    it("returns the correct state") {
+                        expect(sut!.hasTextOrMessage).to(equal(testHasTextOrMessage))
+                    }
                 }
 
                 it("sets up the instance correctly") {
@@ -181,17 +189,17 @@ class HSBViewModelTests: QuickSpec {
                             expect(actual).to(equal(expected))
                         }
                     }
-                    
+
                     context("with index 3") {
                         var appearenceProviderMock: AppearenceProviderMock?
-                        
+
                         context("when appearence is set to light mode") {
                             beforeEach {
                                 appearenceProviderMock = AppearenceProviderMock()
                                 appearenceProviderMock!.expectedAppearence = .light
                                 sut!.appearenceProvider = appearenceProviderMock!
                             }
-                            
+
                             it("returns color model representing white color") {
                                 let actual = sut.minimumColorModel(forSliderAt: 3) as! HSBAColor
                                 let expected = HSBAColor(hue: 360.0, saturation: 0.0, brightness: 100.0, alpha: 100.0)
@@ -199,14 +207,14 @@ class HSBViewModelTests: QuickSpec {
                                 expect(actual).to(equal(expected))
                             }
                         }
-                        
+
                         context("when appearence is set to dark mode") {
                             beforeEach {
                                 appearenceProviderMock = AppearenceProviderMock()
                                 appearenceProviderMock!.expectedAppearence = .dark
                                 sut!.appearenceProvider = appearenceProviderMock!
                             }
-                            
+
                             it("returns color model representing black color") {
                                 let actual = sut.minimumColorModel(forSliderAt: 3) as! HSBAColor
                                 let expected = HSBAColor(hue: 360.0, saturation: 0.0, brightness: 0.0, alpha: 100.0)

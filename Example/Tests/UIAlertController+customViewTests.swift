@@ -13,12 +13,14 @@ class UIAlertControllerCustomViewTests: XCTestCase {
     var sut: SheetyColorsController!
     var testColor: UIColor!
     var testTitle: String!
+    var testMessage: String!
 
     override func setUp() {
         super.setUp()
         testColor = .yellow
         testTitle = "TestTitle"
-        let config = SheetyColorsConfigMock(alphaEnabled: true, initialColor: testColor, hapticFeedbackEnabled: true, title: testTitle, type: .rgb)
+        testMessage = "TestMessage"
+        let config = SheetyColorsConfigMock(alphaEnabled: true, initialColor: testColor, hapticFeedbackEnabled: true, title: testTitle, message: testMessage, type: .rgb)
         sut = SheetyColorsController(withConfig: config)
     }
 
@@ -32,6 +34,10 @@ class UIAlertControllerCustomViewTests: XCTestCase {
 
     func testActionSheetHasCorrectTitle() {
         XCTAssertEqual(sut.title, testTitle)
+    }
+
+    func testActionSheetHasCorrectMessage() {
+        XCTAssertEqual(sut.message, testMessage)
     }
 
     func testColorPropertyProvidesCurrentColor() {

@@ -18,8 +18,11 @@ public protocol SheetyColorsConfigProtocol {
     /// The initial color used when displaying the SheetyColors view.
     var initialColor: UIColor { get }
 
+    /// A description text displayed inside the SheetyColors view.
+    var message: String? { get }
+
     /// A title text displayed inside the SheetyColors view.
-    var title: String { get }
+    var title: String? { get }
 
     /// The color model used by the SheetyColors view.
     var type: SheetyColorsType { get }

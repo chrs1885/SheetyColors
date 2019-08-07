@@ -30,7 +30,7 @@ public extension SheetyColorsController {
          - config: A config object containing options for specifying the look and feel of a SheetyColors view.
      */
     convenience init(withConfig config: SheetyColorsConfigProtocol) {
-        self.init(title: config.title, message: nil, preferredStyle: .actionSheet)
+        self.init(title: config.title, message: config.message, preferredStyle: .actionSheet)
 
         let controller = SheetyColorsViewFactory.createView(withConfig: config)
         setValue(controller, forKey: Constants.keyContentViewController)

@@ -87,7 +87,8 @@ extension SheetyColorsViewController {
 
 extension SheetyColorsViewController {
     func setupConstraints() {
-        stackView.anchor(top: view.topAnchor, bottom: view.bottomAnchor, paddingBottom: 15.0, left: view.leftAnchor, paddingLeft: 15.0, right: view.rightAnchor, paddingRight: 15.0)
+        let paddingTop: CGFloat = viewModel.hasTextOrMessage ? 0.0 : 15.0
+        stackView.anchor(top: view.topAnchor, paddingTop: paddingTop, bottom: view.bottomAnchor, paddingBottom: 15.0, left: view.leftAnchor, paddingLeft: 15.0, right: view.rightAnchor, paddingRight: 15.0)
     }
 }
 
