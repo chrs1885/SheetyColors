@@ -15,7 +15,7 @@ public enum SheetyColorsType: Equatable, CaseIterable
 case grayscale
 ```
 
-> The grayscale color model.
+> The Grayscale color model.
 
 ### `hsb`
 
