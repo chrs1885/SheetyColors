@@ -20,4 +20,11 @@ enum SheetType {
             return "Edit Color"
         }
     }
+
+    var message: String {
+        switch self {
+        case .createColor, .editColor:
+            return "Select a color by using the color sliders below."
+        }
+    }
 }
