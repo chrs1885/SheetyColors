@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SheetyColors'
-  s.version          = '0.3.1'
+  s.version          = '1.0.1'
   s.summary          = 'An action sheet styled color picker for iOS.'
 
   s.description      = <<-DESC
@@ -15,7 +15,7 @@ The SheetyColors color picker is based on UIKit's UIAlertController. Therefore, 
   s.social_media_url = 'https://twitter.com/chr_wendt'
 
   s.ios.deployment_target = '11.0'
-  s.dependency 'Capable/Colors', '~> 1.0.0'
+  s.dependency 'Capable/Colors', '~> 1.0'
 
   s.source_files     = 'SheetyColors/Classes/**/*.{swift}'
   s.resources        = 'SheetyColors/Classes/**/*.{xcassets,xib}'

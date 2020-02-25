@@ -19,13 +19,21 @@ class GrayscaleViewModelTests: QuickSpec {
             context("after initialization") {
                 var testColorModel: GrayscaleColor!
                 var testIsAlphaEnabled: Bool!
+                var testHasTextOrMessage: Bool!
 
                 beforeEach {
                     delegateMock = SheetyColorsViewModelDelegateMock()
                     testIsAlphaEnabled = true
+                    testHasTextOrMessage = true
                     testColorModel = GrayscaleColor(white: 123.0, alpha: 69.0)
-                    sut = GrayscaleViewModel(withColorModel: testColorModel, alphaEnabled: testIsAlphaEnabled)
+                    sut = GrayscaleViewModel(withColorModel: testColorModel, isAlphaEnabled: testIsAlphaEnabled, hasTextOrMessage: testHasTextOrMessage)
                     sut.viewModelDelegate = delegateMock
+                }
+
+                context("when calling hasTextOrMessage property") {
+                    it("returns the correct state") {
+                        expect(sut!.hasTextOrMessage).to(equal(testHasTextOrMessage))
+                    }
                 }
 
                 it("sets up the instance correctly") {
@@ -126,14 +134,14 @@ class GrayscaleViewModelTests: QuickSpec {
 
                     context("with index 1") {
                         var appearenceProviderMock: AppearenceProviderMock?
-                        
+
                         context("when appearence is set to light mode") {
                             beforeEach {
                                 appearenceProviderMock = AppearenceProviderMock()
                                 appearenceProviderMock!.expectedAppearence = .light
                                 sut!.appearenceProvider = appearenceProviderMock!
                             }
-                            
+
                             it("returns color model representing white color") {
                                 let actual = sut.minimumColorModel(forSliderAt: 1) as! GrayscaleColor
                                 let expected = GrayscaleColor(white: 255.0, alpha: 100.0)
@@ -141,14 +149,14 @@ class GrayscaleViewModelTests: QuickSpec {
                                 expect(actual).to(equal(expected))
                             }
                         }
-                        
+
                         context("when appearence is set to dark mode") {
                             beforeEach {
                                 appearenceProviderMock = AppearenceProviderMock()
                                 appearenceProviderMock!.expectedAppearence = .dark
                                 sut!.appearenceProvider = appearenceProviderMock!
                             }
-                            
+
                             it("returns color model representing black color") {
                                 let actual = sut.minimumColorModel(forSliderAt: 1) as! GrayscaleColor
                                 let expected = GrayscaleColor(white: 0.0, alpha: 100.0)

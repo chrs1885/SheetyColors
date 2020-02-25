@@ -24,7 +24,8 @@ class SheetyColorsConfigTests: QuickSpec {
                     expect(sut.alphaEnabled).to(beTrue())
                     expect(sut.hapticFeedbackEnabled).to(beTrue())
                     expect(sut.initialColor).to(equal(.white))
-                    expect(sut.title).to(equal(""))
+                    expect(sut.title).to(beNil())
+                    expect(sut.message).to(beNil())
                     expect(sut.type).to(equal(.rgb))
                 }
             }
@@ -32,11 +33,13 @@ class SheetyColorsConfigTests: QuickSpec {
             context("when initialized with custom values") {
                 var testInitialColor: UIColor!
                 var testTitle: String!
+                var testMessage: String!
 
                 beforeEach {
                     testInitialColor = .red
-                    testTitle = "TestTilte"
-                    sut = SheetyColorsConfig(alphaEnabled: false, hapticFeedbackEnabled: false, initialColor: testInitialColor, title: testTitle, type: .rgb)
+                    testTitle = "TestTitle"
+                    testMessage = "TestMessage"
+                    sut = SheetyColorsConfig(alphaEnabled: false, hapticFeedbackEnabled: false, initialColor: testInitialColor, title: testTitle, message: testMessage, type: .rgb)
                 }
 
                 it("initializes a new instance by using custom values") {
@@ -44,6 +47,7 @@ class SheetyColorsConfigTests: QuickSpec {
                     expect(sut.hapticFeedbackEnabled).to(beFalse())
                     expect(sut.initialColor).to(equal(testInitialColor))
                     expect(sut.title).to(equal(testTitle))
+                    expect(sut.message).to(equal(testMessage))
                     expect(sut.type).to(equal(.rgb))
                 }
             }

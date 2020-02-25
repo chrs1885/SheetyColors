@@ -16,7 +16,6 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		831FCF0022591DFE003C48A4 /* UIAlertController+customViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831FCEFF22591DFE003C48A4 /* UIAlertController+customViewTests.swift */; };
 		831FCF02225E62F8003C48A4 /* SheetyColorsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831FCF01225E62F8003C48A4 /* SheetyColorsViewTests.swift */; };
-		83205EE52256815500D62BB8 /* UIView+findLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83205EE42256815500D62BB8 /* UIView+findLabelTests.swift */; };
 		832DCEFF226E4D7C00DAF3EF /* HSBViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832DCEFE226E4D7B00DAF3EF /* HSBViewModelTests.swift */; };
 		832DCF03226F92E100DAF3EF /* UIColor+hsbaColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832DCF02226F92E100DAF3EF /* UIColor+hsbaColorTests.swift */; };
 		834A36DC224686C500DECD37 /* RGBAColors+NSItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36DB224686C500DECD37 /* RGBAColors+NSItemProvider.swift */; };
@@ -68,7 +67,6 @@
 		8166C41FC07DB3CEB6DFB341 /* Pods-SheetyColors_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheetyColors_Example.debug.xcconfig"; path = "Target Support Files/Pods-SheetyColors_Example/Pods-SheetyColors_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		831FCEFF22591DFE003C48A4 /* UIAlertController+customViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+customViewTests.swift"; sourceTree = "<group>"; };
 		831FCF01225E62F8003C48A4 /* SheetyColorsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewTests.swift; sourceTree = "<group>"; };
-		83205EE42256815500D62BB8 /* UIView+findLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+findLabelTests.swift"; sourceTree = "<group>"; };
 		832DCEFE226E4D7B00DAF3EF /* HSBViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSBViewModelTests.swift; sourceTree = "<group>"; };
 		832DCF02226F92E100DAF3EF /* UIColor+hsbaColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hsbaColorTests.swift"; sourceTree = "<group>"; };
 		834A36DB224686C500DECD37 /* RGBAColors+NSItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RGBAColors+NSItemProvider.swift"; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 		83205EE32256813800D62BB8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				83205EE42256815500D62BB8 /* UIView+findLabelTests.swift */,
 				831FCEFF22591DFE003C48A4 /* UIAlertController+customViewTests.swift */,
 			);
 			name = Extensions;
@@ -491,8 +488,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SheetyColors_Tests/Pods-SheetyColors_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
@@ -500,8 +495,6 @@
 				"${BUILT_PRODUCTS_DIR}/SnapshotTesting/SnapshotTesting.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
@@ -597,16 +590,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SheetyColors_Example/Pods-SheetyColors_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Capable/Capable.framework",
 				"${BUILT_PRODUCTS_DIR}/SheetyColors/SheetyColors.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Capable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SheetyColors.framework",
@@ -651,7 +640,6 @@
 				83537FC222739E1400E91C39 /* UIColor+grayscaleColorTests.swift in Sources */,
 				834A36E8224E88F400DECD37 /* RGBViewModelTests.swift in Sources */,
 				834A36ED224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift in Sources */,
-				83205EE52256815500D62BB8 /* UIView+findLabelTests.swift in Sources */,
 				834A36F4224E98F900DECD37 /* SheetyColorsViewMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

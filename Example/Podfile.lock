@@ -1,16 +1,16 @@
 PODS:
   - Capable/Colors (1.0.1)
-  - Nimble (8.0.1)
-  - Quick (2.0.0)
-  - SheetyColors (0.3.1):
+  - Nimble (8.0.2)
+  - Quick (2.1.0)
+  - SheetyColors (1.0.0):
     - Capable/Colors (~> 1.0.0)
   - SnapshotTesting (1.5.0)
 
 DEPENDENCIES:
-  - Nimble (~> 8.0.1)
-  - Quick (~> 2.0.0)
+  - Nimble (= 8.0.2)
+  - Quick (= 2.1.0)
   - SheetyColors (from `../`)
-  - SnapshotTesting (~> 1.5)
+  - SnapshotTesting (= 1.5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -25,11 +25,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Capable: f102b9cb3167470fac31d07d175b95ecb4f9ca9a
-  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
-  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
-  SheetyColors: 9edd082cd40f6ab3681262ff73cf21349fe37853
+  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+  SheetyColors: dbf4b6b427d10f0316a2237b8a00cd8d576466dd
   SnapshotTesting: 9ca1d80f6322509a035856170c11d0571b1f7171
 
-PODFILE CHECKSUM: 9b39eb683f19af0f28a510f2ff148ddd0ce5f2a5
+PODFILE CHECKSUM: 4d25efd32952718fd1b46a2d61df3cf0534d24cf
 
-COCOAPODS: 1.6.0.rc.2
+COCOAPODS: 1.7.5

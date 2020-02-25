@@ -1,9 +1,14 @@
+## Version 1.0.1
+### Bugfix
+* Fix version of Capable dependency which was causing issues in projects where Capable was used side by side with SheetyColors
+
 ## Version 1.0.0
 ### Enhancements
 * [Support iOS 13](https://github.com/chrs1885/SheetyColors/issues/3)
 
 ### Features
-* [Support Dark Mode](https://github.com/chrs1885/SheetyColors/issues/4)
+* [Support dark mode](https://github.com/chrs1885/SheetyColors/issues/4)
+* [Add message label](https://github.com/chrs1885/SheetyColors/issues/9)
 
 ## Version 0.3.1
 ### Enhancements

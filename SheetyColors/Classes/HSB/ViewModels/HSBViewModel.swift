@@ -10,18 +10,20 @@ private enum SliderType: Int, CaseIterable {
 }
 
 class HSBViewModel {
-    var isAlphaEnabled: Bool
+    let hasTextOrMessage: Bool
+    let isAlphaEnabled: Bool
     var colorModel: HSBAColor
     var appearenceProvider: AppearenceProviderProtocol = AppearenceProvider()
     weak var viewModelDelegate: SheetyColorsViewModelDelegate?
 
     lazy var appearence: Appearence = {
-        return self.appearenceProvider.current
+        self.appearenceProvider.current
     }()
 
-    init(withColorModel colorModel: HSBAColor, alphaEnabled: Bool) {
+    init(withColorModel colorModel: HSBAColor, isAlphaEnabled: Bool, hasTextOrMessage: Bool) {
         self.colorModel = colorModel
-        isAlphaEnabled = alphaEnabled
+        self.hasTextOrMessage = hasTextOrMessage
+        self.isAlphaEnabled = isAlphaEnabled
     }
 }
 

@@ -11,7 +11,7 @@ import Foundation
 
 struct AppearenceProviderMock: AppearenceProviderProtocol {
     var expectedAppearence: Appearence = .unknown
-    
+
     var current: Appearence {
         return expectedAppearence
     }
