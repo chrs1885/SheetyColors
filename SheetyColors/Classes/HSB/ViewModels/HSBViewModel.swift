@@ -5,6 +5,8 @@
 //  Created by Christoph Wendt on 20.04.19.
 //
 
+import CoreGraphics
+
 private enum SliderType: Int, CaseIterable {
     case hue, saturation, brightness, alpha
 }

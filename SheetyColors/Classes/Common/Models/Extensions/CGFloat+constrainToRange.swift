@@ -5,7 +5,7 @@
 //  Created by Christoph Wendt on 25.04.19.
 //
 
-import Foundation
+import CoreGraphics
 
 extension CGFloat {
     mutating func constrainTo(min: CGFloat = 0.0, max: CGFloat) {

@@ -31,7 +31,7 @@ To run the example project from Xcode, clone the repo, and run `pod install` fro
 
 ## Installation
 
-There are currently three different ways to integrate **SheetyColors** into your apps.
+There are currently four different ways to integrate **SheetyColors** into your apps.
 
 ### CocoaPods
 
@@ -41,6 +41,14 @@ use_frameworks!
 target 'MyApp' do
   pod 'SheetyColors'
 end
+```
+
+### Swift Package Manager
+
+```ruby
+dependencies: [
+    .package(url: "https://github.com/chrs1885/SheetyColors.git", from: "1.0.2")
+]
 ```
 
 ### Carthage

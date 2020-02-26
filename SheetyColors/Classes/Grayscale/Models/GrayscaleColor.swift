@@ -5,7 +5,7 @@
 //  Created by Christoph Wendt on 25.04.19.
 //
 
-import CoreGraphics
+import UIKit
 
 /// A model class representing grayscale colors. The white component can hold values between 0.0 and 255.0 while the alphavalue has a maximum value of 100.0.
 public class GrayscaleColor: NSObject, NSCopying, Codable {
