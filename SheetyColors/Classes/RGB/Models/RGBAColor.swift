@@ -5,7 +5,7 @@
 //  Created by Christoph Wendt on 10.02.19.
 //
 
-import CoreGraphics
+import UIKit
 
 /// A model class representing RGBA colors. The red, green, and blue component can hold values between 0.0 and 255.0 while the alpha value has a maximum value of 100.0.
 public class RGBAColor: NSObject, NSCopying, Codable {
