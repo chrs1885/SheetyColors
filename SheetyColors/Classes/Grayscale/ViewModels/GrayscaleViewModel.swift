@@ -5,9 +5,7 @@
 //  Created by Christoph Wendt on 25.04.19.
 //
 
-import Foundation
 import CoreGraphics
-import UIKit
 
 private enum SliderType: Int, CaseIterable {
     case white, alpha

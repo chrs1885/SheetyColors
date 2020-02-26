@@ -6,6 +6,7 @@
 //
 
 import CoreGraphics
+
 protocol SheetyColorsViewModelProtocol {
     var viewModelDelegate: SheetyColorsViewModelDelegate? { get set }
     var hasTextOrMessage: Bool { get }
