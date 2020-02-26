@@ -1,3 +1,7 @@
+## Version 1.0.2
+### Enhancements
+*[Support Swift Package Manager](https://github.com/chrs1885/SheetyColors/issues/10)
+
 ## Version 1.0.1
 ### Bugfix
 * Fix version of Capable dependency which was causing issues in projects where Capable was used side by side with SheetyColors
