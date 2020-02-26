@@ -5,6 +5,9 @@
 //  Created by Christoph Wendt on 03.02.19.
 //
 
+import Foundation
+import CoreGraphics
+
 private enum SliderType: Int, CaseIterable {
     case red, green, blue, alpha
 }

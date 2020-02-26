@@ -5,6 +5,7 @@
 //  Created by Christoph Wendt on 08.02.19.
 //
 
+import CoreGraphics
 protocol SheetyColorsViewModelProtocol {
     var viewModelDelegate: SheetyColorsViewModelDelegate? { get set }
     var hasTextOrMessage: Bool { get }
