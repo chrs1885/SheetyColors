@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-class SheetyColorsViewController: UIViewController, SheetyColorsViewProtocol {
+/// The controller class managing a SheetyColors view.
+public class SheetyColorsViewController: UIViewController, SheetyColorsViewControllerProtocol {
     private var previewColorView: PreviewColorView!
     private var stackView: UIStackView!
     private var selectionFeedback: UISelectionFeedbackGenerator?
@@ -24,7 +25,7 @@ class SheetyColorsViewController: UIViewController, SheetyColorsViewProtocol {
         return SheetyColorsViewController(nibName: "SheetyColorsViewController", bundle: Bundle.framework)
     }
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }

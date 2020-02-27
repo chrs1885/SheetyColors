@@ -7,7 +7,17 @@
 
 import UIKit
 
-struct SheetyColorsViewFactory {
+/// A factory for creating SheetyColors view controller
+public struct SheetyColorsViewFactory {
+    
+    /**
+     Creates a SheetyColorsViewController instance based on a given configuration.
+
+     - Parameter:
+     - config: Defines all aspects of the view such as a color model type, alpha value support, texts, initial colors, or haptical feedback.
+     
+     - Returns: A SheetyColorsViewController instance.
+     */
     static func createView(withConfig config: SheetyColorsConfigProtocol) -> SheetyColorsViewController {
         var viewModel: SheetyColorsViewModelProtocol
         let hasTextOrMessage: Bool = config.title != nil || config.message != nil
@@ -21,11 +31,11 @@ struct SheetyColorsViewFactory {
             viewModel = RGBViewModel(withColorModel: config.initialColor.rgbaColor, isAlphaEnabled: config.alphaEnabled, hasTextOrMessage: hasTextOrMessage)
         }
 
-        let view = SheetyColorsViewController.create()
-        view.viewModel = viewModel
-        view.hapticFeedbackEnabled = config.hapticFeedbackEnabled
-        viewModel.viewModelDelegate = view
+        let viewController = SheetyColorsViewController.create()
+        viewController.viewModel = viewModel
+        viewController.hapticFeedbackEnabled = config.hapticFeedbackEnabled
+        viewModel.viewModelDelegate = viewController
 
-        return view
+        return viewController
     }
 }
