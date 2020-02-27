@@ -18,7 +18,7 @@ public struct SheetyColorsViewFactory {
      
      - Returns: A SheetyColorsViewController instance.
      */
-    static func createView(withConfig config: SheetyColorsConfigProtocol) -> SheetyColorsViewController {
+    public static func createView(withConfig config: SheetyColorsConfigProtocol) -> SheetyColorsViewController {
         var viewModel: SheetyColorsViewModelProtocol
         let hasTextOrMessage: Bool = config.title != nil || config.message != nil
 
