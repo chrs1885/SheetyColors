@@ -14,7 +14,7 @@ class HSBViewModelTests: QuickSpec {
     override func spec() {
         describe("The HSBViewModel") {
             var sut: HSBViewModel!
-            var delegateMock: SheetyColorsViewModelDelegateMock!
+            var delegateMock: SheetyColorsViewDelegateMock!
 
             context("after initialization") {
                 var testColorModel: HSBAColor!
@@ -22,12 +22,12 @@ class HSBViewModelTests: QuickSpec {
                 var testHasTextOrMessage: Bool!
 
                 beforeEach {
-                    delegateMock = SheetyColorsViewModelDelegateMock()
+                    delegateMock = SheetyColorsViewDelegateMock()
                     testIsAlphaEnabled = true
                     testHasTextOrMessage = true
                     testColorModel = HSBAColor(hue: 123.0, saturation: 94.0, brightness: 87.0, alpha: 69.0)
                     sut = HSBViewModel(withColorModel: testColorModel, isAlphaEnabled: testIsAlphaEnabled, hasTextOrMessage: testHasTextOrMessage)
-                    sut.viewModelDelegate = delegateMock
+                    sut.viewDelegate = delegateMock
                 }
 
                 context("when calling hasTextOrMessage property") {

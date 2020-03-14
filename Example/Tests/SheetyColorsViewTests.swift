@@ -23,7 +23,7 @@ class SheetyColorsViewTests: QuickSpec {
                     sut = SheetyColorsViewController.create()
                     sut.viewModel = viewModel
                     sut.hapticFeedbackEnabled = false
-                    viewModel.viewModelDelegate = sut
+                    viewModel.viewDelegate = sut
                 }
 
                 it("renders a RGB SheetyColors view without an alpha slider") {
@@ -75,7 +75,7 @@ class SheetyColorsViewTests: QuickSpec {
                     sut = SheetyColorsViewController.create()
                     sut.viewModel = viewModel
                     sut.hapticFeedbackEnabled = false
-                    viewModel.viewModelDelegate = sut
+                    viewModel.viewDelegate = sut
                 }
 
                 it("renders a RGB SheetyColors view with an alpha slider") {
@@ -92,7 +92,7 @@ class SheetyColorsViewTests: QuickSpec {
                     sut = SheetyColorsViewController.create()
                     sut.viewModel = viewModel
                     sut.hapticFeedbackEnabled = false
-                    viewModel.viewModelDelegate = sut
+                    viewModel.viewDelegate = sut
                 }
 
                 it("renders a HSB SheetyColors view without an alpha slider") {
@@ -109,7 +109,7 @@ class SheetyColorsViewTests: QuickSpec {
                     sut = SheetyColorsViewController.create()
                     sut.viewModel = viewModel
                     sut.hapticFeedbackEnabled = false
-                    viewModel.viewModelDelegate = sut
+                    viewModel.viewDelegate = sut
                 }
 
                 it("renders a HSB SheetyColors view with an alpha slider") {
@@ -126,7 +126,7 @@ class SheetyColorsViewTests: QuickSpec {
                     sut = SheetyColorsViewController.create()
                     sut.viewModel = viewModel
                     sut.hapticFeedbackEnabled = false
-                    viewModel.viewModelDelegate = sut
+                    viewModel.viewDelegate = sut
                 }
 
                 it("renders a Grayscale SheetyColors view without an alpha slider") {
@@ -143,7 +143,7 @@ class SheetyColorsViewTests: QuickSpec {
                     sut = SheetyColorsViewController.create()
                     sut.viewModel = viewModel
                     sut.hapticFeedbackEnabled = false
-                    viewModel.viewModelDelegate = sut
+                    viewModel.viewDelegate = sut
                 }
 
                 it("renders a Grayscale SheetyColors view with an alpha slider") {

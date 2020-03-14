@@ -34,7 +34,7 @@ public struct SheetyColorsViewFactory {
         let viewController = SheetyColorsViewController.create()
         viewController.viewModel = viewModel
         viewController.hapticFeedbackEnabled = config.hapticFeedbackEnabled
-        viewModel.viewModelDelegate = viewController
+        viewModel.viewDelegate = viewController
 
         return viewController
     }

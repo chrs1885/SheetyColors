@@ -14,7 +14,7 @@ class GrayscaleViewModelTests: QuickSpec {
     override func spec() {
         describe("The GrayscaleViewModel") {
             var sut: GrayscaleViewModel!
-            var delegateMock: SheetyColorsViewModelDelegateMock!
+            var delegateMock: SheetyColorsViewDelegateMock!
 
             context("after initialization") {
                 var testColorModel: GrayscaleColor!
@@ -22,12 +22,12 @@ class GrayscaleViewModelTests: QuickSpec {
                 var testHasTextOrMessage: Bool!
 
                 beforeEach {
-                    delegateMock = SheetyColorsViewModelDelegateMock()
+                    delegateMock = SheetyColorsViewDelegateMock()
                     testIsAlphaEnabled = true
                     testHasTextOrMessage = true
                     testColorModel = GrayscaleColor(white: 123.0, alpha: 69.0)
                     sut = GrayscaleViewModel(withColorModel: testColorModel, isAlphaEnabled: testIsAlphaEnabled, hasTextOrMessage: testHasTextOrMessage)
-                    sut.viewModelDelegate = delegateMock
+                    sut.viewDelegate = delegateMock
                 }
 
                 context("when calling hasTextOrMessage property") {

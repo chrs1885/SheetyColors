@@ -8,7 +8,7 @@
 import CoreGraphics
 
 protocol SheetyColorsViewModelProtocol {
-    var viewModelDelegate: SheetyColorsViewModelDelegate? { get set }
+    var viewDelegate: SheetyColorsViewDelegate? { get set }
     var hasTextOrMessage: Bool { get }
     var primaryKeyText: String { get }
     var primaryValueText: String { get }

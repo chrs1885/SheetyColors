@@ -14,7 +14,7 @@ class RGBViewModelTests: QuickSpec {
     override func spec() {
         describe("The RGBViewModel") {
             var sut: RGBViewModel!
-            var delegateMock: SheetyColorsViewModelDelegateMock!
+            var delegateMock: SheetyColorsViewDelegateMock!
 
             context("after initialization") {
                 var testColorModel: RGBAColor!
@@ -22,12 +22,12 @@ class RGBViewModelTests: QuickSpec {
                 var testHasTextOrMessage: Bool!
 
                 beforeEach {
-                    delegateMock = SheetyColorsViewModelDelegateMock()
+                    delegateMock = SheetyColorsViewDelegateMock()
                     testIsAlphaEnabled = true
                     testHasTextOrMessage = true
                     testColorModel = RGBAColor(red: 10.0, green: 11.0, blue: 12.0, alpha: 13.0)
                     sut = RGBViewModel(withColorModel: testColorModel, isAlphaEnabled: testIsAlphaEnabled, hasTextOrMessage: testHasTextOrMessage)
-                    sut.viewModelDelegate = delegateMock
+                    sut.viewDelegate = delegateMock
                 }
 
                 it("sets up the instance correctly") {

@@ -123,7 +123,7 @@ extension SheetyColorsViewController {
 
 // MARK: - Data binding
 
-extension SheetyColorsViewController: SheetyColorsViewModelDelegate {
+extension SheetyColorsViewController: SheetyColorsViewDelegate {
     func didUpdateColorComponent(in viewModel: SheetyColorsViewModelProtocol) {
         previewColorView.primaryValueText = viewModel.primaryValueText
         previewColorView.secondaryValueText = viewModel.secondaryValueText

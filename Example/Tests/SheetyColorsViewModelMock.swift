@@ -10,7 +10,7 @@ import Foundation
 @testable import SheetyColors
 
 class SheetyColorsViewModelMock: SheetyColorsViewModelProtocol {
-    weak var viewModelDelegate: SheetyColorsViewModelDelegate?
+    weak var viewDelegate: SheetyColorsViewDelegate?
     var primaryKeyText: String = ""
     var primaryValueText: String = ""
     var secondaryKeyText: String = ""

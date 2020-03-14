@@ -16,7 +16,7 @@ class HSBViewModel {
     let isAlphaEnabled: Bool
     var colorModel: HSBAColor
     var appearenceProvider: AppearenceProviderProtocol = AppearenceProvider()
-    weak var viewModelDelegate: SheetyColorsViewModelDelegate?
+    weak var viewDelegate: SheetyColorsViewDelegate?
 
     lazy var appearence: Appearence = {
         self.appearenceProvider.current
@@ -162,6 +162,6 @@ extension HSBViewModel: SheetyColorsViewModelProtocol {
             colorModel.alpha = floor(value)
         }
 
-        viewModelDelegate?.didUpdateColorComponent(in: self)
+        viewDelegate?.didUpdateColorComponent(in: self)
     }
 }

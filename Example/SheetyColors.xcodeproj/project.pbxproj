@@ -23,7 +23,7 @@
 		834A36E2224971F700DECD37 /* SheetyColorsViewFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36E1224971F700DECD37 /* SheetyColorsViewFactoryTests.swift */; };
 		834A36E52249829300DECD37 /* SheetyColorsConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36E42249829300DECD37 /* SheetyColorsConfigMock.swift */; };
 		834A36E8224E88F400DECD37 /* RGBViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36E7224E88F400DECD37 /* RGBViewModelTests.swift */; };
-		834A36ED224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36EC224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift */; };
+		834A36ED224E8C7400DECD37 /* SheetyColorsViewDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36EC224E8C7400DECD37 /* SheetyColorsViewDelegateMock.swift */; };
 		834A36F2224E94FC00DECD37 /* SheetyColorsViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36F1224E94FC00DECD37 /* SheetyColorsViewModelMock.swift */; };
 		834A36F4224E98F900DECD37 /* SheetyColorsViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A36F3224E98F900DECD37 /* SheetyColorsViewMock.swift */; };
 		83537FC222739E1400E91C39 /* UIColor+grayscaleColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83537FC122739E1400E91C39 /* UIColor+grayscaleColorTests.swift */; };
@@ -74,7 +74,7 @@
 		834A36E1224971F700DECD37 /* SheetyColorsViewFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewFactoryTests.swift; sourceTree = "<group>"; };
 		834A36E42249829300DECD37 /* SheetyColorsConfigMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsConfigMock.swift; sourceTree = "<group>"; };
 		834A36E7224E88F400DECD37 /* RGBViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBViewModelTests.swift; sourceTree = "<group>"; };
-		834A36EC224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewModelDelegateMock.swift; sourceTree = "<group>"; };
+		834A36EC224E8C7400DECD37 /* SheetyColorsViewDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewDelegateMock.swift; sourceTree = "<group>"; };
 		834A36F1224E94FC00DECD37 /* SheetyColorsViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewModelMock.swift; sourceTree = "<group>"; };
 		834A36F3224E98F900DECD37 /* SheetyColorsViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsViewMock.swift; sourceTree = "<group>"; };
 		83537FC122739E1400E91C39 /* UIColor+grayscaleColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+grayscaleColorTests.swift"; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 				836D683C22F8B4C5005452FB /* AppearenceProviderMock.swift */,
 				834A36F1224E94FC00DECD37 /* SheetyColorsViewModelMock.swift */,
 				834A36E42249829300DECD37 /* SheetyColorsConfigMock.swift */,
-				834A36EC224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift */,
+				834A36EC224E8C7400DECD37 /* SheetyColorsViewDelegateMock.swift */,
 				834A36F3224E98F900DECD37 /* SheetyColorsViewMock.swift */,
 			);
 			name = Mocks;
@@ -639,7 +639,7 @@
 				83537FC52273A01000E91C39 /* GrayscaleViewModel.swift in Sources */,
 				83537FC222739E1400E91C39 /* UIColor+grayscaleColorTests.swift in Sources */,
 				834A36E8224E88F400DECD37 /* RGBViewModelTests.swift in Sources */,
-				834A36ED224E8C7400DECD37 /* SheetyColorsViewModelDelegateMock.swift in Sources */,
+				834A36ED224E8C7400DECD37 /* SheetyColorsViewDelegateMock.swift in Sources */,
 				834A36F4224E98F900DECD37 /* SheetyColorsViewMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
