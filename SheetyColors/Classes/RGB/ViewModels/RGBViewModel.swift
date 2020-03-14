@@ -17,6 +17,7 @@ class RGBViewModel {
     var colorModel: RGBAColor
     var appearenceProvider: AppearenceProviderProtocol = AppearenceProvider()
     weak var viewDelegate: SheetyColorsViewDelegate?
+    weak var delegate: SheetyColorsDelegate?
 
     lazy var appearence: Appearence = {
         self.appearenceProvider.current
@@ -160,5 +161,6 @@ extension RGBViewModel: SheetyColorsViewModelProtocol {
         }
 
         viewDelegate?.didUpdateColorComponent(in: self)
+        delegate?.didSelectColor(colorModel.uiColor)
     }
 }

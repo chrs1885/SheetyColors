@@ -18,7 +18,7 @@ public struct SheetyColorsViewFactory {
      
      - Returns: A SheetyColorsViewController instance.
      */
-    public static func createView(withConfig config: SheetyColorsConfigProtocol) -> SheetyColorsViewController {
+    public static func createView(withConfig config: SheetyColorsConfigProtocol, delegate: SheetyColorsDelegate? = nil) -> SheetyColorsViewController {
         var viewModel: SheetyColorsViewModelProtocol
         let hasTextOrMessage: Bool = config.title != nil || config.message != nil
 
@@ -35,6 +35,7 @@ public struct SheetyColorsViewFactory {
         viewController.viewModel = viewModel
         viewController.hapticFeedbackEnabled = config.hapticFeedbackEnabled
         viewModel.viewDelegate = viewController
+        viewModel.delegate = delegate
 
         return viewController
     }

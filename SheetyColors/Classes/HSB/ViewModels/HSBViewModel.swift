@@ -17,6 +17,7 @@ class HSBViewModel {
     var colorModel: HSBAColor
     var appearenceProvider: AppearenceProviderProtocol = AppearenceProvider()
     weak var viewDelegate: SheetyColorsViewDelegate?
+    weak var delegate: SheetyColorsDelegate?
 
     lazy var appearence: Appearence = {
         self.appearenceProvider.current
@@ -163,5 +164,6 @@ extension HSBViewModel: SheetyColorsViewModelProtocol {
         }
 
         viewDelegate?.didUpdateColorComponent(in: self)
+        delegate?.didSelectColor(colorModel.uiColor)
     }
 }
