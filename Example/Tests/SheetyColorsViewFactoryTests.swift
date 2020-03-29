@@ -13,10 +13,10 @@ import Quick
 class SheetyColorsViewFactoryTests: QuickSpec {
     override func spec() {
         describe("The SheetyColorsViewFactory") {
-            context("when calling create with a config of type .rgb") {
-                var testConfig: SheetyColorsConfigProtocol!
-                var view: SheetyColorsViewController!
-
+            var testConfig: SheetyColorsConfigProtocol!
+            var view: SheetyColorsViewController!
+            
+            context("when calling createView with a config of type .rgb") {
                 beforeEach {
                     testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .red, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
@@ -30,10 +30,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
                 }
             }
 
-            context("when calling create with a config of type .hsb") {
-                var testConfig: SheetyColorsConfigProtocol!
-                var view: SheetyColorsViewController!
-
+            context("when calling createView with a config of type .hsb") {
                 beforeEach {
                     testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .red, hapticFeedbackEnabled: false, title: nil, message: nil, type: .hsb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
@@ -47,10 +44,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
                 }
             }
 
-            context("when calling create with a config of type .grayscale") {
-                var testConfig: SheetyColorsConfigProtocol!
-                var view: SheetyColorsViewController!
-
+            context("when calling createView with a config of type .grayscale") {
                 beforeEach {
                     testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .red, hapticFeedbackEnabled: false, title: nil, message: nil, type: .grayscale)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
@@ -64,10 +58,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
                 }
             }
 
-            context("when calling create with a config that has alphaEnabled set to true") {
-                var testConfig: SheetyColorsConfigProtocol!
-                var view: SheetyColorsViewController!
-
+            context("when calling createView with a config that has alphaEnabled set to true") {
                 beforeEach {
                     testConfig = SheetyColorsConfigMock(alphaEnabled: true, initialColor: .white, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
@@ -79,9 +70,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
                 }
             }
 
-            context("when calling create with a config that has set the text property") {
-                var testConfig: SheetyColorsConfigProtocol!
-                var view: SheetyColorsViewController!
+            context("when calling createView with a config that has set the text property") {
                 var testText: String!
 
                 beforeEach {
@@ -96,10 +85,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
                 }
             }
 
-            context("when calling create with a config that doesn't have a text nor a message") {
-                var testConfig: SheetyColorsConfigProtocol!
-                var view: SheetyColorsViewController!
-
+            context("when calling createView with a config that doesn't have a text nor a message") {
                 beforeEach {
                     testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .white, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
@@ -111,10 +97,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
                 }
             }
 
-            context("when calling create with a config with hapticFeedbackEnabled set to true") {
-                var testConfig: SheetyColorsConfigProtocol!
-                var view: SheetyColorsViewController!
-
+            context("when calling createView with a config with hapticFeedbackEnabled set to true") {
                 beforeEach {
                     testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .white, hapticFeedbackEnabled: true, title: nil, message: nil, type: .rgb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
@@ -125,10 +108,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
                 }
             }
 
-            context("when calling create with a config with hapticFeedbackEnabled set to false") {
-                var testConfig: SheetyColorsConfigProtocol!
-                var view: SheetyColorsViewController!
-
+            context("when calling createView with a config with hapticFeedbackEnabled set to false") {
                 beforeEach {
                     testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .white, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
@@ -136,6 +116,20 @@ class SheetyColorsViewFactoryTests: QuickSpec {
 
                 it("sets hapticFeedbackEnabled on the view controller to false") {
                     expect(view.hapticFeedbackEnabled).to(beFalse())
+                }
+            }
+            
+            context("when calling createView with a delegate") {
+                var delegateMock: SheetyColorsDelegateMock!
+
+                beforeEach {
+                    delegateMock = SheetyColorsDelegateMock()
+                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .white, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
+                    view = SheetyColorsViewFactory.createView(withConfig: testConfig, delegate: delegateMock)
+                }
+
+                it("sets the delegate on the view model") {
+                    expect(view.viewModel.delegate).to(be(delegateMock))
                 }
             }
         }

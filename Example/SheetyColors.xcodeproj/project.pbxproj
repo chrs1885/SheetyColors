@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		22AA8832D7526E840D7FA916 /* Pods_SheetyColors_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87B5CDD8C9040B059B8C1536 /* Pods_SheetyColors_Example.framework */; };
 		44B496B12233C0AB00CF8B38 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B496B02233C0AB00CF8B38 /* ColorCell.swift */; };
+		44D0F1F4243148E7001DF988 /* SheetyColorsDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0F1F3243148E7001DF988 /* SheetyColorsDelegateMock.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ColorsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ColorsCollectionViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		1BB8CE96911C8C57D7DDDF3A /* Pods_SheetyColors_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SheetyColors_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3697BB2765259F63B9A5841A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		44B496B02233C0AB00CF8B38 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		44D0F1F3243148E7001DF988 /* SheetyColorsDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsDelegateMock.swift; sourceTree = "<group>"; };
 		553AD8A7258AE141F7908ED0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SheetyColors_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SheetyColors_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				834A36E42249829300DECD37 /* SheetyColorsConfigMock.swift */,
 				834A36EC224E8C7400DECD37 /* SheetyColorsViewDelegateMock.swift */,
 				834A36F3224E98F900DECD37 /* SheetyColorsViewMock.swift */,
+				44D0F1F3243148E7001DF988 /* SheetyColorsDelegateMock.swift */,
 			);
 			name = Mocks;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				831FCF0022591DFE003C48A4 /* UIAlertController+customViewTests.swift in Sources */,
 				831FCF02225E62F8003C48A4 /* SheetyColorsViewTests.swift in Sources */,
 				836D683D22F8B4C5005452FB /* AppearenceProviderMock.swift in Sources */,
+				44D0F1F4243148E7001DF988 /* SheetyColorsDelegateMock.swift in Sources */,
 				83537FC52273A01000E91C39 /* GrayscaleViewModel.swift in Sources */,
 				83537FC222739E1400E91C39 /* UIColor+grayscaleColorTests.swift in Sources */,
 				834A36E8224E88F400DECD37 /* RGBViewModelTests.swift in Sources */,

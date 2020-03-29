@@ -14,7 +14,8 @@ class RGBViewModelTests: QuickSpec {
     override func spec() {
         describe("The RGBViewModel") {
             var sut: RGBViewModel!
-            var delegateMock: SheetyColorsViewDelegateMock!
+            var viewDelegateMock: SheetyColorsViewDelegateMock!
+            var delegateMock: SheetyColorsDelegateMock!
 
             context("after initialization") {
                 var testColorModel: RGBAColor!
@@ -22,12 +23,14 @@ class RGBViewModelTests: QuickSpec {
                 var testHasTextOrMessage: Bool!
 
                 beforeEach {
-                    delegateMock = SheetyColorsViewDelegateMock()
+                    viewDelegateMock = SheetyColorsViewDelegateMock()
+                    delegateMock = SheetyColorsDelegateMock()
                     testIsAlphaEnabled = true
                     testHasTextOrMessage = true
                     testColorModel = RGBAColor(red: 10.0, green: 11.0, blue: 12.0, alpha: 13.0)
                     sut = RGBViewModel(withColorModel: testColorModel, isAlphaEnabled: testIsAlphaEnabled, hasTextOrMessage: testHasTextOrMessage)
-                    sut.viewDelegate = delegateMock
+                    sut.viewDelegate = viewDelegateMock
+                    sut.delegate = delegateMock
                 }
 
                 it("sets up the instance correctly") {
@@ -334,8 +337,13 @@ class RGBViewModelTests: QuickSpec {
                             sut.sliderValueChanged(forSliderAt: 0, value: testColorValue)
                         }
 
+                        it("informs the viewDelegate") {
+                            expect(viewDelegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                        }
+                        
                         it("informs the delegate") {
-                            expect(delegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                            expect(delegateMock.didCallDidSelectColor).to(beTrue())
+                            expect(delegateMock.selectedColor).to(equal(sut.colorModel.uiColor))
                         }
 
                         it("floors the value and updates the red component of the color model") {
@@ -348,8 +356,13 @@ class RGBViewModelTests: QuickSpec {
                             sut.sliderValueChanged(forSliderAt: 1, value: testColorValue)
                         }
 
+                        it("informs the viewDelegate") {
+                            expect(viewDelegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                        }
+                        
                         it("informs the delegate") {
-                            expect(delegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                            expect(delegateMock.didCallDidSelectColor).to(beTrue())
+                            expect(delegateMock.selectedColor).to(equal(sut.colorModel.uiColor))
                         }
 
                         it("floors the value and updates the green component of the color model") {
@@ -362,8 +375,13 @@ class RGBViewModelTests: QuickSpec {
                             sut.sliderValueChanged(forSliderAt: 2, value: testColorValue)
                         }
 
+                        it("informs the viewDelegate") {
+                            expect(viewDelegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                        }
+                        
                         it("informs the delegate") {
-                            expect(delegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                            expect(delegateMock.didCallDidSelectColor).to(beTrue())
+                            expect(delegateMock.selectedColor).to(equal(sut.colorModel.uiColor))
                         }
 
                         it("floors the value and updates the blue component of the color model") {
@@ -376,8 +394,13 @@ class RGBViewModelTests: QuickSpec {
                             sut.sliderValueChanged(forSliderAt: 3, value: testColorValue)
                         }
 
+                        it("informs the viewDelegate") {
+                            expect(viewDelegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                        }
+                        
                         it("informs the delegate") {
-                            expect(delegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                            expect(delegateMock.didCallDidSelectColor).to(beTrue())
+                            expect(delegateMock.selectedColor).to(equal(sut.colorModel.uiColor))
                         }
 
                         it("floors the value and updates the alpha component of the color model") {
