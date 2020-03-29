@@ -13,14 +13,14 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/chrs1885/Capable.git", from: "1.1.3"),
-        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", from: "1.5.0"),
-        .package(url: "https://github.com/Quick/Quick.git", from: "2.1.0"),
-        .package(url: "https://github.com/Quick/Nimble.git", from: "8.0.4"),
-        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.40.13"),
-        .package(url: "https://github.com/Realm/SwiftLint", from: "0.35.0"),
+        .package(url: "https://github.com/chrs1885/Capable.git", from: "1.1.4"),
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", from: "1.7.2"),
+        .package(url: "https://github.com/Quick/Quick.git", from: "2.2.0"),
+        .package(url: "https://github.com/Quick/Nimble.git", from: "8.0.7"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.44.6"),
+        .package(url: "https://github.com/Realm/SwiftLint", from: "0.39.1"),
         .package(url: "https://github.com/orta/Komondor", from: "1.0.4"),
-        .package(url: "https://github.com/eneko/SourceDocs.git", from: "0.5.1"),
+        .package(url: "https://github.com/eneko/SourceDocs.git", from: "0.6.1"),
     ],
     targets: [
         .target(name: "SheetyColors_Example", dependencies: [], path: "Example", sources: ["SheetyColors/SheetType.swift"]),

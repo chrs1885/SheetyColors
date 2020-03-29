@@ -1,16 +1,16 @@
 PODS:
   - Capable/Colors (1.1.4)
-  - Nimble (8.0.2)
-  - Quick (2.1.0)
+  - Nimble (8.0.7)
+  - Quick (2.2.0)
   - SheetyColors (1.0.2):
     - Capable/Colors (~> 1.1)
-  - SnapshotTesting (1.5.0)
+  - SnapshotTesting (1.7.2)
 
 DEPENDENCIES:
-  - Nimble (= 8.0.2)
-  - Quick (= 2.1.0)
+  - Nimble (= 8.0.7)
+  - Quick (= 2.2.0)
   - SheetyColors (from `../`)
-  - SnapshotTesting (= 1.5.0)
+  - SnapshotTesting (= 1.7.2)
 
 SPEC REPOS:
   trunk:
@@ -25,11 +25,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Capable: 9f420f2a80a12144814ea2f0ba196516a0827ca1
-  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
-  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
-  SheetyColors: 0ba50c070954e567fa3c21dbec97f4cfb458b94e
-  SnapshotTesting: 9ca1d80f6322509a035856170c11d0571b1f7171
+  Nimble: a73af6ecd4c9106f434f3d55fc54570be3739e0b
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  SheetyColors: 1d0d56e5ee7923b3f12eea59a2815eae826479ee
+  SnapshotTesting: 8caa6661fea7c8019d5b46de77c16bab99c36c5c
 
-PODFILE CHECKSUM: 4d25efd32952718fd1b46a2d61df3cf0534d24cf
+PODFILE CHECKSUM: 5095640969646fd5f5546f91228d960c22a55514
 
 COCOAPODS: 1.8.4
