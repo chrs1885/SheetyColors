@@ -12,7 +12,7 @@ public class HSBAColor: NSObject, NSCopying, Codable {
     var hue, saturation, brightness, alpha: CGFloat
 
     var hexColor: String {
-        if let colorRef = self.uiColor.cgColor.components {
+        if let colorRef = uiColor.cgColor.components {
             let red: CGFloat = colorRef[0]
             let green: CGFloat = colorRef[1]
             let blue: CGFloat = colorRef[2]

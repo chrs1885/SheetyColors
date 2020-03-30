@@ -1,5 +1,5 @@
 //
-//  SheetyColorsViewProtocol.swift
+//  SheetyColorsViewControllerProtocol.swift
 //  SheetyColors
 //
 //  Created by Christoph Wendt on 03.02.19.
@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol SheetyColorsViewProtocol {
+protocol SheetyColorsViewControllerProtocol {
     var previewColor: UIColor { get }
 }

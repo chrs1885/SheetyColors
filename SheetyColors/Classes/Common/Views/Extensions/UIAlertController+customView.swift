@@ -27,7 +27,7 @@ public extension SheetyColorsController {
      Creates a SheetyColorsController instance.
 
      - Parameter:
-         - config: A config object containing options for specifying the look and feel of a SheetyColors view.
+     - config: A config object containing options for specifying the look and feel of a SheetyColors view.
      */
     convenience init(withConfig config: SheetyColorsConfigProtocol) {
         self.init(title: config.title, message: config.message, preferredStyle: .actionSheet)

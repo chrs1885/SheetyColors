@@ -16,7 +16,8 @@ class GrayscaleViewModel {
     let isAlphaEnabled: Bool
     var colorModel: GrayscaleColor
     var appearenceProvider: AppearenceProviderProtocol = AppearenceProvider()
-    weak var viewModelDelegate: SheetyColorsViewModelDelegate?
+    weak var viewDelegate: SheetyColorsViewDelegate?
+    weak var delegate: SheetyColorsDelegate?
 
     lazy var appearence: Appearence = {
         self.appearenceProvider.current
@@ -134,6 +135,7 @@ extension GrayscaleViewModel: SheetyColorsViewModelProtocol {
             colorModel.alpha = floor(value)
         }
 
-        viewModelDelegate?.didUpdateColorComponent(in: self)
+        viewDelegate?.didUpdateColorComponent(in: self)
+        delegate?.didSelectColor(colorModel.uiColor)
     }
 }

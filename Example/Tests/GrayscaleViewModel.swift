@@ -14,7 +14,8 @@ class GrayscaleViewModelTests: QuickSpec {
     override func spec() {
         describe("The GrayscaleViewModel") {
             var sut: GrayscaleViewModel!
-            var delegateMock: SheetyColorsViewModelDelegateMock!
+            var viewDelegateMock: SheetyColorsViewDelegateMock!
+            var delegateMock: SheetyColorsDelegateMock!
 
             context("after initialization") {
                 var testColorModel: GrayscaleColor!
@@ -22,12 +23,14 @@ class GrayscaleViewModelTests: QuickSpec {
                 var testHasTextOrMessage: Bool!
 
                 beforeEach {
-                    delegateMock = SheetyColorsViewModelDelegateMock()
+                    viewDelegateMock = SheetyColorsViewDelegateMock()
+                    delegateMock = SheetyColorsDelegateMock()
                     testIsAlphaEnabled = true
                     testHasTextOrMessage = true
                     testColorModel = GrayscaleColor(white: 123.0, alpha: 69.0)
                     sut = GrayscaleViewModel(withColorModel: testColorModel, isAlphaEnabled: testIsAlphaEnabled, hasTextOrMessage: testHasTextOrMessage)
-                    sut.viewModelDelegate = delegateMock
+                    sut.viewDelegate = viewDelegateMock
+                    sut.delegate = delegateMock
                 }
 
                 context("when calling hasTextOrMessage property") {
@@ -230,8 +233,13 @@ class GrayscaleViewModelTests: QuickSpec {
                             sut.sliderValueChanged(forSliderAt: 0, value: testColorValue)
                         }
 
+                        it("informs the viewDelegate") {
+                            expect(viewDelegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                        }
+
                         it("informs the delegate") {
-                            expect(delegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                            expect(delegateMock.didCallDidSelectColor).to(beTrue())
+                            expect(delegateMock.selectedColor).to(equal(sut.colorModel.uiColor))
                         }
 
                         it("floors the value and updates the hue component of the color model") {
@@ -244,8 +252,13 @@ class GrayscaleViewModelTests: QuickSpec {
                             sut.sliderValueChanged(forSliderAt: 1, value: testColorValue)
                         }
 
+                        it("informs the viewDelegate") {
+                            expect(viewDelegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                        }
+
                         it("informs the delegate") {
-                            expect(delegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                            expect(delegateMock.didCallDidSelectColor).to(beTrue())
+                            expect(delegateMock.selectedColor).to(equal(sut.colorModel.uiColor))
                         }
 
                         it("floors the value and updates the alpha component of the color model") {

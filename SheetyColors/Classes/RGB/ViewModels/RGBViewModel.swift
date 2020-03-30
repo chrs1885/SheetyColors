@@ -16,7 +16,8 @@ class RGBViewModel {
     let isAlphaEnabled: Bool
     var colorModel: RGBAColor
     var appearenceProvider: AppearenceProviderProtocol = AppearenceProvider()
-    weak var viewModelDelegate: SheetyColorsViewModelDelegate?
+    weak var viewDelegate: SheetyColorsViewDelegate?
+    weak var delegate: SheetyColorsDelegate?
 
     lazy var appearence: Appearence = {
         self.appearenceProvider.current
@@ -159,6 +160,7 @@ extension RGBViewModel: SheetyColorsViewModelProtocol {
             colorModel.alpha = floor(value)
         }
 
-        viewModelDelegate?.didUpdateColorComponent(in: self)
+        viewDelegate?.didUpdateColorComponent(in: self)
+        delegate?.didSelectColor(colorModel.uiColor)
     }
 }
