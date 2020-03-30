@@ -15,7 +15,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
         describe("The SheetyColorsViewFactory") {
             var testConfig: SheetyColorsConfigProtocol!
             var view: SheetyColorsViewController!
-            
+
             context("when calling createView with a config of type .rgb") {
                 beforeEach {
                     testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .red, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
@@ -118,7 +118,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
                     expect(view.hapticFeedbackEnabled).to(beFalse())
                 }
             }
-            
+
             context("when calling createView with a delegate") {
                 var delegateMock: SheetyColorsDelegateMock!
 

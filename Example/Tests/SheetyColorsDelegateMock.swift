@@ -9,10 +9,10 @@
 import Foundation
 @testable import SheetyColors
 
-class SheetyColorsDelegateMock: SheetyColorsDelegate {    
+class SheetyColorsDelegateMock: SheetyColorsDelegate {
     var didCallDidSelectColor = false
     var selectedColor: UIColor?
-    
+
     func didSelectColor(_ color: UIColor) {
         didCallDidSelectColor = true
         selectedColor = color

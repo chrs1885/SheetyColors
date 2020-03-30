@@ -4,13 +4,13 @@ import PackageDescription
 let package = Package(
     name: "SheetyColors",
     platforms: [
-        .iOS(.v11),
+        .iOS(.v11), .macOS(.v10_12),
     ],
     products: [
         .library(
             name: "SheetyColors",
             targets: ["SheetyColors"]
-        )
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/chrs1885/Capable.git", from: "1.1.4"),

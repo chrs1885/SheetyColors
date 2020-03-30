@@ -25,7 +25,7 @@ public class SheetyColorsViewController: UIViewController, SheetyColorsViewContr
         return SheetyColorsViewController(nibName: "SheetyColorsViewController", bundle: Bundle.framework)
     }
 
-    override public func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }

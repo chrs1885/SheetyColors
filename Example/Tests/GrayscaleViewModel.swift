@@ -16,7 +16,7 @@ class GrayscaleViewModelTests: QuickSpec {
             var sut: GrayscaleViewModel!
             var viewDelegateMock: SheetyColorsViewDelegateMock!
             var delegateMock: SheetyColorsDelegateMock!
-            
+
             context("after initialization") {
                 var testColorModel: GrayscaleColor!
                 var testIsAlphaEnabled: Bool!
@@ -236,7 +236,7 @@ class GrayscaleViewModelTests: QuickSpec {
                         it("informs the viewDelegate") {
                             expect(viewDelegateMock.didCallDidUpdateColorComponent).to(beTrue())
                         }
-                        
+
                         it("informs the delegate") {
                             expect(delegateMock.didCallDidSelectColor).to(beTrue())
                             expect(delegateMock.selectedColor).to(equal(sut.colorModel.uiColor))
@@ -255,7 +255,7 @@ class GrayscaleViewModelTests: QuickSpec {
                         it("informs the viewDelegate") {
                             expect(viewDelegateMock.didCallDidUpdateColorComponent).to(beTrue())
                         }
-                        
+
                         it("informs the delegate") {
                             expect(delegateMock.didCallDidSelectColor).to(beTrue())
                             expect(delegateMock.selectedColor).to(equal(sut.colorModel.uiColor))
