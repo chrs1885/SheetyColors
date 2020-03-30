@@ -49,7 +49,7 @@ end
 
 ```ruby
 dependencies: [
-    .package(url: "https://github.com/chrs1885/SheetyColors.git", from: "1.0.2")
+    .package(url: "https://github.com/chrs1885/SheetyColors.git", from: "1.1.0")
 ]
 ```
 
