@@ -1,3 +1,8 @@
+## Version 1.1.0
+### Features
+* SwiftUI support
+* Expose SheetyColors view] 
+
 ## Version 1.0.2
 ### Enhancements
 *[Support Swift Package Manager](https://github.com/chrs1885/SheetyColors/issues/10)
