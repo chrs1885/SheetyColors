@@ -9,6 +9,6 @@
 import Foundation
 @testable import SheetyColors
 
-class SheetyColorsViewMock: SheetyColorsViewProtocol {
+class SheetyColorsViewMock: SheetyColorsViewControllerProtocol {
     var previewColor = UIColor.red
 }

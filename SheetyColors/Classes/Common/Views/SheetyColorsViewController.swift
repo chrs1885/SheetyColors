@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-class SheetyColorsViewController: UIViewController, SheetyColorsViewProtocol {
+/// The controller class managing a SheetyColors view.
+public class SheetyColorsViewController: UIViewController, SheetyColorsViewControllerProtocol {
     private var previewColorView: PreviewColorView!
     private var stackView: UIStackView!
     private var selectionFeedback: UISelectionFeedbackGenerator?
@@ -24,7 +25,7 @@ class SheetyColorsViewController: UIViewController, SheetyColorsViewProtocol {
         return SheetyColorsViewController(nibName: "SheetyColorsViewController", bundle: Bundle.framework)
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
@@ -122,7 +123,7 @@ extension SheetyColorsViewController {
 
 // MARK: - Data binding
 
-extension SheetyColorsViewController: SheetyColorsViewModelDelegate {
+extension SheetyColorsViewController: SheetyColorsViewDelegate {
     func didUpdateColorComponent(in viewModel: SheetyColorsViewModelProtocol) {
         previewColorView.primaryValueText = viewModel.primaryValueText
         previewColorView.secondaryValueText = viewModel.secondaryValueText

@@ -9,7 +9,7 @@
 import Foundation
 @testable import SheetyColors
 
-class SheetyColorsViewModelDelegateMock: SheetyColorsViewModelDelegate {
+class SheetyColorsViewDelegateMock: SheetyColorsViewDelegate {
     var didCallDidUpdateColorComponent = false
 
     func didUpdateColorComponent(in _: SheetyColorsViewModelProtocol) {
