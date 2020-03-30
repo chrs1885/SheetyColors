@@ -49,7 +49,7 @@ end
 
 ```ruby
 dependencies: [
-    .package(url: "https://github.com/chrs1885/SheetyColors.git", from: "1.0.2")
+    .package(url: "https://github.com/chrs1885/SheetyColors.git", from: "1.1.0")
 ]
 ```
 
@@ -126,11 +126,12 @@ With SwiftUI projects the color picker can't be used inside the action sheet tha
 ```swift
 struct ContentView: View {
 	@State var selectedColor: UIColor = UIColor.white
-	
+	let config = SheetyColorsConfig(alphaEnabled: true, hapticFeedbackEnabled: true, initialColor: UIColor.red, type: .rgb)
+
 	var body: some View {
 		Text("Select a color")
 			.foregroundColor(Color(self.$selectedColor.wrappedValue))
-		SheetyColorsView(color: $selectedColor)
+		ColorPicker(config: config, color: self.$selectedColor)
 	}
 }
 ```
