@@ -135,6 +135,7 @@ struct ContentView: View {
 }
 ```
 
+[Here's an example](https://gist.github.com/chrs1885/d3b9310f92a247b1ad6e022896596401) of how creating an action sheet styled color picker with SwiftUI and SheetyColors.
 
 ## Contributions
 
