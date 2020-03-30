@@ -11,6 +11,8 @@ import SwiftUI
 import UIKit
 
 @available(iOS 13.0, *)
+
+// A color picker view that can be used with SwiftUI.
 public struct SheetyColorsView: UIViewControllerRepresentable {
     public class Coordinator: NSObject, SheetyColorsDelegate {
         var parent: SheetyColorsView
@@ -24,7 +26,10 @@ public struct SheetyColorsView: UIViewControllerRepresentable {
         }
     }
     
+    /// Defines all aspects of the view such as a color model type, alpha value support, texts, initial colors, or haptical feedback.
     var config: SheetyColorsConfig
+    
+    /// A binding for the color that has been selected within the color picker.
     @Binding var color: UIColor
     
     public func makeCoordinator() -> Coordinator {
