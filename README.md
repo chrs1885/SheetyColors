@@ -98,7 +98,7 @@ present(sheetyColors, animated: true, completion: nil)
 Please check the [documentation](./Documentation/Reference/README.md) for further information on the API.
 
 ### Custom container views
-If you prefer to use the color picker inside a custom view controller, you can do so by doing creating the picker's view controller directly:
+If you prefer to use the color picker inside a custom view controller, you can do so by creating the picker's view controller directly:
 
 ```swift
 return SheetyColorsViewFactory.createView(withConfig: config, delegate: myDelegate)
@@ -131,7 +131,7 @@ struct ContentView: View {
 	var body: some View {
 		Text("Select a color")
 			.foregroundColor(Color(self.$selectedColor.wrappedValue))
-		ColorPicker(config: config, color: self.$selectedColor)
+		SheetyColorsView(config: config, color: self.$selectedColor)
 	}
 }
 ```
