@@ -70,7 +70,8 @@ extension SheetyColorsViewController {
         previewColorView.primaryKeyText = viewModel.primaryKeyText
         previewColorView.primaryValueText = viewModel.primaryValueText
         previewColorView.secondaryKeyText = viewModel.secondaryKeyText
-        previewColorView.secondaryValueText = viewModel.secondaryValueText
+        previewColorView.hexValueText = viewModel.secondaryValueText
+        previewColorView.delegate = self
     }
 
     func setupStackView() {
@@ -126,15 +127,26 @@ extension SheetyColorsViewController {
 extension SheetyColorsViewController: SheetyColorsViewDelegate {
     func didUpdateColorComponent(in viewModel: SheetyColorsViewModelProtocol) {
         previewColorView.primaryValueText = viewModel.primaryValueText
-        previewColorView.secondaryValueText = viewModel.secondaryValueText
+        previewColorView.hexValueText = viewModel.secondaryValueText
 
         CATransaction.setValue(true, forKey: kCATransactionDisableActions)
         previewColorView.color = viewModel.previewColorModel.uiColor
         for index in 0 ..< viewModel.numberOfSliders {
             let slider = sliders[index]
+            slider.value = viewModel.value(forSliderAt: index)
             slider.minColor = viewModel.minimumColorModel(forSliderAt: index).uiColor
             slider.maxColor = viewModel.maximumColorModel(forSliderAt: index).uiColor
         }
         CATransaction.commit()
+    }
+}
+
+// MARK: - PreviewColorViewDelegate
+
+extension SheetyColorsViewController: PreviewColorViewDelegate {
+    func previewColorView(_ previewColorView: PreviewColorView, didEditHexValue value: String) {
+        guard let color = UIColor(hex: value) else { return }
+        
+        viewModel.hexValueChanged(withColor: color)
     }
 }

@@ -27,4 +27,5 @@ protocol SheetyColorsViewModelProtocol {
     func thumbText(forSliderAt index: Int) -> String?
     func thumbIconName(forSliderAt index: Int) -> String?
     func sliderValueChanged(forSliderAt index: Int, value: CGFloat)
+    func hexValueChanged(withColor color: UIColor)
 }

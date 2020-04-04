@@ -8,10 +8,11 @@ import Capable
 import UIKit
 
 class PreviewColorView: UIView {
-    var primaryKeyLabel: UILabel!
+    weak var delegate: PreviewColorViewDelegate?
+    var primaryTitleLabel: UILabel!
     var primaryValueLabel: UILabel!
-    var secondaryKeyLabel: UILabel!
-    var secondaryValueLabel: UILabel!
+    var hexTitleLabel: UILabel!
+    var hexValueTextField: UITextField!
     var infoButton: UIButton!
     var labelStackView: UIStackView!
     var colorLayer: CALayer!
@@ -27,16 +28,18 @@ class PreviewColorView: UIView {
 
     var textColor: UIColor = .clear {
         didSet {
-            for label in [primaryKeyLabel, primaryValueLabel, secondaryKeyLabel, secondaryValueLabel] {
+            for label in [primaryTitleLabel, primaryValueLabel, hexTitleLabel] {
                 label?.textColor = textColor
             }
+            
+            hexValueTextField?.textColor = textColor
             infoButton.tintColor = textColor
         }
     }
 
     var primaryKeyText: String = "" {
         didSet {
-            primaryKeyLabel.text = primaryKeyText
+            primaryTitleLabel.text = primaryKeyText
         }
     }
 
@@ -48,13 +51,13 @@ class PreviewColorView: UIView {
 
     var secondaryKeyText: String = "" {
         didSet {
-            secondaryKeyLabel.text = secondaryKeyText
+            hexTitleLabel.text = secondaryKeyText
         }
     }
 
-    var secondaryValueText: String = "" {
+    var hexValueText: String = "" {
         didSet {
-            secondaryValueLabel.text = secondaryValueText
+            hexValueTextField.text = hexValueText
         }
     }
 
@@ -73,6 +76,7 @@ class PreviewColorView: UIView {
         setupButton()
         setupConstraints()
         setupGestureRecognizer()
+        setupTextFieldHandler()
         updateLabelVisibility(withDuration: 0.0)
     }
 
@@ -101,22 +105,21 @@ class PreviewColorView: UIView {
     }
 
     private func setupLabels() {
-        primaryKeyLabel = UILabel(frame: .zero)
+        primaryTitleLabel = UILabel(frame: .zero)
         primaryValueLabel = UILabel(frame: .zero)
-        secondaryKeyLabel = UILabel(frame: .zero)
-        secondaryValueLabel = UILabel(frame: .zero)
+        hexTitleLabel = UILabel(frame: .zero)
+        hexValueTextField = UITextField(frame: .zero)
 
-        let keyLabels = [primaryKeyLabel, secondaryKeyLabel]
-        let valueLabels = [primaryValueLabel, secondaryValueLabel]
+        let keyLabels = [primaryTitleLabel, hexTitleLabel]
+        let valueLabels = [primaryValueLabel, hexValueTextField]
 
         for label in keyLabels {
             label?.font = UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: .regular)
         }
 
-        for label in valueLabels {
-            label?.font = UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: .light)
-        }
-
+        primaryValueLabel?.font = UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: .light)
+        hexValueTextField?.font = UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: .light)
+        
         guard let keyViews = keyLabels as? [UIView], let valueViews = valueLabels as? [UIView] else { return }
 
         let keyLabelStackView = UIStackView(arrangedSubviews: keyViews)
@@ -147,6 +150,12 @@ class PreviewColorView: UIView {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         addGestureRecognizer(tap)
     }
+    
+    private func setupTextFieldHandler() {
+        hexValueTextField.delegate = self
+        hexValueTextField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingDidEnd)
+        hexValueTextField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingDidEndOnExit)
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -174,6 +183,41 @@ extension PreviewColorView {
     }
 }
 
+// MARK: - Handle User Interaction
+
+extension PreviewColorView: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard
+            let text = textField.text else {
+                return
+        }
+        
+        delegate?.previewColorView(self, didEditHexValue: text)
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+         guard
+            let text = textField.text,
+            let regex = try? NSRegularExpression(pattern: "^[0-9a-fA-F]{6}$") else {
+           return false
+       }
+        
+        let range = NSRange(location: 0, length: text.utf16.count)
+        return  regex.firstMatch(in: text, options: [], range: range) != nil
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard
+            let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string),
+            let regex = try? NSRegularExpression(pattern: "^[0-9a-fA-F]{0,6}$") else {
+            return false
+        }
+        
+        let range = NSRange(location: 0, length: updatedString.utf16.count)
+        return  regex.firstMatch(in: updatedString, options: [], range: range) != nil
+    }
+}
+
 // MARK: - Animations
 
 extension PreviewColorView {
@@ -193,9 +237,10 @@ extension PreviewColorView {
 
     func updateLabelVisibility(withDuration duration: TimeInterval) {
         UIView.animate(withDuration: duration) {
-            for label in [self.primaryKeyLabel, self.primaryValueLabel, self.secondaryKeyLabel, self.secondaryValueLabel] {
+            for label in [self.primaryTitleLabel, self.primaryValueLabel, self.hexTitleLabel] {
                 label?.alpha = self.isColorViewLabelShown ? 1.0 : 0.0
             }
+            self.hexValueTextField?.alpha = self.isColorViewLabelShown ? 1.0 : 0.0
             self.infoButton.alpha = self.isColorViewLabelShown ? 0.0 : 1.0
         }
     }

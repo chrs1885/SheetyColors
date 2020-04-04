@@ -166,4 +166,9 @@ extension HSBViewModel: SheetyColorsViewModelProtocol {
         viewDelegate?.didUpdateColorComponent(in: self)
         delegate?.didSelectColor(colorModel.uiColor)
     }
+    
+    func hexValueChanged(withColor color: UIColor) {
+        colorModel = color.hsbaColor
+        viewDelegate?.didUpdateColorComponent(in: self)
+    }
 }
