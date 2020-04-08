@@ -125,11 +125,14 @@ extension SheetyColorsViewController {
 // MARK: - Data binding
 
 extension SheetyColorsViewController: SheetyColorsViewDelegate {
-    func didUpdateColorComponent(in viewModel: SheetyColorsViewModelProtocol) {
+    func didUpdateColorComponent(in viewModel: SheetyColorsViewModelProtocol, shouldAnimate: Bool) {
         previewColorView.primaryValueText = viewModel.primaryValueText
         previewColorView.hexValueText = viewModel.secondaryValueText
 
-        CATransaction.setValue(true, forKey: kCATransactionDisableActions)
+        if (!shouldAnimate) {
+            CATransaction.setValue(true, forKey: kCATransactionDisableActions)
+        }
+        
         previewColorView.color = viewModel.previewColorModel.uiColor
         for index in 0 ..< viewModel.numberOfSliders {
             let slider = sliders[index]

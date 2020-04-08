@@ -12,7 +12,7 @@ class PreviewColorView: UIView {
     var primaryTitleLabel: UILabel!
     var primaryValueLabel: UILabel!
     var hexTitleLabel: UILabel!
-    var hexValueTextField: UITextField!
+    var hexValueTextField: HexTextField!
     var infoButton: UIButton!
     var labelStackView: UIStackView!
     var colorLayer: CALayer!
@@ -22,6 +22,7 @@ class PreviewColorView: UIView {
     var color: UIColor = .clear {
         didSet {
             colorLayer?.backgroundColor = color.cgColor
+            hexValueTextField.unselectTextField()
             updateTextColor()
         }
     }
@@ -31,8 +32,7 @@ class PreviewColorView: UIView {
             for label in [primaryTitleLabel, primaryValueLabel, hexTitleLabel] {
                 label?.textColor = textColor
             }
-            
-            hexValueTextField?.textColor = textColor
+            hexValueTextField.textColor = textColor
             infoButton.tintColor = textColor
         }
     }
@@ -70,7 +70,7 @@ class PreviewColorView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        isColorViewLabelShown = false
+        isColorViewLabelShown = true
         setupColorView()
         setupLabels()
         setupButton()
@@ -108,28 +108,27 @@ class PreviewColorView: UIView {
         primaryTitleLabel = UILabel(frame: .zero)
         primaryValueLabel = UILabel(frame: .zero)
         hexTitleLabel = UILabel(frame: .zero)
-        hexValueTextField = UITextField(frame: .zero)
+        hexValueTextField = HexTextField()
 
-        let keyLabels = [primaryTitleLabel, hexTitleLabel]
-        let valueLabels = [primaryValueLabel, hexValueTextField]
-
-        for label in keyLabels {
+        for label in [primaryTitleLabel, hexTitleLabel] {
             label?.font = UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: .regular)
         }
 
         primaryValueLabel?.font = UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: .light)
-        hexValueTextField?.font = UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: .light)
-        
-        guard let keyViews = keyLabels as? [UIView], let valueViews = valueLabels as? [UIView] else { return }
 
-        let keyLabelStackView = UIStackView(arrangedSubviews: keyViews)
-        keyLabelStackView.axis = .vertical
+        let primaryStackView = UIStackView(arrangedSubviews: [primaryTitleLabel, primaryValueLabel])
+        primaryStackView.axis = .horizontal
+        primaryStackView.alignment = .top
+        primaryStackView.spacing = 8.0
 
-        let valueLabelStackView = UIStackView(arrangedSubviews: valueViews)
-        valueLabelStackView.axis = .vertical
+        let secondaryStackView = UIStackView(arrangedSubviews: [hexTitleLabel, hexValueTextField])
+        secondaryStackView.axis = .horizontal
+        secondaryStackView.alignment = .top
+        secondaryStackView.spacing = 8.0
 
-        labelStackView = UIStackView(arrangedSubviews: [keyLabelStackView, valueLabelStackView])
-        labelStackView.axis = .horizontal
+        labelStackView = UIStackView(arrangedSubviews: [primaryStackView, secondaryStackView])
+        labelStackView.axis = .vertical
+        labelStackView.alignment = .leading
         labelStackView.spacing = 8.0
         addSubview(labelStackView)
     }
@@ -141,6 +140,7 @@ class PreviewColorView: UIView {
     }
 
     private func setupConstraints() {
+        #warning("This constraint needs to have a lower prio, since it will always break if you are using the picker outside of an action sheet")
         anchor(heightConstant: 100.0)
         labelStackView.anchor(top: topAnchor, paddingTop: 10.0, left: leftAnchor, paddingLeft: 10.0)
         infoButton.anchor(top: topAnchor, paddingTop: 10.0, right: rightAnchor, paddingRight: 10.0)
@@ -153,8 +153,6 @@ class PreviewColorView: UIView {
     
     private func setupTextFieldHandler() {
         hexValueTextField.delegate = self
-        hexValueTextField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingDidEnd)
-        hexValueTextField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingDidEndOnExit)
     }
 
     override func layoutSubviews() {
@@ -170,7 +168,9 @@ class PreviewColorView: UIView {
 extension PreviewColorView {
     @objc func handleTap(_: UIView) {
         if isColorViewLabelShown {
+            hexValueTextField.unselectTextField()
             hideLabels()
+            
         } else {
             displayLabels()
         }
@@ -185,38 +185,12 @@ extension PreviewColorView {
 
 // MARK: - Handle User Interaction
 
-extension PreviewColorView: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard
-            let text = textField.text else {
-                return
-        }
-        
-        delegate?.previewColorView(self, didEditHexValue: text)
-    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-         guard
-            let text = textField.text,
-            let regex = try? NSRegularExpression(pattern: "^[0-9a-fA-F]{6}$") else {
-           return false
-       }
-        
-        let range = NSRange(location: 0, length: text.utf16.count)
-        return  regex.firstMatch(in: text, options: [], range: range) != nil
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard
-            let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string),
-            let regex = try? NSRegularExpression(pattern: "^[0-9a-fA-F]{0,6}$") else {
-            return false
-        }
-        
-        let range = NSRange(location: 0, length: updatedString.utf16.count)
-        return  regex.firstMatch(in: updatedString, options: [], range: range) != nil
+extension PreviewColorView: HexTextFieldDelegate {
+    func hexTextField(_ hextTextField: HexTextField, didEditHexValue value: String) {
+        delegate?.previewColorView(self, didEditHexValue: value)
     }
 }
+
 
 // MARK: - Animations
 

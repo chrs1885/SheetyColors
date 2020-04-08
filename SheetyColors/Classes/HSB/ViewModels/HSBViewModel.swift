@@ -163,12 +163,12 @@ extension HSBViewModel: SheetyColorsViewModelProtocol {
             colorModel.alpha = floor(value)
         }
 
-        viewDelegate?.didUpdateColorComponent(in: self)
+        viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: false)
         delegate?.didSelectColor(colorModel.uiColor)
     }
     
     func hexValueChanged(withColor color: UIColor) {
         colorModel = color.hsbaColor
-        viewDelegate?.didUpdateColorComponent(in: self)
+        viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: true)
     }
 }
