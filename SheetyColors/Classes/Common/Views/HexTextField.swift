@@ -131,7 +131,7 @@ extension HexTextField {
     private func setSelectedTextField(at index: Int?) {
         for i in 0 ..< Constants.numberOfTextFields {
             let underline = underlineViews[i]
-            
+
             if i == index {
                 underline.blink()
             } else {
@@ -143,9 +143,15 @@ extension HexTextField {
     func unselectTextField() {
         if text.lengthOfBytes(using: .utf8) != Constants.numberOfTextFields, let lastValue = lastHexValue {
             shake()
+            generateErrorFeedback()
             text = lastValue
         }
-        setSelectedTextField(at: nil)
+        
+        for textField in textFields {
+            if textField.isFirstResponder {
+                textField.resignFirstResponder()
+            }
+        }
     }
 }
 
@@ -161,11 +167,14 @@ extension HexTextField: UITextFieldDelegate {
         if !string.isEmpty {
             if string.isHex {
                 handleInsertion(currentTextField: textField, text: string.uppercased())
+                generateInputFeedback()
             } else {
                 textFieldStackView.shake()
+                generateErrorFeedback()
             }
         } else {
             handleDeletion(currentTextField: textField)
+            generateInputFeedback()
         }
         
         return false
@@ -200,6 +209,20 @@ extension HexTextField: UITextFieldDelegate {
         
         currentTextField.text = ""
         setSelectedTextField(at: currentIndex)
+    }
+}
+
+// MARK: - Haptic Feedback
+
+private extension HexTextField {
+    func generateInputFeedback() {
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+    }
+    
+    func generateErrorFeedback() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
     }
 }
 
