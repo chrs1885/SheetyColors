@@ -17,6 +17,7 @@ class SheetyColorsViewModelMock: SheetyColorsViewModelProtocol {
     var secondaryKeyText: String = ""
     var secondaryValueText: String = ""
     var hasTextOrMessage: Bool = false
+    var isHapticFeedbackEnabled: Bool = false
     var previewColorModel: SheetyColorProtocol = RGBAColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
     var numberOfSliders: Int = 0
 

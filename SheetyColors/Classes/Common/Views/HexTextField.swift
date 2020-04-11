@@ -25,6 +25,7 @@ class HexTextField: UIView {
     private var textFields = [UITextField]()
     private var underlineViews = [UIView]()
     private var lastHexValue: String?
+    private var hapticFeedbackProvider: HapticFeedbackProviderProtocol?
     
     weak var delegate: HexTextFieldDelegate?
     var textColor: UIColor = .white {
@@ -50,8 +51,9 @@ class HexTextField: UIView {
         }
     }
     
-    init() {
+    init(hapticFeedbackProvider: HapticFeedbackProviderProtocol? = nil) {
         super.init(frame: CGRect.zero)
+        self.hapticFeedbackProvider = hapticFeedbackProvider
         setupViews()
         layoutViews()
     }
@@ -142,8 +144,6 @@ extension HexTextField {
     
     func unselectTextField() {
         if text.lengthOfBytes(using: .utf8) != Constants.numberOfTextFields, let lastValue = lastHexValue {
-            shake()
-            generateErrorFeedback()
             text = lastValue
         }
         
@@ -167,14 +167,14 @@ extension HexTextField: UITextFieldDelegate {
         if !string.isEmpty {
             if string.isHex {
                 handleInsertion(currentTextField: textField, text: string.uppercased())
-                generateInputFeedback()
+                hapticFeedbackProvider?.generateInputFeedback()
             } else {
                 textFieldStackView.shake()
-                generateErrorFeedback()
+                hapticFeedbackProvider?.generateErrorFeedback()
             }
         } else {
             handleDeletion(currentTextField: textField)
-            generateInputFeedback()
+            hapticFeedbackProvider?.generateInputFeedback()
         }
         
         return false
@@ -209,20 +209,6 @@ extension HexTextField: UITextFieldDelegate {
         
         currentTextField.text = ""
         setSelectedTextField(at: currentIndex)
-    }
-}
-
-// MARK: - Haptic Feedback
-
-private extension HexTextField {
-    func generateInputFeedback() {
-        let generator = UIImpactFeedbackGenerator(style: .light)
-        generator.impactOccurred()
-    }
-    
-    func generateErrorFeedback() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.error)
     }
 }
 

@@ -12,6 +12,7 @@ private enum SliderType: Int, CaseIterable {
 }
 
 class RGBViewModel {
+    let isHapticFeedbackEnabled: Bool
     let hasTextOrMessage: Bool
     let isAlphaEnabled: Bool
     var colorModel: RGBAColor
@@ -23,14 +24,15 @@ class RGBViewModel {
         self.appearenceProvider.current
     }()
 
-    init(withColorModel colorModel: RGBAColor, isAlphaEnabled: Bool, hasTextOrMessage: Bool) {
-        self.colorModel = colorModel
-        self.hasTextOrMessage = hasTextOrMessage
-        self.isAlphaEnabled = isAlphaEnabled
+    init(withConfig config: SheetyColorsConfigProtocol) {
+        self.colorModel = config.initialColor.rgbaColor
+        self.hasTextOrMessage = config.title != nil || config.message != nil
+        self.isAlphaEnabled = config.alphaEnabled
+        self.isHapticFeedbackEnabled = config.hapticFeedbackEnabled
     }
 }
 
-extension RGBViewModel: SheetyColorsViewModelProtocol {
+extension RGBViewModel: SheetyColorsViewModelProtocol {    
     var primaryKeyText: String {
         return "RGB"
     }

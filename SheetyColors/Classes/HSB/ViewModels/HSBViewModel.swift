@@ -12,6 +12,7 @@ private enum SliderType: Int, CaseIterable {
 }
 
 class HSBViewModel {
+    let isHapticFeedbackEnabled: Bool
     let hasTextOrMessage: Bool
     let isAlphaEnabled: Bool
     var colorModel: HSBAColor
@@ -23,10 +24,11 @@ class HSBViewModel {
         self.appearenceProvider.current
     }()
 
-    init(withColorModel colorModel: HSBAColor, isAlphaEnabled: Bool, hasTextOrMessage: Bool) {
-        self.colorModel = colorModel
-        self.hasTextOrMessage = hasTextOrMessage
-        self.isAlphaEnabled = isAlphaEnabled
+    init(withConfig config: SheetyColorsConfigProtocol) {
+        self.colorModel = config.initialColor.hsbaColor
+        self.hasTextOrMessage = config.title != nil || config.message != nil
+        self.isAlphaEnabled = config.alphaEnabled
+        self.isHapticFeedbackEnabled = config.hapticFeedbackEnabled
     }
 }
 

@@ -8,6 +8,7 @@ import Capable
 import UIKit
 
 class PreviewColorView: UIView {
+    private var hapticFeedbackProvider: HapticFeedbackProviderProtocol?
     weak var delegate: PreviewColorViewDelegate?
     var primaryTitleLabel: UILabel!
     var primaryValueLabel: UILabel!
@@ -61,9 +62,10 @@ class PreviewColorView: UIView {
         }
     }
 
-    convenience init(withColor color: UIColor) {
+    convenience init(withColor color: UIColor, hapticFeedbackProvider: HapticFeedbackProviderProtocol? = nil) {
         self.init(frame: .zero)
         self.color = color
+        self.hapticFeedbackProvider = hapticFeedbackProvider
         colorLayer.backgroundColor = self.color.cgColor
         updateTextColor()
     }
@@ -108,7 +110,7 @@ class PreviewColorView: UIView {
         primaryTitleLabel = UILabel(frame: .zero)
         primaryValueLabel = UILabel(frame: .zero)
         hexTitleLabel = UILabel(frame: .zero)
-        hexValueTextField = HexTextField()
+        hexValueTextField = HexTextField(hapticFeedbackProvider: hapticFeedbackProvider)
 
         for label in [primaryTitleLabel, hexTitleLabel] {
             label?.font = UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: .regular)
