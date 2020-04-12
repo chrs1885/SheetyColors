@@ -76,7 +76,7 @@ extension SheetyColorsViewController {
         previewColorView = PreviewColorView(withColor: viewModel.previewColorModel.uiColor, hapticFeedbackProvider: hapticFeedbackProvider)
         previewColorView.primaryKeyText = viewModel.primaryKeyText
         previewColorView.primaryValueText = viewModel.primaryValueText
-        previewColorView.secondaryKeyText = viewModel.secondaryKeyText
+        previewColorView.hexKeyText = viewModel.secondaryKeyText
         previewColorView.hexValueText = viewModel.secondaryValueText
         previewColorView.delegate = self
     }

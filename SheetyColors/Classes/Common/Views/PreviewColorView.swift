@@ -50,9 +50,9 @@ class PreviewColorView: UIView {
         }
     }
 
-    var secondaryKeyText: String = "" {
+    var hexKeyText: String = "" {
         didSet {
-            hexTitleLabel.text = secondaryKeyText
+            hexTitleLabel.text = hexKeyText
         }
     }
 
@@ -76,7 +76,7 @@ class PreviewColorView: UIView {
         setupColorView()
         setupLabels()
         setupButton()
-        setupConstraints()
+        setupLayout()
         setupGestureRecognizer()
         setupTextFieldHandler()
         updateLabelVisibility(withDuration: 0.0)
@@ -117,22 +117,6 @@ class PreviewColorView: UIView {
         }
 
         primaryValueLabel?.font = UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: .light)
-
-        let primaryStackView = UIStackView(arrangedSubviews: [primaryTitleLabel, primaryValueLabel])
-        primaryStackView.axis = .horizontal
-        primaryStackView.alignment = .top
-        primaryStackView.spacing = 8.0
-
-        let secondaryStackView = UIStackView(arrangedSubviews: [hexTitleLabel, hexValueTextField])
-        secondaryStackView.axis = .horizontal
-        secondaryStackView.alignment = .top
-        secondaryStackView.spacing = 8.0
-
-        labelStackView = UIStackView(arrangedSubviews: [primaryStackView, secondaryStackView])
-        labelStackView.axis = .vertical
-        labelStackView.alignment = .leading
-        labelStackView.spacing = 8.0
-        addSubview(labelStackView)
     }
 
     private func setupButton() {
@@ -141,11 +125,27 @@ class PreviewColorView: UIView {
         infoButton.addTarget(self, action: #selector(infoButtonPressed(_:)), for: .touchUpInside)
     }
 
-    private func setupConstraints() {
+    private func setupLayout() {
         #warning("This constraint needs to have a lower prio, since it will always break if you are using the picker outside of an action sheet")
         anchor(heightConstant: 100.0)
-        labelStackView.anchor(top: topAnchor, paddingTop: 10.0, left: leftAnchor, paddingLeft: 10.0)
         infoButton.anchor(top: topAnchor, paddingTop: 10.0, right: rightAnchor, paddingRight: 10.0)
+        
+        let keysyStackView = UIStackView(arrangedSubviews: [primaryTitleLabel, hexTitleLabel])
+        keysyStackView.axis = .vertical
+        keysyStackView.alignment = .leading
+        keysyStackView.spacing = 4.0
+
+        let valuesStackView = UIStackView(arrangedSubviews: [primaryValueLabel, hexValueTextField])
+        valuesStackView.axis = .vertical
+        valuesStackView.alignment = .leading
+        valuesStackView.spacing = 4.0
+
+        labelStackView = UIStackView(arrangedSubviews: [keysyStackView, valuesStackView])
+        labelStackView.axis = .horizontal
+        labelStackView.alignment = .top
+        labelStackView.spacing = 8.0
+        addSubview(labelStackView)
+        labelStackView.anchor(top: topAnchor, paddingTop: 10.0, left: leftAnchor, paddingLeft: 10.0)
     }
 
     private func setupGestureRecognizer() {
