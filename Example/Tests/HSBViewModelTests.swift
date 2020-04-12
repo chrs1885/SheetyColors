@@ -18,24 +18,20 @@ class HSBViewModelTests: QuickSpec {
             var delegateMock: SheetyColorsDelegateMock!
 
             context("after initialization") {
-                var testColorModel: HSBAColor!
-                var testIsAlphaEnabled: Bool!
-                var testHasTextOrMessage: Bool!
+                let testColorModel = HSBAColor(hue: 120.0, saturation: 94.0, brightness: 87.0, alpha: 69.0)
+                let testConfig = SheetyColorsConfig(alphaEnabled: true, hapticFeedbackEnabled: true, initialColor: testColorModel.uiColor, title: "title", message: "message", type: .hsb)
 
                 beforeEach {
                     viewDelegateMock = SheetyColorsViewDelegateMock()
                     delegateMock = SheetyColorsDelegateMock()
-                    testIsAlphaEnabled = true
-                    testHasTextOrMessage = true
-                    testColorModel = HSBAColor(hue: 123.0, saturation: 94.0, brightness: 87.0, alpha: 69.0)
-                    sut = HSBViewModel(withColorModel: testColorModel, isAlphaEnabled: testIsAlphaEnabled, hasTextOrMessage: testHasTextOrMessage)
+                    sut = HSBViewModel(withConfig: testConfig)
                     sut.viewDelegate = viewDelegateMock
                     sut.delegate = delegateMock
                 }
 
                 context("when calling hasTextOrMessage property") {
                     it("returns the correct state") {
-                        expect(sut!.hasTextOrMessage).to(equal(testHasTextOrMessage))
+                        expect(sut!.hasTextOrMessage).to(beTrue())
                     }
                 }
 

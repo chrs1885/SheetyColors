@@ -12,9 +12,8 @@ import UIKit
 public class SheetyColorsViewController: UIViewController, SheetyColorsViewControllerProtocol {
     private var previewColorView: PreviewColorView!
     private var stackView: UIStackView!
-    private var viewModel: SheetyColorsViewModelProtocol
-    private var hapticFeedbackProvider: HapticFeedbackProviderProtocol?
-    
+    var hapticFeedbackProvider: HapticFeedbackProviderProtocol?
+    var viewModel: SheetyColorsViewModelProtocol
     var sliders: [GradientSlider] = []
 
     var previewColor: UIColor {

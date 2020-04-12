@@ -8,7 +8,6 @@ import Capable
 import UIKit
 
 class PreviewColorView: UIView {
-    private var hapticFeedbackProvider: HapticFeedbackProviderProtocol?
     weak var delegate: PreviewColorViewDelegate?
     var primaryTitleLabel: UILabel!
     var primaryValueLabel: UILabel!
@@ -19,7 +18,8 @@ class PreviewColorView: UIView {
     var colorLayer: CALayer!
     var transparencyPatternLayer: CALayer!
     var isColorViewLabelShown: Bool!
-
+    var hapticFeedbackProvider: HapticFeedbackProviderProtocol?
+    
     var color: UIColor = .clear {
         didSet {
             colorLayer?.backgroundColor = color.cgColor

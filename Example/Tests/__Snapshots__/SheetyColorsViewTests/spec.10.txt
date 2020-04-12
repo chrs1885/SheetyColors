@@ -1,33 +1,73 @@
 <UIView; frame = (0 0; 300 400); autoresize = W+H; layer = <CALayer>>
-   | <UIStackView; frame = (15 0; 270 385); layer = <CATransformLayer>>
-   |    | <SheetyColors.PreviewColorView; frame = (0 0; 270 185); gestureRecognizers = <NSArray>; layer = <CALayer>>
+   | <UIStackView; frame = (15 15; 270 370); layer = <CATransformLayer>>
+   |    | <SheetyColors.PreviewColorView; frame = (0 0; 270 170); gestureRecognizers = <NSArray>; layer = <CALayer>>
    |    |    | <CALayer> (layer)
    |    |    | <CALayer> (layer)
-   |    |    | <UIStackView; frame = (10 10; 147.667 34); layer = <CATransformLayer>>
-   |    |    |    | <UIStackView; frame = (0 0; 28.3333 34); layer = <CATransformLayer>>
-   |    |    |    |    | <UILabel; frame = (0 0; 28.3333 17); text = 'HSB'; alpha = 0; userInteractionEnabled = NO; animations = { opacity=<CABasicAnimation>; }; layer = <_UILabelLayer>>
-   |    |    |    |    | <UILabel; frame = (0 17; 28.3333 17); text = 'HEX'; alpha = 0; userInteractionEnabled = NO; animations = { opacity=<CABasicAnimation>; }; layer = <_UILabelLayer>>
-   |    |    |    | <UIStackView; frame = (36.3333 0; 111.333 34); layer = <CATransformLayer>>
-   |    |    |    |    | <UILabel; frame = (0 0; 111.333 17); text = '210 100 50 75%'; alpha = 0; userInteractionEnabled = NO; animations = { opacity=<CABasicAnimation>; }; layer = <_UILabelLayer>>
-   |    |    |    |    | <UILabel; frame = (0 17; 111.333 17); text = '003F7F'; alpha = 0; userInteractionEnabled = NO; animations = { opacity=<CABasicAnimation>; }; layer = <_UILabelLayer>>
-   |    |    | <UIButton; frame = (235.667 10; 24.3333 23.6667); opaque = NO; tintColor = UIExtendedGrayColorSpace 1 1; layer = <CALayer>>
+   |    |    | <UIStackView; frame = (10 10; 147.667 45); layer = <CATransformLayer>>
+   |    |    |    | <UIStackView; frame = (0 0; 147.667 17); layer = <CATransformLayer>>
+   |    |    |    |    | <UILabel; frame = (0 0; 28.3333 17); text = 'HSB'; userInteractionEnabled = NO; layer = <_UILabelLayer>>
+   |    |    |    |    | <UILabel; frame = (36.3333 0; 111.333 17); text = '210 100 50 75%'; userInteractionEnabled = NO; layer = <_UILabelLayer>>
+   |    |    |    | <UIStackView; frame = (0 25; 146 20); layer = <CATransformLayer>>
+   |    |    |    |    | <UILabel; frame = (0 0; 28 17); text = 'HEX'; userInteractionEnabled = NO; layer = <_UILabelLayer>>
+   |    |    |    |    | <SheetyColors.HexTextField; frame = (36 0; 110 20); layer = <CALayer>>
+   |    |    |    |    |    | <UIStackView; frame = (0 0; 110 20); layer = <CATransformLayer>>
+   |    |    |    |    |    |    | <UIStackView; frame = (0 0; 15 20); layer = <CATransformLayer>>
+   |    |    |    |    |    |    |    | <UITextField; frame = (0 0; 15 17); text = '0'; opaque = NO; tintColor = UIExtendedGrayColorSpace 0 0; gestureRecognizers = <NSArray>; layer = <CALayer>>
+   |    |    |    |    |    |    |    |    | <_UIBaselineLayoutStrut; frame = (0 0; 0 17); hidden = YES; userInteractionEnabled = NO; layer = <_UILabelLayer>>
+   |    |    |    |    |    |    |    |    |    | <_UILabelContentLayer> (layer)
+   |    |    |    |    |    |    |    |    | <_UITextFieldCanvasView; frame = (0 0; 15 17); opaque = NO; userInteractionEnabled = NO; layer = <_UITextTiledLayer>>
+   |    |    |    |    |    |    |    | <UIView; frame = (0 19; 15 1); layer = <CALayer>>
+   |    |    |    |    |    |    | <UIStackView; frame = (19 0; 15 20); layer = <CATransformLayer>>
+   |    |    |    |    |    |    |    | <UITextField; frame = (0 0; 15 17); text = '0'; opaque = NO; tintColor = UIExtendedGrayColorSpace 0 0; gestureRecognizers = <NSArray>; layer = <CALayer>>
+   |    |    |    |    |    |    |    |    | <_UIBaselineLayoutStrut; frame = (0 0; 0 17); hidden = YES; userInteractionEnabled = NO; layer = <_UILabelLayer>>
+   |    |    |    |    |    |    |    |    |    | <_UILabelContentLayer> (layer)
+   |    |    |    |    |    |    |    |    | <_UITextFieldCanvasView; frame = (0 0; 15 17); opaque = NO; userInteractionEnabled = NO; layer = <_UITextTiledLayer>>
+   |    |    |    |    |    |    |    | <UIView; frame = (0 19; 15 1); layer = <CALayer>>
+   |    |    |    |    |    |    | <UIStackView; frame = (38 0; 15 20); layer = <CATransformLayer>>
+   |    |    |    |    |    |    |    | <UITextField; frame = (0 0; 15 17); text = '3'; opaque = NO; tintColor = UIExtendedGrayColorSpace 0 0; gestureRecognizers = <NSArray>; layer = <CALayer>>
+   |    |    |    |    |    |    |    |    | <_UIBaselineLayoutStrut; frame = (0 0; 0 17); hidden = YES; userInteractionEnabled = NO; layer = <_UILabelLayer>>
+   |    |    |    |    |    |    |    |    |    | <_UILabelContentLayer> (layer)
+   |    |    |    |    |    |    |    |    | <_UITextFieldCanvasView; frame = (0 0; 15 17); opaque = NO; userInteractionEnabled = NO; layer = <_UITextTiledLayer>>
+   |    |    |    |    |    |    |    | <UIView; frame = (0 19; 15 1); layer = <CALayer>>
+   |    |    |    |    |    |    | <UIStackView; frame = (57 0; 15 20); layer = <CATransformLayer>>
+   |    |    |    |    |    |    |    | <UITextField; frame = (0 0; 15 17); text = 'F'; opaque = NO; tintColor = UIExtendedGrayColorSpace 0 0; gestureRecognizers = <NSArray>; layer = <CALayer>>
+   |    |    |    |    |    |    |    |    | <_UIBaselineLayoutStrut; frame = (0 0; 0 17); hidden = YES; userInteractionEnabled = NO; layer = <_UILabelLayer>>
+   |    |    |    |    |    |    |    |    |    | <_UILabelContentLayer> (layer)
+   |    |    |    |    |    |    |    |    | <_UITextFieldCanvasView; frame = (0 0; 15 17); opaque = NO; userInteractionEnabled = NO; layer = <_UITextTiledLayer>>
+   |    |    |    |    |    |    |    | <UIView; frame = (0 19; 15 1); layer = <CALayer>>
+   |    |    |    |    |    |    | <UIStackView; frame = (76 0; 15 20); layer = <CATransformLayer>>
+   |    |    |    |    |    |    |    | <UITextField; frame = (0 0; 15 17); text = '7'; opaque = NO; tintColor = UIExtendedGrayColorSpace 0 0; gestureRecognizers = <NSArray>; layer = <CALayer>>
+   |    |    |    |    |    |    |    |    | <_UIBaselineLayoutStrut; frame = (0 0; 0 17); hidden = YES; userInteractionEnabled = NO; layer = <_UILabelLayer>>
+   |    |    |    |    |    |    |    |    |    | <_UILabelContentLayer> (layer)
+   |    |    |    |    |    |    |    |    | <_UITextFieldCanvasView; frame = (0 0; 15 17); opaque = NO; userInteractionEnabled = NO; layer = <_UITextTiledLayer>>
+   |    |    |    |    |    |    |    | <UIView; frame = (0 19; 15 1); layer = <CALayer>>
+   |    |    |    |    |    |    | <UIStackView; frame = (95 0; 15 20); layer = <CATransformLayer>>
+   |    |    |    |    |    |    |    | <UITextField; frame = (0 0; 15 17); text = 'F'; opaque = NO; tintColor = UIExtendedGrayColorSpace 0 0; gestureRecognizers = <NSArray>; layer = <CALayer>>
+   |    |    |    |    |    |    |    |    | <_UIBaselineLayoutStrut; frame = (0 0; 0 17); hidden = YES; userInteractionEnabled = NO; layer = <_UILabelLayer>>
+   |    |    |    |    |    |    |    |    |    | <_UILabelContentLayer> (layer)
+   |    |    |    |    |    |    |    |    | <_UITextFieldCanvasView; frame = (0 0; 15 17); opaque = NO; userInteractionEnabled = NO; layer = <_UITextTiledLayer>>
+   |    |    |    |    |    |    |    | <UIView; frame = (0 19; 15 1); layer = <CALayer>>
+   |    |    |    |    |    | <UIButton; frame = (0 0; 110 20); opaque = NO; layer = <CALayer>>
+   |    |    |    |    |    |    | <UIButtonLabel; frame = (0 0; 0 0); hidden = YES; opaque = NO; userInteractionEnabled = NO; layer = <_UILabelLayer>>
+   |    |    |    |    |    |    |    | <_UILabelContentLayer> (layer)
+   |    |    | <UIButton; frame = (235.667 10; 24.3333 23.6667); alpha = 0; opaque = NO; tintColor = UIExtendedGrayColorSpace 1 1; animations = { opacity=<CABasicAnimation>; }; layer = <CALayer>>
    |    |    |    | <UIImageView; frame = (0 0; 24.3333 23.6667); clipsToBounds = YES; opaque = NO; userInteractionEnabled = NO; layer = <CALayer>>
-   |    | <SheetyColors.GradientSlider; baseClass = UIControl; frame = (-2 191; 274 48); layer = <CALayer>>
+   |    | <SheetyColors.GradientSlider; baseClass = UIControl; frame = (-2 176; 274 48); layer = <CALayer>>
    |    |    | <CAGradientLayer> (layer)
    |    |    | <CALayer> (layer)
    |    |    |    | <CALayer> (layer)
    |    |    |    | <_TtC12SheetyColorsP33_484746A459ABDEEC544DEF4AF835257327VerticallyCenteredTextLayer> (layer)
-   |    | <SheetyColors.GradientSlider; baseClass = UIControl; frame = (-2 241; 274 48); layer = <CALayer>>
+   |    | <SheetyColors.GradientSlider; baseClass = UIControl; frame = (-2 226; 274 48); layer = <CALayer>>
    |    |    | <CAGradientLayer> (layer)
    |    |    | <CALayer> (layer)
    |    |    |    | <CALayer> (layer)
    |    |    |    | <_TtC12SheetyColorsP33_484746A459ABDEEC544DEF4AF835257327VerticallyCenteredTextLayer> (layer)
-   |    | <SheetyColors.GradientSlider; baseClass = UIControl; frame = (-2 291; 274 48); layer = <CALayer>>
+   |    | <SheetyColors.GradientSlider; baseClass = UIControl; frame = (-2 276; 274 48); layer = <CALayer>>
    |    |    | <CAGradientLayer> (layer)
    |    |    | <CALayer> (layer)
    |    |    |    | <CALayer> (layer)
    |    |    |    | <_TtC12SheetyColorsP33_484746A459ABDEEC544DEF4AF835257327VerticallyCenteredTextLayer> (layer)
-   |    | <SheetyColors.GradientSlider; baseClass = UIControl; frame = (-2 341; 274 48); layer = <CALayer>>
+   |    | <SheetyColors.GradientSlider; baseClass = UIControl; frame = (-2 326; 274 48); layer = <CALayer>>
    |    |    | <CAGradientLayer> (layer)
    |    |    | <CALayer> (layer)
    |    |    |    | <CALayer> (layer)

@@ -15,14 +15,15 @@ class SheetyColorsViewTests: QuickSpec {
     override func spec() {
         describe("The SheetyColorsViewController") {
             var sut: SheetyColorsViewController!
-
-            context("when RGB SheetyColors view is configured with alpha enabled") {
+            let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75)
+            var testConfig = SheetyColorsConfig(alphaEnabled: false, hapticFeedbackEnabled: false, initialColor: testColor, title: nil, message: nil, type: .rgb)
+            
+            context("when RGB SheetyColors view is configured with alpha disabled") {
                 beforeEach {
-                    let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75).rgbaColor
-                    let viewModel = RGBViewModel(withColorModel: testColor, isAlphaEnabled: false, hasTextOrMessage: true)
-                    sut = SheetyColorsViewController.create()
-                    sut.viewModel = viewModel
-                    sut.hapticFeedbackEnabled = false
+                    testConfig.alphaEnabled = false
+                    testConfig.type = .rgb
+                    let viewModel = RGBViewModel(withConfig: testConfig)
+                    sut = SheetyColorsViewController(viewModel: viewModel)
                     viewModel.viewDelegate = sut
                 }
 
@@ -68,13 +69,12 @@ class SheetyColorsViewTests: QuickSpec {
 //                }
             }
 
-            context("when RGB SheetyColors view is configured with alpha disabled") {
+            context("when RGB SheetyColors view is configured with alpha enabled") {
                 beforeEach {
-                    let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75).rgbaColor
-                    let viewModel = RGBViewModel(withColorModel: testColor, isAlphaEnabled: true, hasTextOrMessage: true)
-                    sut = SheetyColorsViewController.create()
-                    sut.viewModel = viewModel
-                    sut.hapticFeedbackEnabled = false
+                    testConfig.alphaEnabled = true
+                    testConfig.type = .rgb
+                    let viewModel = RGBViewModel(withConfig: testConfig)
+                    sut = SheetyColorsViewController(viewModel: viewModel)
                     viewModel.viewDelegate = sut
                 }
 
@@ -87,11 +87,10 @@ class SheetyColorsViewTests: QuickSpec {
 
             context("when HSB SheetyColors view is configured with alpha disabled") {
                 beforeEach {
-                    let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75).hsbaColor
-                    let viewModel = HSBViewModel(withColorModel: testColor, isAlphaEnabled: false, hasTextOrMessage: true)
-                    sut = SheetyColorsViewController.create()
-                    sut.viewModel = viewModel
-                    sut.hapticFeedbackEnabled = false
+                    testConfig.alphaEnabled = false
+                    testConfig.type = .hsb
+                    let viewModel = HSBViewModel(withConfig: testConfig)
+                    sut = SheetyColorsViewController(viewModel: viewModel)
                     viewModel.viewDelegate = sut
                 }
 
@@ -104,11 +103,10 @@ class SheetyColorsViewTests: QuickSpec {
 
             context("when HSB SheetyColors view is configured with alpha enabled") {
                 beforeEach {
-                    let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75).hsbaColor
-                    let viewModel = HSBViewModel(withColorModel: testColor, isAlphaEnabled: true, hasTextOrMessage: true)
-                    sut = SheetyColorsViewController.create()
-                    sut.viewModel = viewModel
-                    sut.hapticFeedbackEnabled = false
+                    testConfig.alphaEnabled = true
+                    testConfig.type = .hsb
+                    let viewModel = HSBViewModel(withConfig: testConfig)
+                    sut = SheetyColorsViewController(viewModel: viewModel)
                     viewModel.viewDelegate = sut
                 }
 
@@ -121,11 +119,10 @@ class SheetyColorsViewTests: QuickSpec {
 
             context("when Grayscale SheetyColors view is configured with alpha disabled") {
                 beforeEach {
-                    let testColor = UIColor(white: 0.5, alpha: 0.75).grayscaleColor
-                    let viewModel = GrayscaleViewModel(withColorModel: testColor, isAlphaEnabled: false, hasTextOrMessage: true)
-                    sut = SheetyColorsViewController.create()
-                    sut.viewModel = viewModel
-                    sut.hapticFeedbackEnabled = false
+                    testConfig.alphaEnabled = false
+                    testConfig.type = .grayscale
+                    let viewModel = GrayscaleViewModel(withConfig: testConfig)
+                    sut = SheetyColorsViewController(viewModel: viewModel)
                     viewModel.viewDelegate = sut
                 }
 
@@ -138,11 +135,10 @@ class SheetyColorsViewTests: QuickSpec {
 
             context("when Grayscale SheetyColors view is configured with alpha enabled") {
                 beforeEach {
-                    let testColor = UIColor(white: 0.5, alpha: 0.75).grayscaleColor
-                    let viewModel = GrayscaleViewModel(withColorModel: testColor, isAlphaEnabled: true, hasTextOrMessage: true)
-                    sut = SheetyColorsViewController.create()
-                    sut.viewModel = viewModel
-                    sut.hapticFeedbackEnabled = false
+                    testConfig.alphaEnabled = true
+                    testConfig.type = .grayscale
+                    let viewModel = GrayscaleViewModel(withConfig: testConfig)
+                    sut = SheetyColorsViewController(viewModel: viewModel)
                     viewModel.viewDelegate = sut
                 }
 
