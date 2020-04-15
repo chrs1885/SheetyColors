@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		22AA8832D7526E840D7FA916 /* Pods_SheetyColors_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87B5CDD8C9040B059B8C1536 /* Pods_SheetyColors_Example.framework */; };
+		443A8A252447636500487BAD /* HapticFeedbackProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443A8A242447636500487BAD /* HapticFeedbackProviderMock.swift */; };
 		44B496B12233C0AB00CF8B38 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B496B02233C0AB00CF8B38 /* ColorCell.swift */; };
 		44D0F1F4243148E7001DF988 /* SheetyColorsDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0F1F3243148E7001DF988 /* SheetyColorsDelegateMock.swift */; };
+		44D9423224445C81000B7F31 /* HexTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9423124445C81000B7F31 /* HexTextFieldTests.swift */; };
+		44D942352444C436000B7F31 /* UIColor+hexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D942342444C436000B7F31 /* UIColor+hexTests.swift */; };
+		44D942382444DA08000B7F31 /* HexTextFieldDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D942372444DA08000B7F31 /* HexTextFieldDelegateMock.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ColorsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ColorsCollectionViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -53,8 +57,12 @@
 		0E199A98F8761686DD180A4E /* SheetyColors.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SheetyColors.podspec; path = ../SheetyColors.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1BB8CE96911C8C57D7DDDF3A /* Pods_SheetyColors_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SheetyColors_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3697BB2765259F63B9A5841A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		443A8A242447636500487BAD /* HapticFeedbackProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackProviderMock.swift; sourceTree = "<group>"; };
 		44B496B02233C0AB00CF8B38 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		44D0F1F3243148E7001DF988 /* SheetyColorsDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetyColorsDelegateMock.swift; sourceTree = "<group>"; };
+		44D9423124445C81000B7F31 /* HexTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexTextFieldTests.swift; sourceTree = "<group>"; };
+		44D942342444C436000B7F31 /* UIColor+hexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hexTests.swift"; sourceTree = "<group>"; };
+		44D942372444DA08000B7F31 /* HexTextFieldDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexTextFieldDelegateMock.swift; sourceTree = "<group>"; };
 		553AD8A7258AE141F7908ED0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SheetyColors_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SheetyColors_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,6 +147,23 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		44D942332444C41D000B7F31 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				44D942342444C436000B7F31 /* UIColor+hexTests.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		44D942362444D9BC000B7F31 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				44D942372444DA08000B7F31 /* HexTextFieldDelegateMock.swift */,
+				443A8A242447636500487BAD /* HapticFeedbackProviderMock.swift */,
+			);
+			name = Mocks;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -217,9 +242,11 @@
 		83205EE22256812D00D62BB8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				44D942362444D9BC000B7F31 /* Mocks */,
 				83205EE32256813800D62BB8 /* Extensions */,
 				831FCF01225E62F8003C48A4 /* SheetyColorsViewTests.swift */,
 				83DDE21B2262204F005F4CEF /* GradientSliderTests.swift */,
+				44D9423124445C81000B7F31 /* HexTextFieldTests.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -365,6 +392,7 @@
 		83DDE21F2264FD06005F4CEF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				44D942332444C41D000B7F31 /* Extensions */,
 				83DDE2202264FD1C005F4CEF /* SheetyColorsConfigTests.swift */,
 			);
 			name = Models;
@@ -628,6 +656,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44D942382444DA08000B7F31 /* HexTextFieldDelegateMock.swift in Sources */,
 				832DCEFF226E4D7C00DAF3EF /* HSBViewModelTests.swift in Sources */,
 				832DCF03226F92E100DAF3EF /* UIColor+hsbaColorTests.swift in Sources */,
 				834A36E52249829300DECD37 /* SheetyColorsConfigMock.swift in Sources */,
@@ -636,13 +665,16 @@
 				83DDE21C2262204F005F4CEF /* GradientSliderTests.swift in Sources */,
 				834A36F2224E94FC00DECD37 /* SheetyColorsViewModelMock.swift in Sources */,
 				834A36E2224971F700DECD37 /* SheetyColorsViewFactoryTests.swift in Sources */,
+				44D942352444C436000B7F31 /* UIColor+hexTests.swift in Sources */,
 				831FCF0022591DFE003C48A4 /* UIAlertController+customViewTests.swift in Sources */,
 				831FCF02225E62F8003C48A4 /* SheetyColorsViewTests.swift in Sources */,
 				836D683D22F8B4C5005452FB /* AppearenceProviderMock.swift in Sources */,
 				44D0F1F4243148E7001DF988 /* SheetyColorsDelegateMock.swift in Sources */,
 				83537FC52273A01000E91C39 /* GrayscaleViewModel.swift in Sources */,
+				443A8A252447636500487BAD /* HapticFeedbackProviderMock.swift in Sources */,
 				83537FC222739E1400E91C39 /* UIColor+grayscaleColorTests.swift in Sources */,
 				834A36E8224E88F400DECD37 /* RGBViewModelTests.swift in Sources */,
+				44D9423224445C81000B7F31 /* HexTextFieldTests.swift in Sources */,
 				834A36ED224E8C7400DECD37 /* SheetyColorsViewDelegateMock.swift in Sources */,
 				834A36F4224E98F900DECD37 /* SheetyColorsViewMock.swift in Sources */,
 			);

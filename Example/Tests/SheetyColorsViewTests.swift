@@ -28,45 +28,45 @@ class SheetyColorsViewTests: QuickSpec {
                 }
 
                 it("renders a RGB SheetyColors view without an alpha slider") {
-                    assertSnapshot(matching: sut, as: .recursiveDescription(size: .init(width: 300, height: 400)))
-                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
-                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)), named: "rgb_without_alpha_normal")
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)), named: "rgb_without_alpha_wide")
                 }
 
-//                context("when start dragging a slider") {
-//                    var testSlider: GradientSlider!
-//
-//                    beforeEach {
-//                        testSlider = GradientSlider(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0))
-//                        sut.sliderDidStartEditing(testSlider)
-//                    }
-//
-//                    it("it unhides the labels") {
-//                        assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
-//                    }
-//
-//                    context("when changing a slider's position") {
-//                        beforeEach {
-//                            let activeSlider = sut.sliders[0]
-//                            activeSlider.value = 255.0
-//                            sut.sliderValueDidChange(activeSlider)
-//                        }
-//
-//                        it("it changes colors and labels accordingly") {
-//                            assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
-//                        }
-//                    }
-//
-//                    context("when lifting the finger after sliding") {
-//                        beforeEach {
-//                            sut.sliderDidStartEditing(testSlider)
-//                        }
-//
-//                        it("it hides the labels again") {
-//                            assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
-//                        }
-//                    }
-//                }
+                context("when start dragging a slider") {
+                    var testSlider: GradientSlider!
+
+                    beforeEach {
+                        testSlider = GradientSlider(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0))
+                        sut.viewDidLoad()
+                        sut.sliderDidStartEditing(testSlider)
+                    }
+
+                    it("it unhides the labels") {
+                        assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)), named: "rgb_dragging_slider_displays_labels")
+                    }
+
+                    context("when changing a slider's position") {
+                        beforeEach {
+                            let activeSlider = sut.sliders[0]
+                            activeSlider.value = 255.0
+                            sut.sliderValueDidChange(activeSlider)
+                        }
+
+                        it("it changes colors and labels accordingly") {
+                            assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)), named: "rgb_dragging_slider_changes_values")
+                        }
+                    }
+
+                    context("when lifting the finger after sliding") {
+                        beforeEach {
+                            sut.sliderDidStartEditing(testSlider)
+                        }
+
+                        it("it hides the labels again") {
+                            assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)), named: "rgb_stop_dragging_hides_labels")
+                        }
+                    }
+                }
             }
 
             context("when RGB SheetyColors view is configured with alpha enabled") {
@@ -79,9 +79,8 @@ class SheetyColorsViewTests: QuickSpec {
                 }
 
                 it("renders a RGB SheetyColors view with an alpha slider") {
-                    assertSnapshot(matching: sut, as: .recursiveDescription(size: .init(width: 300, height: 400)))
-                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
-                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)), named: "rgb_with_alpha_normal")
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)), named: "rgb_with_alpha_wide")
                 }
             }
 
@@ -95,9 +94,8 @@ class SheetyColorsViewTests: QuickSpec {
                 }
 
                 it("renders a HSB SheetyColors view without an alpha slider") {
-                    assertSnapshot(matching: sut, as: .recursiveDescription(size: .init(width: 300, height: 400)))
-                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
-                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)), named: "hsb_without_alpha_normal")
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)), named: "hsb_without_alpha_wide")
                 }
             }
 
@@ -111,9 +109,8 @@ class SheetyColorsViewTests: QuickSpec {
                 }
 
                 it("renders a HSB SheetyColors view with an alpha slider") {
-                    assertSnapshot(matching: sut, as: .recursiveDescription(size: .init(width: 300, height: 400)))
-                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
-                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)), named: "hsb_with_alpha_normal")
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)), named: "hsb_with_alpha_wide")
                 }
             }
 
@@ -127,9 +124,8 @@ class SheetyColorsViewTests: QuickSpec {
                 }
 
                 it("renders a Grayscale SheetyColors view without an alpha slider") {
-                    assertSnapshot(matching: sut, as: .recursiveDescription(size: .init(width: 300, height: 400)))
-                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
-                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)), named: "grayscale_without_alpha_normal")
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)), named: "grayscale_without_alpha_wide")
                 }
             }
 
@@ -143,9 +139,8 @@ class SheetyColorsViewTests: QuickSpec {
                 }
 
                 it("renders a Grayscale SheetyColors view with an alpha slider") {
-                    assertSnapshot(matching: sut, as: .recursiveDescription(size: .init(width: 300, height: 400)))
-                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)))
-                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)))
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 300, height: 400)), named: "grayscale_with_alpha_normal")
+                    assertSnapshot(matching: sut, as: .image(size: .init(width: 600, height: 400)), named: "grayscale_with_alpha_wide")
                 }
             }
         }

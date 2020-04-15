@@ -22,10 +22,10 @@ class HexTextField: UIView {
     
     private var button: UIButton!
     private var textFieldStackView: UIStackView!
-    private var textFields = [UITextField]()
     private var underlineViews = [UIView]()
     private var lastHexValue: String?
     private var hapticFeedbackProvider: HapticFeedbackProviderProtocol?
+    var textFields = [UITextField]()
     
     weak var delegate: HexTextFieldDelegate?
     var textColor: UIColor = .white {
@@ -122,23 +122,11 @@ extension HexTextField {
 // MARK: - Text Field Highlighting
 
 extension HexTextField {
-    @objc private func buttonPressed() {
+    @objc func buttonPressed() {
         textFields.first?.becomeFirstResponder()
         setSelectedTextField(at: 0)
         for element in textFields {
             element.text = ""
-        }
-    }
-    
-    private func setSelectedTextField(at index: Int?) {
-        for i in 0 ..< Constants.numberOfTextFields {
-            let underline = underlineViews[i]
-
-            if i == index {
-                underline.blink()
-            } else {
-                underline.layer.removeAllAnimations()
-            }
         }
     }
     
@@ -150,6 +138,18 @@ extension HexTextField {
         for textField in textFields {
             if textField.isFirstResponder {
                 textField.resignFirstResponder()
+            }
+        }
+    }
+    
+    private func setSelectedTextField(at index: Int?) {
+        for i in 0 ..< Constants.numberOfTextFields {
+            let underline = underlineViews[i]
+
+            if i == index {
+                underline.blink()
+            } else {
+                underline.layer.removeAllAnimations()
             }
         }
     }
