@@ -5,7 +5,7 @@
 //  Created by Wendt, Christoph on 10.04.20.
 //
 
-import Foundation
+import UIKit
 
 class HapticFeedbackProvider: HapticFeedbackProviderProtocol {
     private var selectionFeedback: UISelectionFeedbackGenerator?

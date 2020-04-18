@@ -6,6 +6,7 @@
 //
 
 import CoreGraphics
+import UIKit
 
 protocol SheetyColorsViewModelProtocol {
     var viewDelegate: SheetyColorsViewDelegate? { get set }
