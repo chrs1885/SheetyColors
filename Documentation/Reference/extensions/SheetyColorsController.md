@@ -21,4 +21,4 @@ convenience init(withConfig config: SheetyColorsConfigProtocol)
 > Creates a SheetyColorsController instance.
 >
 > - Parameter:
->     - config: A config object containing options for specifying the look and feel of a SheetyColors view.
+> - config: A config object containing options for specifying the look and feel of a SheetyColors view.

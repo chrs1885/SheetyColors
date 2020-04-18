@@ -6,7 +6,7 @@
 public protocol SheetyColorProtocol: Codable
 ```
 
-> A protocol defining a color object provided by the SheetyColors view..
+> A protocol defining a color object provided by the SheetyColors view.
 
 ## Properties
 ### `uiColor`
