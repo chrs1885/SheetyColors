@@ -1,3 +1,7 @@
+## Version 1.2.0
+### Features
+* [Hex color input field](https://github.com/chrs1885/SheetyColors/issues/15)
+
 ## Version 1.1.0
 ### Features
 * SwiftUI support
