@@ -1,6 +1,6 @@
 ![Cocoapods(https://cocoapods.org/pods/SheetyColors)](https://img.shields.io/cocoapods/v/SheetyColors.svg)
 [![Carthage compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
-![SwiftUI Ready](https://img.shields.io/badge/SwiftUI-Ready-yellow)
+![UIKit & SwiftUI](https://img.shields.io/badge/iOS-UIKit%20%26%20SwiftUI-yellow)
 ![iOS 13 Ready](https://img.shields.io/badge/iOS%2013-Ready-blueviolet)
 ![Swift](https://img.shields.io/badge/swift-5.0-red.svg)
 [![Build Status](https://app.bitrise.io/app/e955e72e7da4b8c0/status.svg?token=wOm6zBpCFw7ZeP8gJdDE_A&branch=develop)](https://app.bitrise.io/app/e955e72e7da4b8c0)
@@ -12,11 +12,15 @@
 
 **SheetyColors** is an action sheet styled color picker for iOS:
 
-- **Based on UIAlertController:** The SheetyColors API is based on UIKit's `UIAlertController`. Simply add buttons to it as you would for any other Action Sheet by defining `UIAlertAction` instances. Therefore, it nicely integrates with the look & feel of all other native system dialogs. However, you can also chose to use the color picker it self without an action sheet.
-- **SwiftUI support:** SheetyColors can also be used as part of your SwiftUI projects. Have a look at the *Usage* section to get further info.
-- **iOS 13 ready:** SheetyColors has been tested on devices running iOS 13 Beta. The library is also optimized to work well with the new Dark Mode.
-- **Fully configurable:** You can choose between a variety of configurations such as a color model (RGB, HSB, or Grayscale), alpha component support, haptic feedback, text/message label, and many more.
-- **Intuitive UI:** Each slider comes with a gradient that gives you an idea of how changing individual slider values affects the resulting color.
+- 📱 **Based on UIAlertController:** The SheetyColors API is based on UIKit's `UIAlertController`. Simply add buttons to it as you would for any other Action Sheet by defining `UIAlertAction` instances. Therefore, it nicely integrates with the look & feel of all other native system dialogs. However, you can also chose to use the color picker it self without an action sheet.
+- 🎨 **Fully configurable:** You can choose between a variety of configurations such as 
+	- color model (RGB, HSB, or Grayscale)
+	- alpha component support
+	- haptic feedback
+	- text/message label
+- 🎚️ **Sliders and HEX-input:** You can create new colors by either using sliders or the newly added HEX-input.
+- 👶 **Intuitive UI:** Each slider comes with a gradient that gives you an idea of how changing individual slider values affects the resulting color. All controls do support haptic feedback and will react to any errors such as invalid HEX values.
+- 🍏 **SwiftUI & iOS 13 support:** SheetyColors can also be used as part of your SwiftUI projects. Have a look at the *Usage* section to get further info. The library is also optimized to work well with the new Dark Mode.
 
 |RGB, HSB, and Grayscale|Fully configurable|Dark mode support|
 | :-: | :-: | :-: |
