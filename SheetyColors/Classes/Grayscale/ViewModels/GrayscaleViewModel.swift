@@ -6,6 +6,7 @@
 //
 
 import CoreGraphics
+import UIKit
 
 private enum SliderType: Int, CaseIterable {
     case white, alpha
