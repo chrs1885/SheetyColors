@@ -19,7 +19,7 @@ class PreviewColorView: UIView {
     var transparencyPatternLayer: CALayer!
     var isColorViewLabelShown: Bool!
     var hapticFeedbackProvider: HapticFeedbackProviderProtocol?
-    
+
     var color: UIColor = .clear {
         didSet {
             colorLayer?.backgroundColor = color.cgColor
@@ -129,7 +129,7 @@ class PreviewColorView: UIView {
         #warning("This constraint needs to have a lower prio, since it will always break if you are using the picker outside of an action sheet")
         anchor(heightConstant: 100.0)
         infoButton.anchor(top: topAnchor, paddingTop: 10.0, right: rightAnchor, paddingRight: 10.0)
-        
+
         let keysyStackView = UIStackView(arrangedSubviews: [primaryTitleLabel, hexTitleLabel])
         keysyStackView.axis = .vertical
         keysyStackView.alignment = .leading
@@ -152,7 +152,7 @@ class PreviewColorView: UIView {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         addGestureRecognizer(tap)
     }
-    
+
     private func setupTextFieldHandler() {
         hexValueTextField.delegate = self
     }
@@ -172,7 +172,7 @@ extension PreviewColorView {
         if isColorViewLabelShown {
             hexValueTextField.unselectTextField()
             hideLabels()
-            
+
         } else {
             displayLabels()
         }
@@ -188,11 +188,10 @@ extension PreviewColorView {
 // MARK: - Handle User Interaction
 
 extension PreviewColorView: HexTextFieldDelegate {
-    func hexTextField(_ hextTextField: HexTextField, didEditHexValue value: String) {
+    func hexTextField(_: HexTextField, didEditHexValue value: String) {
         delegate?.previewColorView(self, didEditHexValue: value)
     }
 }
-
 
 // MARK: - Animations
 

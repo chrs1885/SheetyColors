@@ -25,10 +25,10 @@ class HSBViewModel {
     }()
 
     init(withConfig config: SheetyColorsConfigProtocol) {
-        self.colorModel = config.initialColor.hsbaColor
-        self.hasTextOrMessage = config.title != nil || config.message != nil
-        self.isAlphaEnabled = config.alphaEnabled
-        self.isHapticFeedbackEnabled = config.hapticFeedbackEnabled
+        colorModel = config.initialColor.hsbaColor
+        hasTextOrMessage = config.title != nil || config.message != nil
+        isAlphaEnabled = config.alphaEnabled
+        isHapticFeedbackEnabled = config.hapticFeedbackEnabled
     }
 }
 
@@ -168,7 +168,7 @@ extension HSBViewModel: SheetyColorsViewModelProtocol {
         viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: false)
         delegate?.didSelectColor(colorModel.uiColor)
     }
-    
+
     func hexValueChanged(withColor color: UIColor) {
         colorModel = color.hsbaColor
         viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: true)

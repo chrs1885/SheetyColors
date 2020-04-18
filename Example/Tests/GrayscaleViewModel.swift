@@ -20,7 +20,6 @@ class GrayscaleViewModelTests: QuickSpec {
             context("after initialization") {
                 let testColorModel = GrayscaleColor(white: 120.0, alpha: 69.0)
                 let testConfig = SheetyColorsConfig(alphaEnabled: true, hapticFeedbackEnabled: true, initialColor: testColorModel.uiColor, title: "title", message: "message", type: .grayscale)
-                
 
                 beforeEach {
                     viewDelegateMock = SheetyColorsViewDelegateMock()

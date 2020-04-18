@@ -12,8 +12,8 @@ import Foundation
 class HexTextFieldDelegateMock: HexTextFieldDelegate {
     var didEditHexValue = false
     var hexValue: String?
-    
-    func hexTextField(_ hextTextField: HexTextField, didEditHexValue value: String) {
+
+    func hexTextField(_: HexTextField, didEditHexValue value: String) {
         didEditHexValue = true
         hexValue = value
     }
