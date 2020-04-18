@@ -103,8 +103,8 @@ class SheetyColorsViewFactoryTests: QuickSpec {
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
                 }
 
-                it("sets hapticFeedbackEnabled on the view controller to true") {
-                    expect(view.hapticFeedbackEnabled).to(beTrue())
+                it("sets the HapticFeedbackProvider instance") {
+                    expect(view.hapticFeedbackProvider).toNot(beNil())
                 }
             }
 
@@ -114,8 +114,8 @@ class SheetyColorsViewFactoryTests: QuickSpec {
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
                 }
 
-                it("sets hapticFeedbackEnabled on the view controller to false") {
-                    expect(view.hapticFeedbackEnabled).to(beFalse())
+                it("doesn't set the HapticFeedbackProvider instance") {
+                    expect(view.hapticFeedbackProvider).to(beNil())
                 }
             }
 

@@ -18,17 +18,13 @@ class RGBViewModelTests: QuickSpec {
             var delegateMock: SheetyColorsDelegateMock!
 
             context("after initialization") {
-                var testColorModel: RGBAColor!
-                var testIsAlphaEnabled: Bool!
-                var testHasTextOrMessage: Bool!
+                let testColorModel = RGBAColor(red: 10.0, green: 11.0, blue: 12.0, alpha: 13.0)
+                let testConfig = SheetyColorsConfig(alphaEnabled: true, hapticFeedbackEnabled: true, initialColor: testColorModel.uiColor, title: "title", message: "message", type: .rgb)
 
                 beforeEach {
                     viewDelegateMock = SheetyColorsViewDelegateMock()
                     delegateMock = SheetyColorsDelegateMock()
-                    testIsAlphaEnabled = true
-                    testHasTextOrMessage = true
-                    testColorModel = RGBAColor(red: 10.0, green: 11.0, blue: 12.0, alpha: 13.0)
-                    sut = RGBViewModel(withColorModel: testColorModel, isAlphaEnabled: testIsAlphaEnabled, hasTextOrMessage: testHasTextOrMessage)
+                    sut = RGBViewModel(withConfig: testConfig)
                     sut.viewDelegate = viewDelegateMock
                     sut.delegate = delegateMock
                 }
@@ -39,7 +35,7 @@ class RGBViewModelTests: QuickSpec {
 
                 context("when calling hasTextOrMessage property") {
                     it("returns the correct state") {
-                        expect(sut!.hasTextOrMessage).to(equal(testHasTextOrMessage))
+                        expect(sut!.hasTextOrMessage).to(beTrue())
                     }
                 }
 

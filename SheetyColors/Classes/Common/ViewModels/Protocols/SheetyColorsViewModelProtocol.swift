@@ -10,6 +10,7 @@ import CoreGraphics
 protocol SheetyColorsViewModelProtocol {
     var viewDelegate: SheetyColorsViewDelegate? { get set }
     var delegate: SheetyColorsDelegate? { get set }
+    var isHapticFeedbackEnabled: Bool { get }
     var hasTextOrMessage: Bool { get }
     var primaryKeyText: String { get }
     var primaryValueText: String { get }
@@ -27,4 +28,5 @@ protocol SheetyColorsViewModelProtocol {
     func thumbText(forSliderAt index: Int) -> String?
     func thumbIconName(forSliderAt index: Int) -> String?
     func sliderValueChanged(forSliderAt index: Int, value: CGFloat)
+    func hexValueChanged(withColor color: UIColor)
 }

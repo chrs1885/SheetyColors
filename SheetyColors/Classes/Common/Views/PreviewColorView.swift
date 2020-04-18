@@ -8,35 +8,39 @@ import Capable
 import UIKit
 
 class PreviewColorView: UIView {
-    var primaryKeyLabel: UILabel!
+    weak var delegate: PreviewColorViewDelegate?
+    var primaryTitleLabel: UILabel!
     var primaryValueLabel: UILabel!
-    var secondaryKeyLabel: UILabel!
-    var secondaryValueLabel: UILabel!
+    var hexTitleLabel: UILabel!
+    var hexValueTextField: HexTextField!
     var infoButton: UIButton!
     var labelStackView: UIStackView!
     var colorLayer: CALayer!
     var transparencyPatternLayer: CALayer!
     var isColorViewLabelShown: Bool!
-
+    var hapticFeedbackProvider: HapticFeedbackProviderProtocol?
+    
     var color: UIColor = .clear {
         didSet {
             colorLayer?.backgroundColor = color.cgColor
+            hexValueTextField.unselectTextField()
             updateTextColor()
         }
     }
 
     var textColor: UIColor = .clear {
         didSet {
-            for label in [primaryKeyLabel, primaryValueLabel, secondaryKeyLabel, secondaryValueLabel] {
+            for label in [primaryTitleLabel, primaryValueLabel, hexTitleLabel] {
                 label?.textColor = textColor
             }
+            hexValueTextField.textColor = textColor
             infoButton.tintColor = textColor
         }
     }
 
     var primaryKeyText: String = "" {
         didSet {
-            primaryKeyLabel.text = primaryKeyText
+            primaryTitleLabel.text = primaryKeyText
         }
     }
 
@@ -46,33 +50,35 @@ class PreviewColorView: UIView {
         }
     }
 
-    var secondaryKeyText: String = "" {
+    var hexKeyText: String = "" {
         didSet {
-            secondaryKeyLabel.text = secondaryKeyText
+            hexTitleLabel.text = hexKeyText
         }
     }
 
-    var secondaryValueText: String = "" {
+    var hexValueText: String = "" {
         didSet {
-            secondaryValueLabel.text = secondaryValueText
+            hexValueTextField.text = hexValueText
         }
     }
 
-    convenience init(withColor color: UIColor) {
+    convenience init(withColor color: UIColor, hapticFeedbackProvider: HapticFeedbackProviderProtocol? = nil) {
         self.init(frame: .zero)
         self.color = color
+        self.hapticFeedbackProvider = hapticFeedbackProvider
         colorLayer.backgroundColor = self.color.cgColor
         updateTextColor()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        isColorViewLabelShown = false
+        isColorViewLabelShown = true
         setupColorView()
         setupLabels()
         setupButton()
-        setupConstraints()
+        setupLayout()
         setupGestureRecognizer()
+        setupTextFieldHandler()
         updateLabelVisibility(withDuration: 0.0)
     }
 
@@ -101,34 +107,16 @@ class PreviewColorView: UIView {
     }
 
     private func setupLabels() {
-        primaryKeyLabel = UILabel(frame: .zero)
+        primaryTitleLabel = UILabel(frame: .zero)
         primaryValueLabel = UILabel(frame: .zero)
-        secondaryKeyLabel = UILabel(frame: .zero)
-        secondaryValueLabel = UILabel(frame: .zero)
+        hexTitleLabel = UILabel(frame: .zero)
+        hexValueTextField = HexTextField(hapticFeedbackProvider: hapticFeedbackProvider)
 
-        let keyLabels = [primaryKeyLabel, secondaryKeyLabel]
-        let valueLabels = [primaryValueLabel, secondaryValueLabel]
-
-        for label in keyLabels {
+        for label in [primaryTitleLabel, hexTitleLabel] {
             label?.font = UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: .regular)
         }
 
-        for label in valueLabels {
-            label?.font = UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: .light)
-        }
-
-        guard let keyViews = keyLabels as? [UIView], let valueViews = valueLabels as? [UIView] else { return }
-
-        let keyLabelStackView = UIStackView(arrangedSubviews: keyViews)
-        keyLabelStackView.axis = .vertical
-
-        let valueLabelStackView = UIStackView(arrangedSubviews: valueViews)
-        valueLabelStackView.axis = .vertical
-
-        labelStackView = UIStackView(arrangedSubviews: [keyLabelStackView, valueLabelStackView])
-        labelStackView.axis = .horizontal
-        labelStackView.spacing = 8.0
-        addSubview(labelStackView)
+        primaryValueLabel?.font = UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: .light)
     }
 
     private func setupButton() {
@@ -137,15 +125,36 @@ class PreviewColorView: UIView {
         infoButton.addTarget(self, action: #selector(infoButtonPressed(_:)), for: .touchUpInside)
     }
 
-    private func setupConstraints() {
+    private func setupLayout() {
+        #warning("This constraint needs to have a lower prio, since it will always break if you are using the picker outside of an action sheet")
         anchor(heightConstant: 100.0)
-        labelStackView.anchor(top: topAnchor, paddingTop: 10.0, left: leftAnchor, paddingLeft: 10.0)
         infoButton.anchor(top: topAnchor, paddingTop: 10.0, right: rightAnchor, paddingRight: 10.0)
+        
+        let keysyStackView = UIStackView(arrangedSubviews: [primaryTitleLabel, hexTitleLabel])
+        keysyStackView.axis = .vertical
+        keysyStackView.alignment = .leading
+        keysyStackView.spacing = 4.0
+
+        let valuesStackView = UIStackView(arrangedSubviews: [primaryValueLabel, hexValueTextField])
+        valuesStackView.axis = .vertical
+        valuesStackView.alignment = .leading
+        valuesStackView.spacing = 4.0
+
+        labelStackView = UIStackView(arrangedSubviews: [keysyStackView, valuesStackView])
+        labelStackView.axis = .horizontal
+        labelStackView.alignment = .top
+        labelStackView.spacing = 8.0
+        addSubview(labelStackView)
+        labelStackView.anchor(top: topAnchor, paddingTop: 10.0, left: leftAnchor, paddingLeft: 10.0)
     }
 
     private func setupGestureRecognizer() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         addGestureRecognizer(tap)
+    }
+    
+    private func setupTextFieldHandler() {
+        hexValueTextField.delegate = self
     }
 
     override func layoutSubviews() {
@@ -161,7 +170,9 @@ class PreviewColorView: UIView {
 extension PreviewColorView {
     @objc func handleTap(_: UIView) {
         if isColorViewLabelShown {
+            hexValueTextField.unselectTextField()
             hideLabels()
+            
         } else {
             displayLabels()
         }
@@ -173,6 +184,15 @@ extension PreviewColorView {
         }
     }
 }
+
+// MARK: - Handle User Interaction
+
+extension PreviewColorView: HexTextFieldDelegate {
+    func hexTextField(_ hextTextField: HexTextField, didEditHexValue value: String) {
+        delegate?.previewColorView(self, didEditHexValue: value)
+    }
+}
+
 
 // MARK: - Animations
 
@@ -193,9 +213,10 @@ extension PreviewColorView {
 
     func updateLabelVisibility(withDuration duration: TimeInterval) {
         UIView.animate(withDuration: duration) {
-            for label in [self.primaryKeyLabel, self.primaryValueLabel, self.secondaryKeyLabel, self.secondaryValueLabel] {
+            for label in [self.primaryTitleLabel, self.primaryValueLabel, self.hexTitleLabel] {
                 label?.alpha = self.isColorViewLabelShown ? 1.0 : 0.0
             }
+            self.hexValueTextField?.alpha = self.isColorViewLabelShown ? 1.0 : 0.0
             self.infoButton.alpha = self.isColorViewLabelShown ? 0.0 : 1.0
         }
     }

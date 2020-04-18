@@ -20,20 +20,17 @@ public struct SheetyColorsViewFactory {
      */
     public static func createView(withConfig config: SheetyColorsConfigProtocol, delegate: SheetyColorsDelegate? = nil) -> SheetyColorsViewController {
         var viewModel: SheetyColorsViewModelProtocol
-        let hasTextOrMessage: Bool = config.title != nil || config.message != nil
 
         switch config.type {
         case .grayscale:
-            viewModel = GrayscaleViewModel(withColorModel: config.initialColor.grayscaleColor, isAlphaEnabled: config.alphaEnabled, hasTextOrMessage: hasTextOrMessage)
+            viewModel = GrayscaleViewModel(withConfig: config)
         case .hsb:
-            viewModel = HSBViewModel(withColorModel: config.initialColor.hsbaColor, isAlphaEnabled: config.alphaEnabled, hasTextOrMessage: hasTextOrMessage)
+            viewModel = HSBViewModel(withConfig: config)
         case .rgb:
-            viewModel = RGBViewModel(withColorModel: config.initialColor.rgbaColor, isAlphaEnabled: config.alphaEnabled, hasTextOrMessage: hasTextOrMessage)
+            viewModel = RGBViewModel(withConfig: config)
         }
 
-        let viewController = SheetyColorsViewController.create()
-        viewController.viewModel = viewModel
-        viewController.hapticFeedbackEnabled = config.hapticFeedbackEnabled
+        let viewController = SheetyColorsViewController(viewModel: viewModel)
         viewModel.viewDelegate = viewController
         viewModel.delegate = delegate
 

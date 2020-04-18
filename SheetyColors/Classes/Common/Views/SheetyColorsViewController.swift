@@ -12,19 +12,26 @@ import UIKit
 public class SheetyColorsViewController: UIViewController, SheetyColorsViewControllerProtocol {
     private var previewColorView: PreviewColorView!
     private var stackView: UIStackView!
-    private var selectionFeedback: UISelectionFeedbackGenerator?
-    var viewModel: SheetyColorsViewModelProtocol!
-    var hapticFeedbackEnabled: Bool = false
+    var hapticFeedbackProvider: HapticFeedbackProviderProtocol?
+    var viewModel: SheetyColorsViewModelProtocol
     var sliders: [GradientSlider] = []
 
     var previewColor: UIColor {
         return viewModel.previewColorModel.uiColor
     }
 
-    class func create() -> SheetyColorsViewController {
-        return SheetyColorsViewController(nibName: "SheetyColorsViewController", bundle: Bundle.framework)
+    init(viewModel: SheetyColorsViewModelProtocol) {
+        self.viewModel = viewModel
+        if viewModel.isHapticFeedbackEnabled {
+            hapticFeedbackProvider = HapticFeedbackProvider()
+        }
+        super.init(nibName: nil, bundle: nil)
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -66,11 +73,12 @@ extension SheetyColorsViewController {
     }
 
     func setupPreviewColorView() {
-        previewColorView = PreviewColorView(withColor: viewModel.previewColorModel.uiColor)
+        previewColorView = PreviewColorView(withColor: viewModel.previewColorModel.uiColor, hapticFeedbackProvider: hapticFeedbackProvider)
         previewColorView.primaryKeyText = viewModel.primaryKeyText
         previewColorView.primaryValueText = viewModel.primaryValueText
-        previewColorView.secondaryKeyText = viewModel.secondaryKeyText
-        previewColorView.secondaryValueText = viewModel.secondaryValueText
+        previewColorView.hexKeyText = viewModel.secondaryKeyText
+        previewColorView.hexValueText = viewModel.secondaryValueText
+        previewColorView.delegate = self
     }
 
     func setupStackView() {
@@ -97,10 +105,6 @@ extension SheetyColorsViewController {
 
 extension SheetyColorsViewController {
     @objc func sliderDidStartEditing(_: GradientSlider) {
-        if hapticFeedbackEnabled {
-            selectionFeedback = UISelectionFeedbackGenerator()
-        }
-
         previewColorView.displayLabels()
     }
 
@@ -109,14 +113,11 @@ extension SheetyColorsViewController {
             viewModel.sliderValueChanged(forSliderAt: index, value: sender.value)
         }
 
-        if hapticFeedbackEnabled {
-            selectionFeedback?.prepare()
-            selectionFeedback?.selectionChanged()
-        }
+        hapticFeedbackProvider?.generateSelectionFeedback()
     }
 
     @objc func sliderDidEndEditing(_: GradientSlider) {
-        selectionFeedback = nil
+        hapticFeedbackProvider?.resetSelectionFeedback()
         previewColorView.hideLabels()
     }
 }
@@ -124,17 +125,31 @@ extension SheetyColorsViewController {
 // MARK: - Data binding
 
 extension SheetyColorsViewController: SheetyColorsViewDelegate {
-    func didUpdateColorComponent(in viewModel: SheetyColorsViewModelProtocol) {
+    func didUpdateColorComponent(in viewModel: SheetyColorsViewModelProtocol, shouldAnimate: Bool) {
         previewColorView.primaryValueText = viewModel.primaryValueText
-        previewColorView.secondaryValueText = viewModel.secondaryValueText
+        previewColorView.hexValueText = viewModel.secondaryValueText
 
-        CATransaction.setValue(true, forKey: kCATransactionDisableActions)
+        if (!shouldAnimate) {
+            CATransaction.setValue(true, forKey: kCATransactionDisableActions)
+        }
+        
         previewColorView.color = viewModel.previewColorModel.uiColor
         for index in 0 ..< viewModel.numberOfSliders {
             let slider = sliders[index]
+            slider.value = viewModel.value(forSliderAt: index)
             slider.minColor = viewModel.minimumColorModel(forSliderAt: index).uiColor
             slider.maxColor = viewModel.maximumColorModel(forSliderAt: index).uiColor
         }
         CATransaction.commit()
+    }
+}
+
+// MARK: - PreviewColorViewDelegate
+
+extension SheetyColorsViewController: PreviewColorViewDelegate {
+    func previewColorView(_ previewColorView: PreviewColorView, didEditHexValue value: String) {
+        guard let color = UIColor(hex: value) else { return }
+        
+        viewModel.hexValueChanged(withColor: color)
     }
 }
