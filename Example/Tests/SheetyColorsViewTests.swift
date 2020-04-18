@@ -17,7 +17,7 @@ class SheetyColorsViewTests: QuickSpec {
             var sut: SheetyColorsViewController!
             let testColor = UIColor(red: 0.0, green: 0.25, blue: 0.5, alpha: 0.75)
             var testConfig = SheetyColorsConfig(alphaEnabled: false, hapticFeedbackEnabled: false, initialColor: testColor, title: nil, message: nil, type: .rgb)
-            
+
             context("when RGB SheetyColors view is configured with alpha disabled") {
                 beforeEach {
                     testConfig.alphaEnabled = false

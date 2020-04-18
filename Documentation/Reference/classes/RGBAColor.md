@@ -18,10 +18,10 @@ public init(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
 > Creates a RGBAColor instance.
 >
 > - Parameter:
->     - red: The red component.
->     - green: The green component.
->     - blue: The blue component.
->     - alpha: The opacity component.
+> - red: The red component.
+> - green: The green component.
+> - blue: The blue component.
+> - alpha: The opacity component.
 
 ### `copy(with:)`
 

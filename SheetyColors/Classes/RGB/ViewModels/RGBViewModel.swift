@@ -25,14 +25,14 @@ class RGBViewModel {
     }()
 
     init(withConfig config: SheetyColorsConfigProtocol) {
-        self.colorModel = config.initialColor.rgbaColor
-        self.hasTextOrMessage = config.title != nil || config.message != nil
-        self.isAlphaEnabled = config.alphaEnabled
-        self.isHapticFeedbackEnabled = config.hapticFeedbackEnabled
+        colorModel = config.initialColor.rgbaColor
+        hasTextOrMessage = config.title != nil || config.message != nil
+        isAlphaEnabled = config.alphaEnabled
+        isHapticFeedbackEnabled = config.hapticFeedbackEnabled
     }
 }
 
-extension RGBViewModel: SheetyColorsViewModelProtocol {    
+extension RGBViewModel: SheetyColorsViewModelProtocol {
     var primaryKeyText: String {
         return "RGB"
     }
@@ -165,7 +165,7 @@ extension RGBViewModel: SheetyColorsViewModelProtocol {
         viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: false)
         delegate?.didSelectColor(colorModel.uiColor)
     }
-    
+
     func hexValueChanged(withColor color: UIColor) {
         colorModel = color.rgbaColor
         viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: true)

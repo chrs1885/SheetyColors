@@ -7,9 +7,9 @@
 //
 
 import Nimble
-import SnapshotTesting
 import Quick
 @testable import SheetyColors
+import SnapshotTesting
 
 class GradientSliderTests: QuickSpec {
     override func spec() {

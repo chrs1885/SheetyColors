@@ -27,11 +27,11 @@ public class SheetyColorsViewController: UIViewController, SheetyColorsViewContr
         }
         super.init(nibName: nil, bundle: nil)
     }
-    
-    required init?(coder: NSCoder) {
+
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     public override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -129,10 +129,10 @@ extension SheetyColorsViewController: SheetyColorsViewDelegate {
         previewColorView.primaryValueText = viewModel.primaryValueText
         previewColorView.hexValueText = viewModel.secondaryValueText
 
-        if (!shouldAnimate) {
+        if !shouldAnimate {
             CATransaction.setValue(true, forKey: kCATransactionDisableActions)
         }
-        
+
         previewColorView.color = viewModel.previewColorModel.uiColor
         for index in 0 ..< viewModel.numberOfSliders {
             let slider = sliders[index]
@@ -147,9 +147,9 @@ extension SheetyColorsViewController: SheetyColorsViewDelegate {
 // MARK: - PreviewColorViewDelegate
 
 extension SheetyColorsViewController: PreviewColorViewDelegate {
-    func previewColorView(_ previewColorView: PreviewColorView, didEditHexValue value: String) {
+    func previewColorView(_: PreviewColorView, didEditHexValue value: String) {
         guard let color = UIColor(hex: value) else { return }
-        
+
         viewModel.hexValueChanged(withColor: color)
     }
 }

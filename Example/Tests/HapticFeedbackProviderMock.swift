@@ -14,19 +14,19 @@ class HapticFeedbackProviderMock: HapticFeedbackProviderProtocol {
     var didCallGenerateSelectionFeedback = false
     var didCallGenerateErrorFeedback = false
     var didCallResetSelectionFeedback = false
-    
+
     func generateInputFeedback() {
         didCallGenerateInputFeedback = true
     }
-    
+
     func generateSelectionFeedback() {
         didCallGenerateSelectionFeedback = true
     }
-    
+
     func generateErrorFeedback() {
         didCallGenerateErrorFeedback = true
     }
-    
+
     func resetSelectionFeedback() {
         didCallResetSelectionFeedback = true
     }

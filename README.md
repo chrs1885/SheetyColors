@@ -18,14 +18,15 @@
 	- alpha component support
 	- haptic feedback
 	- text/message label
-- 🎚️ **Sliders and HEX-input:** You can create new colors by either using sliders or the newly added HEX-input.
-- 👶 **Intuitive UI:** Each slider comes with a gradient that gives you an idea of how changing individual slider values affects the resulting color. All controls do support haptic feedback and will react to any errors such as invalid HEX values.
+- 🎚️ **Sliders and Hex input:** You can create new colors by either using sliders or the newly added Hex input.
+- 👶 **Intuitive UI:** Each slider comes with a gradient that gives you an idea of how changing individual slider values affects the resulting color. All controls do support haptic feedback and will react to any errors such as invalid Hex values.
 - 🍏 **SwiftUI & iOS 13 support:** SheetyColors can also be used as part of your SwiftUI projects. Have a look at the *Usage* section to get further info. The library is also optimized to work well with the new Dark Mode.
 
-|RGB, HSB, and Grayscale|Fully configurable|Dark mode support|
-| :-: | :-: | :-: |
-|![Color picker supporting RGB, HSB, and Grayscale][minimum_config]|![Fully configurable][fully_configurable]|![Dark mode support][dark_mode]|
+| NEW: Hex input |RGB, HSB, and Grayscale|Fully configurable|Dark mode support|
+| :-: | :-: | :-: | :-: |
+|![Color picker supporting RGB, HSB, and Grayscale][hex_input]|![Color picker supporting RGB, HSB, and Grayscale][minimum_config]|![Fully configurable][fully_configurable]|![Dark mode support][dark_mode]|
 
+[hex_input]: ./Documentation/hex_input.gif "New Hex input field"
 [minimum_config]: ./Documentation/demo_minimum_configuration.png "Color picker supporting RGB, HSB, and Grayscale"
 [fully_configurable]: ./Documentation/demo_customizable.png "Fully configurable"
 [dark_mode]: ./Documentation/demo_dark_mode.png "Dark mode support"
@@ -53,7 +54,7 @@ end
 
 ```ruby
 dependencies: [
-    .package(url: "https://github.com/chrs1885/SheetyColors.git", from: "1.1.0")
+    .package(url: "https://github.com/chrs1885/SheetyColors.git", from: "1.2.0")
 ]
 ```
 

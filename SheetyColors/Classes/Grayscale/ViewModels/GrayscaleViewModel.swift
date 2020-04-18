@@ -25,10 +25,10 @@ class GrayscaleViewModel {
     }()
 
     init(withConfig config: SheetyColorsConfigProtocol) {
-        self.colorModel = config.initialColor.grayscaleColor
-        self.hasTextOrMessage = config.title != nil || config.message != nil
-        self.isAlphaEnabled = config.alphaEnabled
-        self.isHapticFeedbackEnabled = config.hapticFeedbackEnabled
+        colorModel = config.initialColor.grayscaleColor
+        hasTextOrMessage = config.title != nil || config.message != nil
+        isAlphaEnabled = config.alphaEnabled
+        isHapticFeedbackEnabled = config.hapticFeedbackEnabled
     }
 }
 
@@ -140,7 +140,7 @@ extension GrayscaleViewModel: SheetyColorsViewModelProtocol {
         viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: false)
         delegate?.didSelectColor(colorModel.uiColor)
     }
-    
+
     func hexValueChanged(withColor color: UIColor) {
         colorModel = color.grayscaleColor
         viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: true)
