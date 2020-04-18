@@ -26,3 +26,10 @@ var rgbaColor: RGBAColor
 ```
 
 > The RGBAColor representation of the UIColor instance.
+
+## Methods
+### `init(hex:)`
+
+```swift
+public convenience init?(hex: String)
+```

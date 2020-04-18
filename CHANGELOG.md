@@ -1,11 +1,15 @@
+## Version 1.2.0
+### Features
+* [Hex color input field](https://github.com/chrs1885/SheetyColors/issues/15)
+
 ## Version 1.1.0
 ### Features
 * SwiftUI support
-* Expose SheetyColors view] 
+* [Expose SheetyColors view](https://github.com/chrs1885/SheetyColors/issues/13)
 
 ## Version 1.0.2
 ### Enhancements
-*[Support Swift Package Manager](https://github.com/chrs1885/SheetyColors/issues/10)
+* [Support Swift Package Manager](https://github.com/chrs1885/SheetyColors/issues/10)
 
 ## Version 1.0.1
 ### Bugfix

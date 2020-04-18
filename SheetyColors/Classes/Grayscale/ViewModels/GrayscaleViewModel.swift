@@ -12,6 +12,7 @@ private enum SliderType: Int, CaseIterable {
 }
 
 class GrayscaleViewModel {
+    let isHapticFeedbackEnabled: Bool
     let hasTextOrMessage: Bool
     let isAlphaEnabled: Bool
     var colorModel: GrayscaleColor
@@ -23,10 +24,11 @@ class GrayscaleViewModel {
         self.appearenceProvider.current
     }()
 
-    init(withColorModel colorModel: GrayscaleColor, isAlphaEnabled: Bool, hasTextOrMessage: Bool) {
-        self.colorModel = colorModel
-        self.hasTextOrMessage = hasTextOrMessage
-        self.isAlphaEnabled = isAlphaEnabled
+    init(withConfig config: SheetyColorsConfigProtocol) {
+        colorModel = config.initialColor.grayscaleColor
+        hasTextOrMessage = config.title != nil || config.message != nil
+        isAlphaEnabled = config.alphaEnabled
+        isHapticFeedbackEnabled = config.hapticFeedbackEnabled
     }
 }
 
@@ -135,7 +137,12 @@ extension GrayscaleViewModel: SheetyColorsViewModelProtocol {
             colorModel.alpha = floor(value)
         }
 
-        viewDelegate?.didUpdateColorComponent(in: self)
+        viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: false)
         delegate?.didSelectColor(colorModel.uiColor)
+    }
+
+    func hexValueChanged(withColor color: UIColor) {
+        colorModel = color.grayscaleColor
+        viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: true)
     }
 }

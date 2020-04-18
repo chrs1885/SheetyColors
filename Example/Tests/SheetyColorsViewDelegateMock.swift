@@ -12,7 +12,7 @@ import Foundation
 class SheetyColorsViewDelegateMock: SheetyColorsViewDelegate {
     var didCallDidUpdateColorComponent = false
 
-    func didUpdateColorComponent(in _: SheetyColorsViewModelProtocol) {
+    func didUpdateColorComponent(in _: SheetyColorsViewModelProtocol, shouldAnimate _: Bool) {
         didCallDidUpdateColorComponent = true
     }
 }

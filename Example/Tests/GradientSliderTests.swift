@@ -27,8 +27,7 @@ class GradientSliderTests: QuickSpec {
             context("when initialized with default values") {
                 it("renders the slider control") {
                     let view = creatContainerView(withView: sut)
-                    assertSnapshot(matching: view, as: .image(size: .init(width: testFrame.width, height: testFrame.height)))
-                    assertSnapshot(matching: sut, as: .recursiveDescription(size: .init(width: testFrame.width, height: testFrame.height)))
+                    assertSnapshot(matching: view, as: .image(size: .init(width: testFrame.width, height: testFrame.height)), named: "initial_default_state")
                 }
             }
 
@@ -45,14 +44,14 @@ class GradientSliderTests: QuickSpec {
                 }
                 it("renders the slider control") {
                     let view = creatContainerView(withView: sut)
-                    assertSnapshot(matching: view, as: .image(size: .init(width: testFrame.width, height: testFrame.height)))
+                    assertSnapshot(matching: view, as: .image(size: .init(width: testFrame.width, height: testFrame.height)), named: "initial_custom_state")
                 }
             }
         }
     }
 }
 
-func creatContainerView(withView view: UIView) -> UIView {
+private func creatContainerView(withView view: UIView) -> UIView {
     let container = UIView()
     container.addSubview(view)
     view.anchor(top: container.topAnchor, bottom: container.bottomAnchor, left: container.leftAnchor, right: container.rightAnchor)

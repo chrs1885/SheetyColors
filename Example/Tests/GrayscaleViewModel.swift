@@ -18,24 +18,20 @@ class GrayscaleViewModelTests: QuickSpec {
             var delegateMock: SheetyColorsDelegateMock!
 
             context("after initialization") {
-                var testColorModel: GrayscaleColor!
-                var testIsAlphaEnabled: Bool!
-                var testHasTextOrMessage: Bool!
+                let testColorModel = GrayscaleColor(white: 120.0, alpha: 69.0)
+                let testConfig = SheetyColorsConfig(alphaEnabled: true, hapticFeedbackEnabled: true, initialColor: testColorModel.uiColor, title: "title", message: "message", type: .grayscale)
 
                 beforeEach {
                     viewDelegateMock = SheetyColorsViewDelegateMock()
                     delegateMock = SheetyColorsDelegateMock()
-                    testIsAlphaEnabled = true
-                    testHasTextOrMessage = true
-                    testColorModel = GrayscaleColor(white: 123.0, alpha: 69.0)
-                    sut = GrayscaleViewModel(withColorModel: testColorModel, isAlphaEnabled: testIsAlphaEnabled, hasTextOrMessage: testHasTextOrMessage)
+                    sut = GrayscaleViewModel(withConfig: testConfig)
                     sut.viewDelegate = viewDelegateMock
                     sut.delegate = delegateMock
                 }
 
                 context("when calling hasTextOrMessage property") {
                     it("returns the correct state") {
-                        expect(sut!.hasTextOrMessage).to(equal(testHasTextOrMessage))
+                        expect(sut!.hasTextOrMessage).to(beTrue())
                     }
                 }
 

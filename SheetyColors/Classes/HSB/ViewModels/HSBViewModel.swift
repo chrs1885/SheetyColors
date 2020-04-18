@@ -12,6 +12,7 @@ private enum SliderType: Int, CaseIterable {
 }
 
 class HSBViewModel {
+    let isHapticFeedbackEnabled: Bool
     let hasTextOrMessage: Bool
     let isAlphaEnabled: Bool
     var colorModel: HSBAColor
@@ -23,10 +24,11 @@ class HSBViewModel {
         self.appearenceProvider.current
     }()
 
-    init(withColorModel colorModel: HSBAColor, isAlphaEnabled: Bool, hasTextOrMessage: Bool) {
-        self.colorModel = colorModel
-        self.hasTextOrMessage = hasTextOrMessage
-        self.isAlphaEnabled = isAlphaEnabled
+    init(withConfig config: SheetyColorsConfigProtocol) {
+        colorModel = config.initialColor.hsbaColor
+        hasTextOrMessage = config.title != nil || config.message != nil
+        isAlphaEnabled = config.alphaEnabled
+        isHapticFeedbackEnabled = config.hapticFeedbackEnabled
     }
 }
 
@@ -163,7 +165,12 @@ extension HSBViewModel: SheetyColorsViewModelProtocol {
             colorModel.alpha = floor(value)
         }
 
-        viewDelegate?.didUpdateColorComponent(in: self)
+        viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: false)
         delegate?.didSelectColor(colorModel.uiColor)
+    }
+
+    func hexValueChanged(withColor color: UIColor) {
+        colorModel = color.hsbaColor
+        viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: true)
     }
 }

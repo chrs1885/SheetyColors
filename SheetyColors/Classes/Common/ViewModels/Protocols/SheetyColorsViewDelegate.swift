@@ -6,5 +6,5 @@
 //
 
 protocol SheetyColorsViewDelegate: AnyObject {
-    func didUpdateColorComponent(in viewModel: SheetyColorsViewModelProtocol)
+    func didUpdateColorComponent(in viewModel: SheetyColorsViewModelProtocol, shouldAnimate: Bool)
 }
