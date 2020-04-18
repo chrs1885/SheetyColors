@@ -392,6 +392,7 @@ class HSBViewModelTests: QuickSpec {
 
                         it("informs the viewDelegate") {
                             expect(viewDelegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                            expect(viewDelegateMock.shouldAnimate).to(beFalse())
                         }
 
                         it("informs the delegate") {
@@ -402,6 +403,25 @@ class HSBViewModelTests: QuickSpec {
                         it("floors the value and updates the alpha component of the color model") {
                             expect(sut.colorModel.alpha).to(equal(floor(testColorValue)))
                         }
+                    }
+                }
+                
+                context("when calling hexValueChanged()") {
+                    var testColor: UIColor!
+
+                    beforeEach {
+                        testColor = .red
+                        sut.hexValueChanged(withColor: testColor)
+                    }
+                    
+                    it("informs the viewDelegate") {
+                        expect(viewDelegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                        expect(viewDelegateMock.shouldAnimate).to(beTrue())
+                    }
+
+                    it("informs the delegate") {
+                        expect(delegateMock.didCallDidSelectColor).to(beTrue())
+                        expect(delegateMock.selectedColor).to(equal(sut.colorModel.uiColor))
                     }
                 }
             }

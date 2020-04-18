@@ -170,5 +170,6 @@ extension RGBViewModel: SheetyColorsViewModelProtocol {
     func hexValueChanged(withColor color: UIColor) {
         colorModel = color.rgbaColor
         viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: true)
+        delegate?.didSelectColor(colorModel.uiColor)
     }
 }
