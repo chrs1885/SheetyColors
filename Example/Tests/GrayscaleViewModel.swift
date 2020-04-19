@@ -263,12 +263,12 @@ class GrayscaleViewModelTests: QuickSpec {
                         }
                     }
                 }
-                
+
                 context("when calling hexValueChanged()") {
                     beforeEach {
                         sut.hexValueChanged(to: "ABCDEF")
                     }
-                    
+
                     it("informs the viewDelegate") {
                         expect(viewDelegateMock.didCallDidUpdateColorComponent).to(beTrue())
                         expect(viewDelegateMock.shouldAnimate).to(beTrue())
