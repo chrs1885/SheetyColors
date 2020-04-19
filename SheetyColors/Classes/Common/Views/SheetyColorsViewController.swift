@@ -148,8 +148,6 @@ extension SheetyColorsViewController: SheetyColorsViewDelegate {
 
 extension SheetyColorsViewController: PreviewColorViewDelegate {
     func previewColorView(_: PreviewColorView, didEditHexValue value: String) {
-        guard let color = UIColor(hex: value) else { return }
-
-        viewModel.hexValueChanged(withColor: color)
+        viewModel.hexValueChanged(to: value)
     }
 }
