@@ -20,8 +20,8 @@ class UIColorGrayscaleColorTests: QuickSpec {
                     sut = UIColor(white: 0.5, alpha: 0.5).grayscaleColor
                 }
 
-                it("returns an HSBAColor instance") {
-                    expect(sut.white).to(equal(127.0))
+                it("returns an GrayscaleColor instance") {
+                    expect(sut.white).to(equal(127.5))
                     expect(sut.alpha).to(equal(50.0))
                 }
             }
@@ -32,7 +32,7 @@ class UIColorGrayscaleColorTests: QuickSpec {
                 }
 
                 it("returns an GraycaleColor instance") {
-                    expect(sut.white).to(equal(72.0))
+                    expect(sut.white).to(equal(72.624))
                     expect(sut.alpha).to(equal(50.0))
                 }
             }
@@ -43,7 +43,7 @@ class UIColorGrayscaleColorTests: QuickSpec {
                 }
 
                 it("returns an GraycaleColor instance") {
-                    expect(sut.white).to(equal(72.0))
+                    expect(sut.white).to(equal(72.624))
                     expect(sut.alpha).to(equal(100.0))
                 }
             }

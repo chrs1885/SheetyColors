@@ -6,6 +6,7 @@
 //
 
 import CoreGraphics
+import UIKit
 
 private enum SliderType: Int, CaseIterable {
     case hue, saturation, brightness, alpha
@@ -169,8 +170,11 @@ extension HSBViewModel: SheetyColorsViewModelProtocol {
         delegate?.didSelectColor(colorModel.uiColor)
     }
 
-    func hexValueChanged(withColor color: UIColor) {
+    func hexValueChanged(to value: String) {
+        guard let color = UIColor(hex: value) else { return }
+
         colorModel = color.hsbaColor
         viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: true)
+        delegate?.didSelectColor(colorModel.uiColor)
     }
 }

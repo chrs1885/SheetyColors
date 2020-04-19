@@ -16,9 +16,8 @@ public class HSBAColor: NSObject, NSCopying, Codable {
             let red: CGFloat = colorRef[0]
             let green: CGFloat = colorRef[1]
             let blue: CGFloat = colorRef[2]
-            let rgb: Int = Int(red * 255.0) << 16 | Int(green * 255.0) << 8 | Int(blue * 255.0) << 0
 
-            return String(format: "%06x", rgb).uppercased()
+            return String(format: "%02lX%02lX%02lX", lroundf(Float(red * 255)), lroundf(Float(green * 255)), lroundf(Float(blue * 255))).uppercased()
         }
 
         return ""
