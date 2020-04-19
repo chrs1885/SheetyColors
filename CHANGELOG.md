@@ -1,3 +1,9 @@
+## Version 1.2.1
+### Bugfixes
+* [Wrong Hex value displayed after entering Hex code (HSB color space)](https://github.com/chrs1885/SheetyColors/issues/24)
+* [Delegate not called when hex value changed](https://github.com/chrs1885/SheetyColors/issues/22)
+* [Missing imports when adding library via SPM](https://github.com/chrs1885/SheetyColors/issues/18)
+
 ## Version 1.2.0
 ### Features
 * [Hex color input field](https://github.com/chrs1885/SheetyColors/issues/15)
@@ -12,7 +18,7 @@
 * [Support Swift Package Manager](https://github.com/chrs1885/SheetyColors/issues/10)
 
 ## Version 1.0.1
-### Bugfix
+### Bugfixes
 * Fix version of Capable dependency which was causing issues in projects where Capable was used side by side with SheetyColors
 
 ## Version 1.0.0
