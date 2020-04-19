@@ -17,11 +17,11 @@ class UIColorHsbaColorTests: QuickSpec {
 
             context("when calling hsbaColor on a hsb colorspace color") {
                 beforeEach {
-                    sut = UIColor(hue: 0.1, saturation: 0.25, brightness: 0.75, alpha: 0.5).hsbaColor
+                    sut = UIColor(hue: 0.25, saturation: 0.25, brightness: 0.75, alpha: 0.5).hsbaColor
                 }
 
                 it("returns an HSBAColor instance") {
-                    expect(sut.hue).to(equal(36.0))
+                    expect(sut.hue).to(equal(90.0))
                     expect(sut.saturation).to(equal(25.0))
                     expect(sut.brightness).to(equal(75.0))
                     expect(sut.alpha).to(equal(50.0))

@@ -55,5 +55,5 @@ class SheetyColorsViewModelMock: SheetyColorsViewModelProtocol {
 
     func sliderValueChanged(forSliderAt _: Int, value _: CGFloat) {}
 
-    func hexValueChanged(withColor _: UIColor) {}
+    func hexValueChanged(to _: String) {}
 }

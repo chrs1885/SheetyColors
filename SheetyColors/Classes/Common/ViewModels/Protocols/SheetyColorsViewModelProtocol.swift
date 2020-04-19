@@ -6,7 +6,6 @@
 //
 
 import CoreGraphics
-import UIKit
 
 protocol SheetyColorsViewModelProtocol {
     var viewDelegate: SheetyColorsViewDelegate? { get set }
@@ -29,5 +28,5 @@ protocol SheetyColorsViewModelProtocol {
     func thumbText(forSliderAt index: Int) -> String?
     func thumbIconName(forSliderAt index: Int) -> String?
     func sliderValueChanged(forSliderAt index: Int, value: CGFloat)
-    func hexValueChanged(withColor color: UIColor)
+    func hexValueChanged(to value: String)
 }

@@ -19,6 +19,5 @@ extension CGFloat {
     mutating func normalizeTo(max: CGFloat) {
         self *= max
         constrainTo(max: max)
-        round(.down)
     }
 }
