@@ -10,7 +10,7 @@ import UIKit
 /// A model class representing HSBA colors. The hue component can hold values between 0.0 and 360.0 while the saturation and brightnes values have a maximum value of 100.0.
 public class HSBAColor: NSObject, NSCopying, Codable {
     var hue, saturation, brightness, alpha: CGFloat
-    
+
     var hexColor: String {
         if let colorRef = uiColor.cgColor.components {
             let red: CGFloat = colorRef[0]
