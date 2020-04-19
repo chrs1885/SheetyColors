@@ -265,11 +265,8 @@ class GrayscaleViewModelTests: QuickSpec {
                 }
                 
                 context("when calling hexValueChanged()") {
-                    var testColor: UIColor!
-
                     beforeEach {
-                        testColor = .red
-                        sut.hexValueChanged(withColor: testColor)
+                        sut.hexValueChanged(to: "ABCDEF")
                     }
                     
                     it("informs the viewDelegate") {
