@@ -1,3 +1,4 @@
+[![Awesome](https://camo.githubusercontent.com/13c4e50d88df7178ae1882a203ed57b641674f94/68747470733a2f2f63646e2e7261776769742e636f6d2f73696e647265736f726875732f617765736f6d652f643733303566333864323966656437386661383536353265336136336531353464643865383832392f6d656469612f62616467652e737667)](https://github.com/vsouza/awesome-ios#color)
 ![Cocoapods(https://cocoapods.org/pods/SheetyColors)](https://img.shields.io/cocoapods/v/SheetyColors.svg)
 [![Carthage compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 ![UIKit & SwiftUI](https://img.shields.io/badge/iOS-UIKit%20%26%20SwiftUI-yellow)
@@ -22,6 +23,7 @@
 - 👶 **Intuitive UI:** Each slider comes with a gradient that gives you an idea of how changing individual slider values affects the resulting color. All controls do support haptic feedback and will react to any errors such as invalid Hex values.
 - 🍏 **SwiftUI & iOS 13 support:** SheetyColors can also be used as part of your SwiftUI projects. Have a look at the *Usage* section to get further info. The library is also optimized to work well with the new Dark Mode.
 
+## Example
 | NEW: Hex input |RGB, HSB, and Grayscale|Fully configurable|Dark mode support|
 | :-: | :-: | :-: | :-: |
 |![Color picker supporting RGB, HSB, and Grayscale][hex_input]|![Color picker supporting RGB, HSB, and Grayscale][minimum_config]|![Fully configurable][fully_configurable]|![Dark mode support][dark_mode]|
@@ -31,10 +33,7 @@
 [fully_configurable]: ./Documentation/demo_customizable.png "Fully configurable"
 [dark_mode]: ./Documentation/demo_dark_mode.png "Dark mode support"
 
-## Example
-To get a quick overview, you can checkout the example app on [Appetize.io](https://appetize.io/embed/gggkv26ep4xn6819f181ffqxpw?device=iphonex&scale=75&autoplay=false&orientation=portrait&deviceColor=black)
-
-To run the example project from Xcode, clone the repo, and run `pod install` from the Example directory first.
+To get a quick overview, you can checkout the example app on [Appetize.io](https://appetize.io/embed/gggkv26ep4xn6819f181ffqxpw?device=iphonex&scale=75&autoplay=false&orientation=portrait&deviceColor=black). To run the example project from Xcode, clone the repo, and run `pod install` from the Example directory first.
 
 ## Installation
 
