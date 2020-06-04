@@ -276,21 +276,6 @@ import UIKit
         return true
     }
 
-    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        super.endTracking(touch, with: event)
-        if let pt = touch?.location(in: self) {
-            var newValue = valueForLocation(point: pt)
-            var difference = abs(value - newValue)
-            if difference >= stepInterval {
-                let remainder = difference.truncatingRemainder(dividingBy: stepInterval)
-                difference -= remainder
-                newValue = newValue > value ? value + difference : value - difference
-                setValue(newValue, animated: false)
-            }
-        }
-        sendActions(for: [UIControl.Event.valueChanged, UIControl.Event.touchUpInside])
-    }
-
     // MARK: - Private Functions
 
     private func updateThumbPosition(animated: Bool) {
