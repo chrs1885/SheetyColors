@@ -275,6 +275,13 @@ import UIKit
         }
         return true
     }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        super.endTracking(touch, with: event)
+        setValue(sliderValue, animated: false)
+        sendActions(for: [UIControl.Event.touchUpInside])
+    }
+
 
     // MARK: - Private Functions
 
