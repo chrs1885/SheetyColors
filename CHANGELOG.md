@@ -1,6 +1,7 @@
 ## Version 1.3.0
 ### Features
 * Expose `previewColor` setter used to change the selected color at any time
+* Expose border color config for color preview view
 
 ### Enhancements
 * [Make sliders more accurate](https://github.com/chrs1885/SheetyColors/issues/20)
