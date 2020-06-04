@@ -18,7 +18,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
 
             context("when calling createView with a config of type .rgb") {
                 beforeEach {
-                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .red, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
+                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, previewBorderColor: .clear, initialColor: .red, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
                 }
 
@@ -32,7 +32,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
 
             context("when calling createView with a config of type .hsb") {
                 beforeEach {
-                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .red, hapticFeedbackEnabled: false, title: nil, message: nil, type: .hsb)
+                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, previewBorderColor: .clear, initialColor: .red, hapticFeedbackEnabled: false, title: nil, message: nil, type: .hsb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
                 }
 
@@ -46,7 +46,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
 
             context("when calling createView with a config of type .grayscale") {
                 beforeEach {
-                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .red, hapticFeedbackEnabled: false, title: nil, message: nil, type: .grayscale)
+                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, previewBorderColor: .clear, initialColor: .red, hapticFeedbackEnabled: false, title: nil, message: nil, type: .grayscale)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
                 }
 
@@ -60,7 +60,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
 
             context("when calling createView with a config that has alphaEnabled set to true") {
                 beforeEach {
-                    testConfig = SheetyColorsConfigMock(alphaEnabled: true, initialColor: .white, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
+                    testConfig = SheetyColorsConfigMock(alphaEnabled: true, previewBorderColor: .clear, initialColor: .white, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
                 }
 
@@ -75,7 +75,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
 
                 beforeEach {
                     testText = "TestText"
-                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .white, hapticFeedbackEnabled: false, title: testText, message: nil, type: .rgb)
+                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, previewBorderColor: .clear, initialColor: .white, hapticFeedbackEnabled: false, title: testText, message: nil, type: .rgb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
                 }
 
@@ -87,7 +87,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
 
             context("when calling createView with a config that doesn't have a text nor a message") {
                 beforeEach {
-                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .white, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
+                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, previewBorderColor: .clear, initialColor: .white, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
                 }
 
@@ -99,7 +99,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
 
             context("when calling createView with a config with hapticFeedbackEnabled set to true") {
                 beforeEach {
-                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .white, hapticFeedbackEnabled: true, title: nil, message: nil, type: .rgb)
+                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, previewBorderColor: .clear, initialColor: .white, hapticFeedbackEnabled: true, title: nil, message: nil, type: .rgb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
                 }
 
@@ -110,7 +110,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
 
             context("when calling createView with a config with hapticFeedbackEnabled set to false") {
                 beforeEach {
-                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .white, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
+                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, previewBorderColor: .clear, initialColor: .white, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig)
                 }
 
@@ -124,7 +124,7 @@ class SheetyColorsViewFactoryTests: QuickSpec {
 
                 beforeEach {
                     delegateMock = SheetyColorsDelegateMock()
-                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, initialColor: .white, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
+                    testConfig = SheetyColorsConfigMock(alphaEnabled: false, previewBorderColor: .clear, initialColor: .white, hapticFeedbackEnabled: false, title: nil, message: nil, type: .rgb)
                     view = SheetyColorsViewFactory.createView(withConfig: testConfig, delegate: delegateMock)
                 }
 

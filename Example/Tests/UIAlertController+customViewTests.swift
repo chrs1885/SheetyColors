@@ -20,7 +20,7 @@ class UIAlertControllerCustomViewTests: XCTestCase {
         testColor = .yellow
         testTitle = "TestTitle"
         testMessage = "TestMessage"
-        let config = SheetyColorsConfigMock(alphaEnabled: true, initialColor: testColor, hapticFeedbackEnabled: true, title: testTitle, message: testMessage, type: .rgb)
+        let config = SheetyColorsConfigMock(alphaEnabled: true, previewBorderColor: .clear, initialColor: testColor, hapticFeedbackEnabled: true, title: testTitle, message: testMessage, type: .rgb)
         sut = SheetyColorsController(withConfig: config)
     }
 
