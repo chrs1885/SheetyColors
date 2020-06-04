@@ -71,7 +71,7 @@ class ColorsCollectionViewController: UICollectionViewController {
         }
 
         let color = (itemIndex != nil) ? colorItems[itemIndex!].uiColor : UIColor.white
-        let config = SheetyColorsConfig(alphaEnabled: true, hapticFeedbackEnabled: true, initialColor: color, title: action.title, message: action.message, type: colorType)
+        let config = SheetyColorsConfig(alphaEnabled: true, previewBorderColor: .red, hapticFeedbackEnabled: true, initialColor: color, title: action.title, message: action.message, type: colorType)
         let controller = SheetyColorsController(withConfig: config)
 
         addSelectAlertAction(for: controller, withAction: action)

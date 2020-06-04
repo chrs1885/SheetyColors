@@ -11,6 +11,9 @@ import UIKit
 public struct SheetyColorsConfig: SheetyColorsConfigProtocol {
     /// Defines whether an opacity slider should be displayed or not.
     public var alphaEnabled: Bool
+    
+    /// Defines the border color of the preview color field.
+    public var previewBorderColor: UIColor
 
     /// Defines whether haptic feedback is supported when changing a slider's value.
     public var hapticFeedbackEnabled: Bool
@@ -32,14 +35,16 @@ public struct SheetyColorsConfig: SheetyColorsConfigProtocol {
 
      - Parameter:
      - alphaEnabled: Defines whether an opacity slider should be displayed or not. Defaults to `true`.
+     - previewBorderColor: Defines the border color of the preview color field. Defaults to `.clear`.
      - hapticFeedbackEnabled: Defines whether haptic feedback is supported when changing a slider's value. Defaults to `true`.
      - initialColor: The initial color used when displaying the SheetyColors view. Defaults to `.white`.
      - title: A title text displayed inside the SheetyColors view. Defaults to `nil`.
      - message: A description text displayed inside the SheetyColors view. Defaults to `nil`.
      - type: The color model used by the SheetyColors view. Defaults to `.rgb`.
      */
-    public init(alphaEnabled: Bool = true, hapticFeedbackEnabled: Bool = true, initialColor: UIColor = .white, title: String? = nil, message: String? = nil, type: SheetyColorsType = .rgb) {
+    public init(alphaEnabled: Bool = true, previewBorderColor: UIColor = .clear, hapticFeedbackEnabled: Bool = true, initialColor: UIColor = .white, title: String? = nil, message: String? = nil, type: SheetyColorsType = .rgb) {
         self.alphaEnabled = alphaEnabled
+        self.previewBorderColor = previewBorderColor
         self.hapticFeedbackEnabled = hapticFeedbackEnabled
         self.initialColor = initialColor
         self.message = message

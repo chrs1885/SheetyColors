@@ -10,6 +10,7 @@ import SheetyColors
 
 struct SheetyColorsConfigMock: SheetyColorsConfigProtocol {
     var alphaEnabled: Bool
+    var previewBorderColor: UIColor
     var initialColor: UIColor
     var hapticFeedbackEnabled: Bool
     var title: String?

@@ -19,7 +19,14 @@ class PreviewColorView: UIView {
     var transparencyPatternLayer: CALayer!
     var isColorViewLabelShown: Bool!
     var hapticFeedbackProvider: HapticFeedbackProviderProtocol?
-
+    
+    var borderColor: UIColor = .clear {
+        didSet {
+            colorLayer.borderWidth = borderColor != .clear ? 1 : 0
+            colorLayer.borderColor = borderColor.cgColor
+        }
+    }
+    
     var color: UIColor = .clear {
         didSet {
             colorLayer?.backgroundColor = color.cgColor

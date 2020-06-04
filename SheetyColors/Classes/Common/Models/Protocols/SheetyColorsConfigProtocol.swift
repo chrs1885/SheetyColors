@@ -12,6 +12,9 @@ public protocol SheetyColorsConfigProtocol {
     /// Defines whether an opacity slider should be displayed or not.
     var alphaEnabled: Bool { get }
 
+    /// Defines the border color of the preview color field.
+    var previewBorderColor: UIColor { get }
+    
     /// Defines whether haptic feedback is supported when changing a slider's value.
     var hapticFeedbackEnabled: Bool { get }
 

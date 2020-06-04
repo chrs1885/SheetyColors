@@ -80,6 +80,7 @@ extension SheetyColorsViewController {
 
     func setupPreviewColorView() {
         previewColorView = PreviewColorView(withColor: viewModel.previewColorModel.uiColor, hapticFeedbackProvider: hapticFeedbackProvider)
+        previewColorView.borderColor = viewModel.previewBorderColor
         previewColorView.primaryKeyText = viewModel.primaryKeyText
         previewColorView.primaryValueText = viewModel.primaryValueText
         previewColorView.hexKeyText = viewModel.secondaryKeyText

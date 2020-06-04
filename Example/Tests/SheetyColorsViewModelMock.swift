@@ -12,6 +12,7 @@ import Foundation
 class SheetyColorsViewModelMock: SheetyColorsViewModelProtocol {
     weak var delegate: SheetyColorsDelegate?
     weak var viewDelegate: SheetyColorsViewDelegate?
+    var previewBorderColor: UIColor = .clear
     var primaryKeyText: String = ""
     var primaryValueText: String = ""
     var secondaryKeyText: String = ""

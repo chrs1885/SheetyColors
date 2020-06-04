@@ -14,6 +14,7 @@ private enum SliderType: Int, CaseIterable {
 
 class GrayscaleViewModel {
     let isHapticFeedbackEnabled: Bool
+    let previewBorderColor: UIColor
     let hasTextOrMessage: Bool
     let isAlphaEnabled: Bool
     var colorModel: GrayscaleColor
@@ -30,6 +31,7 @@ class GrayscaleViewModel {
         hasTextOrMessage = config.title != nil || config.message != nil
         isAlphaEnabled = config.alphaEnabled
         isHapticFeedbackEnabled = config.hapticFeedbackEnabled
+        previewBorderColor = config.previewBorderColor
     }
 }
 

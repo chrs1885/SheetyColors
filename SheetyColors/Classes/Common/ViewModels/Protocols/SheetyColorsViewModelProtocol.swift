@@ -12,6 +12,7 @@ protocol SheetyColorsViewModelProtocol {
     var viewDelegate: SheetyColorsViewDelegate? { get set }
     var delegate: SheetyColorsDelegate? { get set }
     var isHapticFeedbackEnabled: Bool { get }
+    var previewBorderColor: UIColor { get }
     var hasTextOrMessage: Bool { get }
     var primaryKeyText: String { get }
     var primaryValueText: String { get }
