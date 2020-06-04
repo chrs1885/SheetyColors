@@ -1,3 +1,7 @@
+## Version 1.3.0
+### Features
+* Expose `previewColor` setter used to change the selected color at any time
+
 ## Version 1.2.1
 ### Bugfixes
 * [Wrong Hex value displayed after entering Hex code (HSB color space)](https://github.com/chrs1885/SheetyColors/issues/24)
