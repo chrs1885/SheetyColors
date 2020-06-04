@@ -279,6 +279,22 @@ class GrayscaleViewModelTests: QuickSpec {
                         expect(delegateMock.selectedColor).to(equal(sut.colorModel.uiColor))
                     }
                 }
+                
+                context("when calling colorChanged()") {
+                    beforeEach {
+                        sut.colorChanged(to: .red)
+                    }
+                    
+                    it("informs the viewDelegate") {
+                        expect(viewDelegateMock.didCallDidUpdateColorComponent).to(beTrue())
+                        expect(viewDelegateMock.shouldAnimate).to(beTrue())
+                    }
+
+                    it("informs the delegate") {
+                        expect(delegateMock.didCallDidSelectColor).to(beTrue())
+                        expect(delegateMock.selectedColor).to(equal(sut.colorModel.uiColor))
+                    }
+                }
             }
         }
     }
