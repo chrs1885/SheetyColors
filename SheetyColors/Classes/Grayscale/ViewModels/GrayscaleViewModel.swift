@@ -144,7 +144,10 @@ extension GrayscaleViewModel: SheetyColorsViewModelProtocol {
 
     func hexValueChanged(to value: String) {
         guard let color = UIColor(hex: value) else { return }
-
+        colorChanged(to: color)
+    }
+    
+    func colorChanged(to color: UIColor) {
         colorModel = color.grayscaleColor
         viewDelegate?.didUpdateColorComponent(in: self, shouldAnimate: true)
         delegate?.didSelectColor(colorModel.uiColor)

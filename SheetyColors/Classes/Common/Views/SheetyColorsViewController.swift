@@ -16,8 +16,14 @@ public class SheetyColorsViewController: UIViewController, SheetyColorsViewContr
     var viewModel: SheetyColorsViewModelProtocol
     var sliders: [GradientSlider] = []
 
-    var previewColor: UIColor {
-        return viewModel.previewColorModel.uiColor
+    public var previewColor: UIColor {
+        get {
+            viewModel.previewColorModel.uiColor
+        }
+        
+        set {
+            viewModel.colorChanged(to: newValue)
+        }
     }
 
     init(viewModel: SheetyColorsViewModelProtocol) {
