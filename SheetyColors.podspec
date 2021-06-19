@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SheetyColors'
-  s.version          = '1.2.1'
+  s.version          = '1.3.1'
   s.summary          = 'An action sheet styled color picker for iOS.'
 
   s.description      = <<-DESC

@@ -1,3 +1,7 @@
+## Version 1.3.1
+### Enhancements
+* Update dependencies to use Capable 2.0.0
+
 ## Version 1.3.0
 ### Features
 * Expose `previewColor` setter used to change the selected color at any time
